@@ -12,4 +12,8 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  buscarProducts(texto:String){
+    console.log(texto);
+  }
+
 }

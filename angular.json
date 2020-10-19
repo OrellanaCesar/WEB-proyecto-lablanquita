@@ -25,12 +25,18 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/assets/bootstrap-4.5.3/css/bootstrap.min.css"
+              "src/assets/bootstrap-4.5.3/css/bootstrap.min.css",
+              "src/assets/fontawesome/css/all.css",
+              "src/assets/fontawesome/css/fontawesome.min.css",
+              "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "src/assets/jquery/jquery.slim.min.js",
               "src/assets/poper/poper.min.js",
-              "src/assets/bootstrap-4.5.3/js/bootstrap.min.js"
+              "src/assets/bootstrap-4.5.3/js/bootstrap.min.js",
+              "src/assets/fontawesome/js/all.js",
+              "src/assets/fontawesome/js/fontawesome.min.js"
+
             ]
           },
           "configurations": {
