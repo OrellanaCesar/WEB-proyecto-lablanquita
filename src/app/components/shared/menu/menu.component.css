@@ -1,0 +1,81 @@
+.logo{
+  width: 7rem;
+  height: 6rem;
+}
+
+.margen-logo{
+  margin-left: 3rem;
+}
+
+.input-Search{
+  font-size: 1.4rem !important;
+}
+
+@media(max-width:768px){
+  .input-Serach{
+    font-size: 1rem !important;
+  }
+}
+
+.input-Search::placeholder{
+  color:  #9fa9b3 !important;
+}
+
+.button-Search{
+  width: 4rem!;
+  margin-top: 0.5rem;
+}
+
+@media(max-width:768px){
+  .button-Serach{
+      width: 4rem;
+  }
+}
+
+.seccion-RedesSociales{
+  margin-left: 3rem;
+}
+
+.icono-RedesSociales{
+  color: #297582;
+  margin-top: 3.4rem;
+}
+
+.icono-RedesSociales:hover{
+  color: white;
+
+}
+
+@media(max-width:768px){
+  .icono-RedesSociales{
+      color: #297582;
+      margin-left: 2px !important;
+      margin-top: 5px !important;
+  }
+
+  .icono-RedesSociales:hover{
+    color: white;
+
+  }
+}
+
+.bg-orange{
+  background-color: #ef9b3c;
+}
+
+.navbar-orange{
+  color: #17a2b8;
+}
+
+
+.btn-outline-search {
+  color: #17a2b8;
+  background-color: #a2723b;
+  border-color: #a2723b;
+}
+
+.btn-outline-search:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
