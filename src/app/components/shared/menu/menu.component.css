@@ -12,19 +12,20 @@
 }
 
 .input-Search{
-  font-size: 1.4rem !important;
+  font-size: 1rem !important;
 }
 
 @media(width:1024px){
   .input-Search{
     margin-left: 1rem !important;
-    font-size: 1.4rem !important
+    font-size: 1rem !important
   }
 }
 
 @media(max-width:360px){
   .input-Serach{
     font-size: 1rem !important;
+
   }
 }
 
@@ -35,12 +36,9 @@
 }
 
 
-
-
-
-
 .input-Search::placeholder{
   color:  #9fa9b3 !important;
+  font-family: Georgia, Cambria, Times, "Times New Roman";
 }
 
 .button-Search{
@@ -61,6 +59,7 @@
 .icono-RedesSociales{
   color: #297582;
   margin-top: 3.4rem;
+  font-size: 28px;
 }
 
 .icono-RedesSociales:hover{
@@ -71,7 +70,6 @@
 @media(max-width:360px){
   .icono-RedesSociales{
       color: #297582;
-      font-size: 3rem;
       margin-left: 60px !important;
       margin-top: 5px !important;
       margin-bottom: .5rem;
@@ -105,14 +103,19 @@
 
 
 .btn-acceder{
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
-  margin-left: 3rem;
+  margin-right: 6px;
+  width: 9rem;
+  /* margin-left: 3rem; */
 }
 
+.btn-acomodado{
+  width:16rem !important;
+}
 @media (max-width:360px) {
   .btn-acceder{
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-left: 2px;
     margin-right: 2px;
     margin-bottom: 1rem;
@@ -141,4 +144,22 @@
     width: 16rem;
     /* width: 100% ; */
   }
+}
+
+.letra{
+  font-family: Georgia, Cambria, Times, "Times New Roman";
+}
+
+.margen-menu{
+  margin-left:  12rem;
+}
+
+.margen-item-menu{
+  margin-right: 40px;
+}
+
+
+
+.activo a{
+  color:  #f5c58e;
 }
