@@ -8,9 +8,9 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
 const routes: Routes = [
 {path:'' , component:HomeComponent},
 {path:'ubicacion' , component:UbicacionComponent},
-{path:'**', pathMatch:'full', redirectTo:''},
 {path:'createBrand',component:CreateBrandComponent},
 {path:'dashboardBrand' , component:DataTableBrandComponent},
+{path:'**', pathMatch:'full', redirectTo:''},
 ];
 
 @NgModule({

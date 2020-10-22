@@ -1,0 +1,13 @@
+.dashboard{
+	background-color: #0f3666 ;
+	color: white;
+}
+
+.datatable-botones{
+	display: flex;
+	justify-content: center;
+}
+
+.no-data-available {
+	text-align: center !important;
+}
