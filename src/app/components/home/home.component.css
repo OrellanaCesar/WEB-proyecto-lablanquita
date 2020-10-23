@@ -30,17 +30,16 @@
   background-color: white;
 }
 
-/* .circulo{
+.alto-imagen{
+  height: 50vh;
+}
 
-	width: 7rem;
-	height: 7rem;
-	border-radius: 50%;
-	background: #ef9b3c;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-  margin:0px auto;
-  padding:3%
+.imagen-carousel{
+  margin-left: 0px !important;
+}
 
-} */
+@media (max-width:768px){
+  .alto-imagen{
+    height: 35vh;
+  }
+}
