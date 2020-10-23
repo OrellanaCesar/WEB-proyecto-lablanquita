@@ -160,32 +160,21 @@
 
 
 
-.activo a{
+/*.activo a{
   color:  #f5c58e;
-}
+  }*/
 
-.scroll{
-  max-height: 558px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 
-.scroll::-webkit-scrollbar {
-  -webkit-appearance: none;
-}
+  .brand-item:hover{
+    background-color: #316db2!important;
+  }
 
-.scroll::-webkit-scrollbar-thumb {
-  background-color: #1f3e0a;
-  border-radius: 20px;
-  border: 2px solid #1f3e0a;
-}
+  .links {
+    color:#dee2e6 !important;
+    padding-right: 3.5rem !important;
+    padding-left: 3.5rem !important;
+  }
 
-.brand-item:hover{
-  background-color: #021327!important;
-}
-
-.links {
-  color:#dee2e6 !important;
-  padding-right: 3.5rem !important;
-  padding-left: 3.5rem !important;
-}
+  .sub-menu-color{
+    background: #007bff;
+  }

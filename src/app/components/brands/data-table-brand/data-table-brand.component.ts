@@ -18,6 +18,7 @@ export class DataTableBrandComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		/*Crea el dataTable con sus campos*/
 		const that = this;
 		this.dtOptions = {
 			pagingType: 'full_numbers',
@@ -42,10 +43,15 @@ export class DataTableBrandComponent implements OnInit {
 	}
 
 	createBrand(){
+		/*Se va a la vista de crear una marca
+		Parametros:no hay
+		*/
 		this.router.navigateByUrl('createBrand');
 	}
 
 	deleteBrand(id:number){
+		/*Elimina la marca del identificador que pasa como parametro
+		paramentro:id (identificador de la marca)*/
 		this._brands.deleteBrand(id)
 		.subscribe((resp:any) => {
 			const Toast = Swal.mixin({
@@ -92,6 +98,10 @@ export class DataTableBrandComponent implements OnInit {
 				title: error.error.message
 			});
 		})
+	}
+
+	update(id:number){
+		//this.router.navigateByUrl(`/updatebrand/${id}`);
 	}
 
 }
