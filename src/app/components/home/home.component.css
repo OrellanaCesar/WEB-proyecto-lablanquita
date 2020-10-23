@@ -1,0 +1,46 @@
+.hidden-info{
+  display: block ;
+}
+
+@media (max-width: 767px){
+  .hidden-info{
+      display: none !important;
+  }
+}
+
+.botones-contacto{
+  color:#ef9b3c ;
+  font-size: 24px;
+  margin-right: .3rem;
+}
+
+.contacto {
+    color: #ef9b3c  ;
+    cursor: pointer ;
+    font-size: 13px ;
+    line-height: 22px ;
+    font-weight: 300 ;
+}
+
+.decoration:link{
+  text-decoration: none;
+}
+
+.bg-white{
+  background-color: white;
+}
+
+/* .circulo{
+
+	width: 7rem;
+	height: 7rem;
+	border-radius: 50%;
+	background: #ef9b3c;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+  margin:0px auto;
+  padding:3%
+
+} */
