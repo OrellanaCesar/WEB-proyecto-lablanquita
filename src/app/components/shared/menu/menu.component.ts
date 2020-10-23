@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
   constructor( private _brand:BrandService,
     private router:Router) {
     this.getScreenSize();
+    this.getBrands();
   }
 
   ngOnInit(): void {
