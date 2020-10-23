@@ -23,6 +23,7 @@
     "animate.css": "^4.1.1",
     "datatables.net": "^1.10.22",
     "datatables.net-dt": "^1.10.22",
+    "jquery": "^3.5.1",
     "rxjs": "~6.5.4",
     "sweetalert2": "^10.7.0",
     "tslib": "^1.10.0",

@@ -161,7 +161,7 @@
         [routerLink]="['']"
         [class.margen-item-menu]="scrWidth>990">Inicio</a>
       </li>
-      <li class="nav-item mr-5 ml-2 dropdown" >
+      <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo" >
         <a class="nav-link dropdown-toggle "
         style="color:white;"
         id="navbarDropdownBrand"
@@ -169,10 +169,10 @@
         data-toggle="dropdown"
         aria-haspopup="true"
         aria-expanded="false">
-        <strong>MARCAS</strong>
+        <strong>Marcas</strong>
       </a>
       <div class="dropdown-menu  navbar-dark " aria-labelledby="navbarDropdownBrand">
-        <a class="dropdown-item nav-link brand-item links" [routerLink]="['dashboardBrands']">GESTIÓN DE MARCAS
+        <a class="dropdown-item nav-link brand-item links" [routerLink]="['dashboardBrand']">Gestion de Marcas
         </a>
         <div class="dropdown-divider "></div>
         <a class="dropdown-item nav-link brand-item "
