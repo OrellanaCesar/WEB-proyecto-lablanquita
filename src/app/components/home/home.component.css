@@ -1,0 +1,63 @@
+.hidden-info{
+  display: block ;
+}
+
+@media (max-width: 767px){
+  .hidden-info{
+      display: none !important;
+  }
+}
+
+.botones-contacto{
+  color:#ef9b3c ;
+  font-size: 24px;
+  margin-right: .3rem;
+}
+
+.contacto {
+    color: #ef9b3c  ;
+    cursor: pointer ;
+    font-size: 13px ;
+    line-height: 22px ;
+    font-weight: 300 ;
+}
+
+.decoration:link{
+  text-decoration: none;
+}
+
+.bg-white{
+  background-color: white;
+}
+
+.alto-imagen{
+  height: 60vh;
+}
+
+.imagen-carousel{
+  margin-left: 0px !important;
+}
+
+@media (max-width:768px){
+  .alto-imagen{
+    height: 35vh;
+  }
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.owl-next{
+  background-color: #ef9b3c !important ;
+}
+
+.botones-contacto{
+  color:#ef9b3c ;
+  font-size: 24px;
+  margin-right: .3rem;
+}
+
+.letra{
+  font-family: 'Sofia';
+}
