@@ -2,8 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
@@ -29,7 +31,9 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
   FormsModule,
   DataTablesModule,
   HttpClientModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  CarouselModule,
+  BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
