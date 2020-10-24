@@ -136,12 +136,52 @@
     <div class="row adaptacion bg-primary">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
         <button class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse"
+      id="navbarNavAltMarkup"
+      [class.margen-menu]="scrWidth > 990 ">
+      <ul class="navbar-nav">
+        <li class="nav-item "
+        routerLinkActive="activo"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link   letra"
+        [routerLink]="['']"
+        [class.margen-item-menu]="scrWidth>990">Inicio</a>
+      </li>
+      <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo" >
+        <a class="nav-link  letra dropdown-toggle "
+        id="navbarDropdownBrand"
+        role="button"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false">Marcas
+      </a>
+      <div class="dropdown-menu  navbar-dark  sub-menu-color" aria-labelledby="navbarDropdownBrand">
+        <a class="dropdown-item nav-link  links letra brand-item " [routerLink]="['dashboardBrand']">Gestion de Marcas
+        </a>
+        <div class="dropdown-divider "></div>
+        <a class="dropdown-item nav-link brand-item "
+        style="color:white;"
+        *ngFor="let brand of listBrands" >{{ brand.brand_name }}</a>
+      </div>
+    </li>
+    <li class="nav-item"
+    routerLinkActive="activo">
+    <a class="nav-link   letra"
+    [routerLink]="['ubicacion']"
+    [class.margen-item-menu]="scrWidth>990">Ubicación</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  letra"
+    [class.margen-item-menu]="scrWidth>990">Contacto</a>
+  </li>
 
                 <span class="navbar-toggler-icon"></span>
         </button>

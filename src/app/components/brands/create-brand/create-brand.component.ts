@@ -26,16 +26,19 @@ export class CreateBrandComponent implements OnInit {
 	}
 
 	createForm(){
+		/*Crea el formulario para la marca */
 		this.form = this.fb.group({
 			brand_name:['',Validators.required]
 		})
 	}
 
 	goGrid(){
-		this.router.navigateByUrl('dashboardBrands');
+		/*Vuelve al Grid , a la tabla de marcas*/
+		this.router.navigateByUrl('dashboardBrand');
 	}
 
 	get InvalidName(){
+		/*Verifica si el nombre de la marca es valido*/
 		return this.form.get('brand_name').invalid && this.form.get('brand_name').touched;
 	}
 
@@ -53,6 +56,9 @@ export class CreateBrandComponent implements OnInit {
 	}
 
 	register(){
+		/*registra la marca que se cargo en el formulario
+		parametros:no hay
+		return: devuelve un mensaje si se registro correctamente o no*/
 		this.error = false;
 		this.loader = true;
 		if(this.form.invalid){
