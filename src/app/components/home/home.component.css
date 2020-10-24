@@ -31,7 +31,7 @@
 }
 
 .alto-imagen{
-  height: 50vh;
+  height: 60vh;
 }
 
 .imagen-carousel{
@@ -42,4 +42,22 @@
   .alto-imagen{
     height: 35vh;
   }
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.owl-next{
+  background-color: #ef9b3c !important ;
+}
+
+.botones-contacto{
+  color:#ef9b3c ;
+  font-size: 24px;
+  margin-right: .3rem;
+}
+
+.letra{
+  font-family: 'Sofia';
 }

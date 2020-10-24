@@ -145,3 +145,93 @@
 		</div>
 	</div>
 </div>
+<!-- OFERTAS DEL DIA -->
+<div class="row adaptacion " >
+
+	<div class="container mt-5 text-center " >
+		<b *ngIf="listProduct_OfferDay?.length > 0"
+				class="botones-contacto mb-4 letra">
+				PRODUCTOS DESTACADOS
+		</b>
+		<owl-carousel-o [options]="customOptions">
+
+			<ng-container>
+
+				<ng-template *ngFor="let offert of listProduct_OfferDay"
+				carouselSlide [id]="offert.product_id">
+
+					<div class="card"
+								style="width: 18rem;">
+						<img [src]="offert.product_image"
+								 class="card-img-top"
+								 alt=""
+								 style="height: 18rem;">
+						<div class="card-body bg-dark">
+							<h5 class="card-title"
+									style="color: #ef9b3c;">
+									{{offert.product_name}}
+							</h5>
+							<p class="card-text"
+								 style="color: #ef9b3c;">
+								 {{offert.product_description}}
+							 </p>
+							<a href="#"
+							   class="btn btn-primary">
+								 Go somewhere
+							 </a>
+						</div>
+					</div>
+
+				</ng-template>
+
+		  </ng-container>
+
+	  </owl-carousel-o>
+
+	</div>
+</div>
+<!-- PRODUCTOS MAS VENDIDOS -->
+<div class="row adaptacion " >
+
+	<div class="container mt-5 text-center " >
+		<b *ngIf="listProduct_OfferDay?.length > 0"
+				class="botones-contacto mb-4 letra">
+				PRODUCTOS DESTACADOS
+		</b>
+		<owl-carousel-o [options]="customOptions">
+
+			<ng-container>
+
+				<ng-template *ngFor="let offert of listProduct_BestSeller"
+				carouselSlide [id]="offert.product_id">
+
+					<div class="card"
+								style="width: 18rem;">
+						<img [src]="offert.product_image"
+								 class="card-img-top"
+								 alt=""
+								 style="height: 18rem;">
+						<div class="card-body bg-dark">
+							<h5 class="card-title"
+									style="color: #ef9b3c;">
+									{{offert.product_name}}
+							</h5>
+							<p class="card-text"
+								 style="color: #ef9b3c;">
+								 {{offert.product_description}}
+							 </p>
+							<a href="#"
+							   class="btn btn-primary">
+								 Go somewhere
+							 </a>
+						</div>
+					</div>
+
+				</ng-template>
+
+		  </ng-container>
+
+	  </owl-carousel-o>
+
+	</div>
+</div>
