@@ -48,7 +48,7 @@
 
 @media(max-width:360px){
   .button-Serach{
-      width: 4rem;
+    width: 4rem;
   }
 }
 
@@ -69,10 +69,10 @@
 
 @media(max-width:360px){
   .icono-RedesSociales{
-      color: #297582;
-      margin-left: 60px !important;
-      margin-top: 5px !important;
-      margin-bottom: .5rem;
+    color: #297582;
+    margin-left: 60px !important;
+    margin-top: 5px !important;
+    margin-bottom: .5rem;
   }
 
   .icono-RedesSociales:hover{
@@ -160,6 +160,21 @@
 
 
 
-.activo a{
+/*.activo a{
   color:  #f5c58e;
-}
+  }*/
+
+
+  .brand-item:hover{
+    background-color: #316db2!important;
+  }
+
+  .links {
+    color:#dee2e6 !important;
+    padding-right: 3.5rem !important;
+    padding-left: 3.5rem !important;
+  }
+
+  .sub-menu-color{
+    background: #007bff;
+  }

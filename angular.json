@@ -28,14 +28,17 @@
               "src/assets/bootstrap-4.5.3/css/bootstrap.min.css",
               "src/assets/fontawesome/css/all.css",
               "src/assets/fontawesome/css/fontawesome.min.css",
-              "node_modules/animate.css/animate.min.css"
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
             ],
             "scripts": [
               "src/assets/jquery/jquery.slim.min.js",
               "src/assets/poper/poper.min.js",
               "src/assets/bootstrap-4.5.3/js/bootstrap.min.js",
               "src/assets/fontawesome/js/all.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js",
               "src/assets/fontawesome/js/fontawesome.min.js"
+              
 
             ]
           },
@@ -131,5 +134,5 @@
         }
       }
     }},
-  "defaultProject": "web-blanquita"
-}
+    "defaultProject": "web-blanquita"
+  }
