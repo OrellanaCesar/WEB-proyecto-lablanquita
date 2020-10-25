@@ -24,8 +24,7 @@ import { UpdatebrandComponent } from './components/brands/updatebrand/updatebran
   UbicacionComponent,
   DataTableBrandComponent,
   CreateBrandComponent,
-  DataTableCategoryComponent
-  CreateBrandComponent,
+  DataTableCategoryComponent,
   UpdatebrandComponent
   ],
   imports: [
