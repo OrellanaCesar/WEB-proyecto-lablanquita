@@ -62,11 +62,12 @@ export class ProductsService {
     const headers = {
 			"Accept" : "application/json"
 		};
-    return this.http
-    .post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,
-                              data,
-			                        { headers });
+    return this.http.post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,data,{ headers });
   }
+
+  // deleteProduct(id:number){
+  //
+  // }
 
 
 }
