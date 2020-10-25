@@ -7,6 +7,7 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
 import { DataTableCategoryComponent } from './components/categories/data-table-category/data-table-category.component';
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
+import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
 {path:'dashboardBrand' , component:DataTableBrandComponent},
 {path:'dashboardCategory' , component:DataTableCategoryComponent},
 {path:'dashboardProducts' , component:DataTableProductsComponent},
+{path:'createCategory',component:CreateCategoryComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 

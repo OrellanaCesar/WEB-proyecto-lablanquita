@@ -23,6 +23,7 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
 import { DataTableCategoryComponent } from './components/categories/data-table-category/data-table-category.component';
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
+import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 
 
 
@@ -38,6 +39,9 @@ import { CreateProductComponent } from './components/products/create-product/cre
   DataTableCategoryComponent,
   DataTableProductsComponent,
   CreateProductComponent
+  CreateBrandComponent,
+  DataTableCategoryComponent,
+  CreateCategoryComponent
   ],
   imports: [
   BrowserModule,
