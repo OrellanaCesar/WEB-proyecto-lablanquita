@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { DataTableBrandComponent } from './components/brands/data-table-brand/data-table-brand.component';
 import { CreateBrandComponent } from './components/brands/create-brand/create-brand.component';
+import { DataTableCategoryComponent } from './components/categories/data-table-category/data-table-category.component';
 
 //  configuracion de localizacion
 import localeEsAr from '@angular/common/locales/es-AR';
@@ -27,6 +28,8 @@ registerLocaleData(localeEsAr);
   HomeComponent,
   UbicacionComponent,
   DataTableBrandComponent,
+  CreateBrandComponent,
+  DataTableCategoryComponent
   CreateBrandComponent,
   DataTableProductsComponent
   ],
