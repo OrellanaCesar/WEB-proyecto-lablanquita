@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { DataTableBrandComponent } from './components/brands/data-table-brand/data-table-brand.component';
 import { CreateBrandComponent } from './components/brands/create-brand/create-brand.component';
+import { DataTableCategoryComponent } from './components/categories/data-table-category/data-table-category.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
   HomeComponent,
   UbicacionComponent,
   DataTableBrandComponent,
-  CreateBrandComponent
+  CreateBrandComponent,
+  DataTableCategoryComponent
   ],
   imports: [
   BrowserModule,
