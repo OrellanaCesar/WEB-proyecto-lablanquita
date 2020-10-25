@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http';
 import { ApiSettigns } from 'src/app/API/API.settings';
+import { DataTablesResponse } from '../models/dataTable.model';
 
 @Injectable({
   providedIn: 'root'
@@ -55,6 +56,16 @@ export class ProductsService {
     };
     return this.http.get(`${ApiSettigns.url}products/bestSeller`,{headers});
 
+  }
+
+  getDataTables(data:any){
+    const headers = {
+			"Accept" : "application/json"
+		};
+    return this.http
+    .post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,
+                              data,
+			                        { headers });
   }
 
 

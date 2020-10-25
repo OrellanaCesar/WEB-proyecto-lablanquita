@@ -8,6 +8,19 @@
   }
 }
 
+.descripcion {
+    color: #ef9b3c;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.marca-product{
+  color:#ef9b3c ;
+  font-size: 20px;
+  margin-right: .3rem;
+}
+
 .botones-contacto{
   color:#ef9b3c ;
   font-size: 24px;
@@ -60,4 +73,36 @@
 
 .letra{
   font-family: 'Sofia';
+}
+
+.precio{
+  color:#5aee5a;
+}
+
+.tarjetas {
+  width: 18rem ;
+  height: 31rem;
+}
+
+@media(max-width:768px){
+  .tarjetas{
+    width: 100% !important;
+  }
+}
+
+.stock{
+  color:#5aee5a;
+  /* color: #616161 !important; */
+  cursor: pointer ;
+  font-size: 13px ;
+  line-height: 22px ;
+  font-weight: 300 ;
+}
+
+.sinStock{
+  color:#e86464f2;
+  cursor: pointer ;
+  font-size: 13px ;
+  line-height: 22px ;
+  font-weight: 300 ;
 }

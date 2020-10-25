@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -14,6 +14,12 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { DataTableBrandComponent } from './components/brands/data-table-brand/data-table-brand.component';
 import { CreateBrandComponent } from './components/brands/create-brand/create-brand.component';
 
+//  configuracion de localizacion
+import localeEsAr from '@angular/common/locales/es-AR';
+import { registerLocaleData } from '@angular/common';
+import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
+registerLocaleData(localeEsAr);
+
 @NgModule({
   declarations: [
   AppComponent,
@@ -21,7 +27,8 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
   HomeComponent,
   UbicacionComponent,
   DataTableBrandComponent,
-  CreateBrandComponent
+  CreateBrandComponent,
+  DataTableProductsComponent
   ],
   imports: [
   BrowserModule,
@@ -33,7 +40,7 @@ import { CreateBrandComponent } from './components/brands/create-brand/create-br
   CarouselModule,
   BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'es-Ar' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
