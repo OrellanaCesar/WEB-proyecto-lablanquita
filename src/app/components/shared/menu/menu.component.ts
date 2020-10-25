@@ -1,7 +1,10 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { BrandModel } from 'src/app/models/brand.model';
 import { BrandService } from 'src/app/services/brand.service';
+import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+import { CategoryModel } from '../../../models/category.model';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -12,6 +15,7 @@ export class MenuComponent implements OnInit {
   scrHeight:any;
   scrWidth:any;
   listBrands : BrandModel [] = [];
+  listCategories : CategoryModel [] = [];
 
   @HostListener('window:resize', ['$event'])
   getScreenSize(event?) {
@@ -21,9 +25,11 @@ export class MenuComponent implements OnInit {
   }
 
   constructor( private _brand:BrandService,
-    private router:Router) {
+               private router:Router, 
+               private _category:CategoryService) {
     this.getScreenSize();
     this.getBrands();
+    this.getCategories();
   }
 
   ngOnInit(): void {
@@ -39,6 +45,19 @@ export class MenuComponent implements OnInit {
       resp.forEach(element => {
         let brand = new BrandModel(element);
         this.listBrands.push(brand);
+      });
+    },
+    (error:any) => {
+      console.log(error);
+
+    });
+  }
+  getCategories(){
+    this._category.getCategories()
+    .subscribe((resp:any) => {
+      resp.forEach(element => {
+        let category = new CategoryModel(element);
+        this.listCategories.push(category);
       });
     },
     (error:any) => {
