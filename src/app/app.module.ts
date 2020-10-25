@@ -14,6 +14,8 @@ import { UbicacionComponent } from './components/ubicacion/ubicacion.component';
 import { DataTableBrandComponent } from './components/brands/data-table-brand/data-table-brand.component';
 import { CreateBrandComponent } from './components/brands/create-brand/create-brand.component';
 import { DataTableCategoryComponent } from './components/categories/data-table-category/data-table-category.component';
+import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
   UbicacionComponent,
   DataTableBrandComponent,
   CreateBrandComponent,
-  DataTableCategoryComponent
+  DataTableCategoryComponent,
+  CreateCategoryComponent
   ],
   imports: [
   BrowserModule,

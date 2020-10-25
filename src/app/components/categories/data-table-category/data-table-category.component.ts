@@ -50,7 +50,8 @@ export class DataTableCategoryComponent implements OnInit {
 
 
   createCategory(){
-		/*Se va a la vista de crear una categoría
+    /*Esta función llama a la función createCategory del servicio
+      category.service.ts
 		Parametros:no hay
 		*/
 		this.router.navigateByUrl('createCategory');
@@ -59,7 +60,8 @@ export class DataTableCategoryComponent implements OnInit {
   deleteCategory(id:number){
 
 		/*Elimina la categoría del identificador que pasa como parámetro
-		 Parámentro: id (identificador de la categoría)*/
+     Parámentro: id (identificador de la categoría)*/
+     
 		this._categories.deleteCategory(id)
 		.subscribe((resp:any) => {
 			const Toast = Swal.mixin({
