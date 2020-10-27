@@ -38,9 +38,7 @@ import { CreateCategoryComponent } from './components/categories/create-category
   DataTableBrandComponent,
   DataTableCategoryComponent,
   DataTableProductsComponent,
-  CreateProductComponent
-  CreateBrandComponent,
-  DataTableCategoryComponent,
+  CreateProductComponent,
   CreateCategoryComponent
   ],
   imports: [
