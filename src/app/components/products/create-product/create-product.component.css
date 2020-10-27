@@ -1,0 +1,12 @@
+.product-images{
+    border: 1px solid ;
+    color: black ;
+    background-color: #fff ;
+    width: 150px;
+    height: 150px;
+}
+
+.imagen-producto{
+  width: 150px;
+  height: 150px;
+}

@@ -55,7 +55,7 @@
 
 </div>
 
-<div class="row adaptacion bg-dark">
+<div class="row adaptacion bg-fondo">
 
 	<div class="container ">
 		<div class="hidden-info ">
@@ -160,25 +160,52 @@
 				<ng-template *ngFor="let offert of listProduct_OfferDay"
 				carouselSlide [id]="offert.product_id">
 
-					<div class="card"
-								style="width: 18rem;">
-						<img [src]="offert.product_image"
-								 class="card-img-top"
-								 alt=""
-								 style="height: 18rem;">
-						<div class="card-body bg-dark">
-							<h5 class="card-title"
-									style="color: #ef9b3c;">
+					<div class="card tarjetas">
+						<div class="slide">
+
+							<img [src]="offert.product_image"
+							class="card-img-top"
+							alt=""
+							height="250" width="500">
+						</div>
+						<div class="card-body bg-fondo">
+							<h5 class="card-title botones-contacto">
 									{{offert.product_name}}
 							</h5>
-							<p class="card-text"
-								 style="color: #ef9b3c;">
-								 {{offert.product_description}}
-							 </p>
-							<a href="#"
-							   class="btn btn-primary">
-								 Go somewhere
-							 </a>
+							<h4 class="card-title marca-product">
+								{{ offert.brand.brand_name }}
+							</h4>
+							<p class="card-text descripcion">
+								<strong>
+
+									{{ offert.product_description }}
+								</strong>
+							</p>
+							<div  class="row">
+								<h3 class="mr-5 precio">Precio: ${{ offert.product_price | number:'.0-2' }}</h3>
+								<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
+							</div>
+							<div class="row" style="justify-content:center;">
+								<a href="https://api.whatsapp.com/send?phone=543875851100&amp;text=Hola%20La%20Blanquita" class="decoration" target="_blank">
+
+									<button type="button" class="btn btn-success mb-1">
+										<i class="fab fa-whatsapp"></i>
+										Realizar Consulta
+									</button>
+								</a>
+							</div>
+							<div class="row">
+								<h3 *ngIf="offert.product_stock"
+										class="mr-5 stock precio">
+										Hay stock
+								</h3>
+								<h3 *ngIf="!offert.product_stock"
+										class="mr-5 stock sinStock">
+										No Hay stock
+								</h3>
+
+							</div>
+
 						</div>
 					</div>
 
@@ -202,30 +229,57 @@
 
 			<ng-container>
 
-				<ng-template *ngFor="let offert of listProduct_BestSeller"
-				carouselSlide [id]="offert.product_id">
+				<ng-template *ngFor="let best of listProduct_BestSeller"
+				carouselSlide [id]="best.product_id">
 
-					<div class="card"
-								style="width: 18rem;">
-						<img [src]="offert.product_image"
-								 class="card-img-top"
-								 alt=""
-								 style="height: 18rem;">
-						<div class="card-body bg-dark">
-							<h5 class="card-title"
-									style="color: #ef9b3c;">
-									{{offert.product_name}}
-							</h5>
-							<p class="card-text"
-								 style="color: #ef9b3c;">
-								 {{offert.product_description}}
-							 </p>
-							<a href="#"
-							   class="btn btn-primary">
-								 Go somewhere
-							 </a>
-						</div>
+				<div class="card tarjetas">
+					<div class="slide">
+
+						<img [src]="best.product_image"
+						class="card-img-top"
+						alt=""
+						height="250" width="500">
 					</div>
+					<div class="card-body bg-fondo">
+						<h5 class="card-title botones-contacto">
+								{{best.product_name}}
+						</h5>
+						<h4 class="card-title marca-product">
+							{{ best.brand.brand_name }}
+						</h4>
+						<p class="card-text descripcion">
+							<strong>
+
+								{{ best.product_description }}
+							</strong>
+						</p>
+						<div  class="row">
+							<h3 class="mr-5 precio">Precio: ${{ best.product_price | number:'.0-2' }}</h3>
+							<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
+						</div>
+						<div class="row" style="justify-content:center;">
+							<a href="https://api.whatsapp.com/send?phone=543875851100&amp;text=Hola%20La%20Blanquita" class="decoration" target="_blank">
+
+								<button type="button" class="btn btn-success mb-1">
+									<i class="fab fa-whatsapp"></i>
+									Realizar Consulta
+								</button>
+							</a>
+						</div>
+						<div class="row">
+							<h3 *ngIf="best.product_stock"
+									class="mr-5 stock precio">
+									Hay stock
+							</h3>
+							<h3 *ngIf="!best.product_stock"
+									class="mr-5 stock sinStock">
+									No Hay stock
+							</h3>
+
+						</div>
+
+					</div>
+				</div>
 
 				</ng-template>
 
