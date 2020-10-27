@@ -35,7 +35,6 @@ import { UpdatebrandComponent } from './components/brands/updatebrand/updatebran
   MenuComponent,
   HomeComponent,
   UbicacionComponent,
-  CreateBrandComponent,
   DataTableBrandComponent,
   DataTableCategoryComponent,
   DataTableProductsComponent,
