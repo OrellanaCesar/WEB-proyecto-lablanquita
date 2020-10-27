@@ -120,59 +120,101 @@
 
     <div class="row adaptacion bg-primary">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.margen-menu]="scrWidth > 990 ">
+            </button>
+            <div class="collapse navbar-collapse"
+                 id="navbarNavAltMarkup"
+                 [class.margen-menu]="scrWidth > 990 ">
 
                 <ul class="navbar-nav">
-                    <li class="nav-item " routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">
+                    <li class="nav-item "
+                        routerLinkActive="activo"
+                        [routerLinkActiveOptions]="{exact: true}">
 
-                        <a class="nav-link   letra" [routerLink]="['']" [class.margen-item-menu]="scrWidth>990">
-                 Inicio
-              </a>
+                        <a class="nav-link   letra"
+                           [routerLink]="['']"
+                           [class.margen-item-menu]="scrWidth>990">
+                          Inicio
+                        </a>
                     </li>
-                    <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+                    <li class="nav-item mr-5 ml-2 dropdown"
+                        routerLinkActive="activo">
 
-                        <a class="nav-link dropdown-toggle " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <strong>Marcas</strong>
+                        <a class="nav-link dropdown-toggle letra"
+                           id="navbarDropdownBrand"
+                           role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                           Marcas
                         </a>
 
-                        <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
-                            <a class="dropdown-item nav-link brand-item links" [routerLink]="['dashboardBrand']">Gestión de Marcas
-                    </a>
+                        <div class="dropdown-menu  bg-primary "
+                             aria-labelledby="navbarDropdownBrand">
+                            <a class="dropdown-item nav-link brand-item links letra"
+                               [routerLink]="['dashboardBrand']">
+                              Gestión de Marcas
+                            </a>
                             <div class="dropdown-divider "></div>
-                            <a class="dropdown-item nav-link brand-item " style="color:white;" *ngFor="let brand of listBrands">
-                       {{ brand.brand_name }}
-                    </a>
-                        </div>
-                    </li>
+                            <a class="dropdown-item nav-link brand-item "
+                               style="color:white;"
+                               *ngFor="let brand of listBrands">
+                               {{ brand.brand_name }}
+                            </a>
+                         </div>
+                      </li>
 
-                    <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+                      <li class="nav-item mr-5 ml-2 dropdown"
+                          routerLinkActive="activo">
 
-                        <a class="nav-link dropdown-toggle " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <strong>Productos</strong>
+                        <a class="nav-link dropdown-toggle letra "
+                           id="navbarDropdownBrand"
+                           role="button"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false">
+                            Productos
                         </a>
 
-                        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
-                            <a class="dropdown-item nav-link brand-item  links" [routerLink]="['dashboardCategory']">Gestión de Categorías
-                    </a>
+                        <div class="dropdown-menu bg-primary "
+                             aria-labelledby="navbarDropdownBrand">
+                            <a class="dropdown-item nav-link brand-item links letra"
+                               [routerLink]="['dashboardCategory']">
+                               Gestión de Categorías
+                            </a>
                             <div class="dropdown-divider "></div>
-                            <a class="dropdown-item nav-link brand-item " style="color:white;" *ngFor="let category of listCategories">
-                       {{ category.category_name }}
-                    </a>
+                            <a class="dropdown-item nav-link brand-item links letra"
+                               [routerLink]="['dashboardProducts']">
+                               Gestión de Productos
+                            </a>
+                            <div class="dropdown-divider "></div>
+                            <a class="dropdown-item nav-link brand-item letra"
+                               style="color:white;"
+                               *ngFor="let category of listCategories">
+                               {{ category.category_name }}
+                            </a>
                         </div>
-                    </li>
-                    <li class="nav-item" routerLinkActive="activo">
+                      </li>
+                    <li class="nav-item"
+                        routerLinkActive="activo">
 
-                        <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
-                   Ubicación
-                </a>
+                        <a class="nav-link   letra"
+                           [routerLink]="['ubicacion']"
+                           [class.margen-item-menu]="scrWidth>990">
+                           Ubicación
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  letra" [class.margen-item-menu]="scrWidth>990">
-                   Contacto
-                </a>
+                          Contacto
+                        </a>
                     </li>
 
 
