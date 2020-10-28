@@ -15,6 +15,10 @@ export class BrandService {
 		return this.http.get(`${ApiSettigns.url}brands`);
 	}
 
+	getBrand(id:number){
+		return this.http.get(`${ApiSettigns.url}brands/${id}`)
+	}
+
 	createBrand(data:FormData){
 		const headers = {
 			'Accept': 'application/json'
