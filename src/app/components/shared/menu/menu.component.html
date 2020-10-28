@@ -165,7 +165,7 @@
                             <div class="dropdown-divider "></div>
                             <a class="dropdown-item nav-link brand-item "
                                style="color:white;"
-                               *ngFor="let brand of listBrands">
+                               *ngFor="let brand of _data.listBrands">
                                {{ brand.brand_name }}
                             </a>
                          </div>
@@ -197,7 +197,7 @@
                             <div class="dropdown-divider "></div>
                             <a class="dropdown-item nav-link brand-item letra"
                                style="color:white;"
-                               *ngFor="let category of listCategories">
+                               *ngFor="let category of _data.listCategories">
                                {{ category.category_name }}
                             </a>
                         </div>
