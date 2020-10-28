@@ -39,7 +39,7 @@ import { UpdatebrandComponent } from './components/brands/updatebrand/updatebran
   DataTableCategoryComponent,
   DataTableProductsComponent,
   CreateProductComponent,
-  CreateCategoryComponent
+  CreateCategoryComponent,
   CreateBrandComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent

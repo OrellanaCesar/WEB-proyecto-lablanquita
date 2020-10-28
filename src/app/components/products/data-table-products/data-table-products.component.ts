@@ -39,13 +39,13 @@ export class DataTableProductsComponent implements OnInit {
 					})
         }
         ,(error:any) =>{
-            this.Products = [];
-            callback({
-  						recordsTotal: 0,
-  						recordsFiltered: 0,
-  						data : []
-  					})
-            console.log(error);
+          this.Products = [];
+          callback({
+            recordsTotal: 0,
+            recordsFiltered: 0,
+            data : []
+          })
+          console.log(error);
         })
 			},
 			columns: [
