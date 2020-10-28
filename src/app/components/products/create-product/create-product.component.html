@@ -26,12 +26,12 @@
       </div>
       <div class="col-md-4">
         <div class="form-group">
-              <label for="category"><strong>Producto:</strong></label>
+              <label for="category"><strong>Categoría:</strong></label>
               <select
               class="form-control"
               [class.is-invalid] = "categoryNoValida"
               formControlName="category_id">
-                <option value="">Seleccione producto</option>
+                <option value="">Seleccione categoría</option>
                 <option [value]="category.category_id"
                         *ngFor="let category of listCategories">
                         {{category.category_name}}
@@ -39,7 +39,7 @@
               </select>
               <small *ngIf="categoryNoValida"
                      class="text-danger">
-                El campo producto es obligatorio.
+                El campo categoría es obligatorio.
               </small>
             </div>
       </div>
@@ -51,7 +51,7 @@
               [class.is-invalid] = "brandNoValida"
               formControlName="brand_id">
                 <option value="">Seleccione marca</option>
-                <option  [value]="brand.brnad_id"
+                <option  [value]="brand.brand_id"
                          *ngFor="let brand of listBrands">
                   {{brand.brand_name}}
                 </option>
@@ -156,15 +156,21 @@
           <select class="form-control"
                   formControlName="product_offer_day_order">
             <option value=0>Seleccione orden en el Carosuel</option>
-            <option [value]="orden"
-                    *ngFor="let orden of caoruselOpcion">{{ orden }}</option>
+            <option [value]="order"
+                    *ngFor="let order of caoruselOpcion"
+										[class.ocupado]="listOfferOcupied.includes(order)"
+										[class.libre]="!listOfferOcupied.includes(order)">
+										{{ order }}
+						</option>
           </select>
 
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label class="form-label"><strong>Destacado:</strong></label>
+          <label class="form-label">
+						<strong>Destacado:</strong>
+					</label>
           <select class="form-control"
                   [class.is-invalid] = "bestNoValido"
                   formControlName="product_best_seller"
@@ -179,13 +185,17 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <label class="form-label"><strong>Ubicación del Carousel:</strong></label>
+          <label class="form-label">
+						<strong>Ubicación del Carousel:</strong>
+					</label>
           <select class="form-control"
                   formControlName="product_best_seller_order">
             <option value=0>Seleccione orden en el Carosuel</option>
-            <option [value]="orden"
-                    *ngFor="let orden of caoruselOpcion">
-                    {{ orden }}
+            <option [value]="order"
+                    *ngFor="let order of caoruselOpcion"
+										[class.ocupado] = "listBestOcupied.includes(order)"
+										[class.libre] = "!listBestOcupied.includes(order)">
+                    {{ order }}
             </option>
           </select>
 
@@ -200,15 +210,20 @@
       </div>
       <div class="col-md-12" *ngIf="!loader">
       	<div class="form-group">
-      		<button type="submit" style="width:100% !important" class="btn btn-primary">
-      			<strong >Registrar Marca</strong>
+      		<button type="submit"
+									style="width:100% !important"
+									class="btn btn-primary">
+      			<strong >Registrar Producto</strong>
       		</button>
 
       	</div>
       </div>
       <div class="col-md-12" *ngIf="loader">
       	<div class="form-group">
-      		<button type="submit" [disabled]="loader" style="width:100% !important" class="btn btn-primary">
+      		<button type="submit"
+									[disabled]="loader"
+									style="width:100% !important"
+									class="btn btn-primary">
       			<i  class="fas fa-spinner fa-spin "></i>
       		</button>
 

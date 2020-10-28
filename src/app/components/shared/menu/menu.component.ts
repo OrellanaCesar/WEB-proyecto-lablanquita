@@ -4,6 +4,7 @@ import { BrandService } from 'src/app/services/brand.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
 import { CategoryModel } from '../../../models/category.model';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 @Component({
   selector: 'app-menu',
@@ -25,11 +26,14 @@ export class MenuComponent implements OnInit {
   }
 
   constructor( private _brand:BrandService,
-               private router:Router, 
-               private _category:CategoryService) {
+               private router:Router,
+               private _category:CategoryService,
+               public _data:DataServicesService) {
     this.getScreenSize();
     this.getBrands();
     this.getCategories();
+    this._data.listBrands = this.listBrands;
+    this._data.listCategories = this.listCategories;
   }
 
   ngOnInit(): void {

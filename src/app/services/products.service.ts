@@ -41,6 +41,36 @@ export class ProductsService {
 
   }
 
+  getOrderOfferDay(){
+
+    /*Esta funcion realiza la peticion a la API para obtener
+    todas los product_offer_day_order de los productos del dia
+    parameter: no hay.
+    return: retorna una promesa de la peticion que sera evaluada
+    en el componente apropiado
+    */
+
+    const headers = {
+      'Accept': 'application/json'
+    };
+    return this.http.get(`${ApiSettigns.url}products/order/ocupedOfferDay`,{headers});
+  }
+
+  getOrderBestSeller(){
+
+    /*Esta funcion realiza la peticion a la API para obtener
+    todas los product_best_seller_order de los productos destacados
+    parameter: no hay.
+    return: retorna una promesa de la peticion que sera evaluada
+    en el componente apropiado
+    */
+
+    const headers = {
+      'Accept': 'application/json'
+    };
+    return this.http.get(`${ApiSettigns.url}products/order/ocupedBestSeller`,{headers});
+  }
+
   getProductsBestSeller(){
 
     /*Esta funcion realizara la peticion a la API para
@@ -63,6 +93,14 @@ export class ProductsService {
 			"Accept" : "application/json"
 		};
     return this.http.post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,data,{ headers });
+  }
+
+  createProduct(data:FormData){
+
+    const headers = {
+      'Accept' : 'application/json'
+    }
+    return this.http.post(`${ApiSettigns.url}products/create`,data,{headers});
   }
 
   // deleteProduct(id:number){
