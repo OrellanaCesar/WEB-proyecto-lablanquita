@@ -101,7 +101,7 @@ export class DataTableBrandComponent implements OnInit {
 	}
 
 	update(id:number){
-		//this.router.navigateByUrl(`/updatebrand/${id}`);
+		this.router.navigateByUrl(`/updatebrand/${id}`);
 	}
 
 }

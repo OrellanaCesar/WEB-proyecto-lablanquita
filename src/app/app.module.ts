@@ -24,6 +24,7 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
+import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
 
 
 
@@ -34,12 +35,14 @@ import { CreateCategoryComponent } from './components/categories/create-category
   MenuComponent,
   HomeComponent,
   UbicacionComponent,
-  CreateBrandComponent,
   DataTableBrandComponent,
   DataTableCategoryComponent,
   DataTableProductsComponent,
   CreateProductComponent,
   CreateCategoryComponent
+  CreateBrandComponent,
+  DataTableCategoryComponent,
+  UpdatebrandComponent
   ],
   imports: [
   BrowserModule,
