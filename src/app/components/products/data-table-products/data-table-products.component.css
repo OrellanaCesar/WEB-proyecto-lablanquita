@@ -57,3 +57,30 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 	background-color: #ecff0eeb !important;
 	border-color:#ecff0eeb !important;
 }
+
+.product-imagen{
+    width: 40vw;
+    height: 50vh;
+		margin-left: 9rem;
+}
+
+@media (max-width:768px) {
+	.product-imagen{
+		width: 85vw;
+    height: 21vh;
+	}
+}
+
+@media (width:768px) {
+	.product-imagen{
+		width: 55vw !important;
+    height: 35vh !important;
+	}
+}
+
+@media (width:640px) {
+	.product-imagen{
+		width: 70vw !important;
+    height: 65vh !important;
+	}
+}

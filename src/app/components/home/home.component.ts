@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductModel } from 'src/app/models/product.model';
+import { ApiSettigns } from 'src/app/API/API.settings';
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,7 @@ export class HomeComponent implements OnInit {
   listProduct_OfferDay: ProductModel [] = [];
   listProduct_BestSeller: ProductModel [] = [];
 
+  url_image:string = ApiSettigns.url_image;
 
   // configuracion para el carousel de productos
   customOptions: OwlOptions = {
