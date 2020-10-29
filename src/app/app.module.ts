@@ -25,6 +25,8 @@ import { DataTableProductsComponent } from './components/products/data-table-pro
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 import { ModifyCategoryComponent } from './components/categories/modify-category/modify-category.component';
+import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
+import { ShowProductComponent } from './components/products/show-product/show-product.component';
 
 
 
@@ -35,12 +37,15 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
   MenuComponent,
   HomeComponent,
   UbicacionComponent,
-  CreateBrandComponent,
   DataTableBrandComponent,
   DataTableCategoryComponent,
   DataTableProductsComponent,
   CreateProductComponent,
   CreateCategoryComponent,
+  CreateBrandComponent,
+  DataTableCategoryComponent,
+  UpdatebrandComponent,
+  ShowProductComponent
   ModifyCategoryComponent
   ],
   imports: [

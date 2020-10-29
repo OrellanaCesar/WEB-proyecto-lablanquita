@@ -14,14 +14,27 @@ export class ProductsService {
 
   getProducts(){
 
-    /*Esta funcion realizara la peticion a la API para
+    /*
+    Esta funcion realizara la peticion a la API para
     obtener todo los productos que hay ne la base de datos.
     parameter: no hay.
     return: retorna una promesa de la peticion que sera evaluada
         en el componente apropiado
-    */
+        */
 
-    return this.http.get(`${ApiSettigns.url}products`);
+        return this.http.get(`${ApiSettigns.url}products`);
+      }
+
+      getProduct(id:number){
+
+    /*Esta funcion la peticion a la API para obtener los datos de un
+    producto determinado
+    parametros: identificador del producto
+    return : retorna una promesa de la peticion que sera evaluada en 
+    el componentte apropiado*/ 
+    
+    return this.http.get(`${ApiSettigns.url}products/${id}`)
+    
   }
 
   getProductsOfferDay(){
@@ -32,13 +45,43 @@ export class ProductsService {
     parameter: no hay.
     return: retorna una promesa de la peticion que sera evaluada
         en el componente apropiado
+        */
+
+        const headers = {
+          'Accept': 'application/json'
+        };
+        return this.http.get(`${ApiSettigns.url}products/offerDay`,{headers});
+
+      }
+
+      getOrderOfferDay(){
+
+    /*Esta funcion realiza la peticion a la API para obtener
+    todas los product_offer_day_order de los productos del dia
+    parameter: no hay.
+    return: retorna una promesa de la peticion que sera evaluada
+    en el componente apropiado
     */
 
     const headers = {
       'Accept': 'application/json'
     };
-    return this.http.get(`${ApiSettigns.url}products/offerDay`,{headers});
+    return this.http.get(`${ApiSettigns.url}products/order/ocupedOfferDay`,{headers});
+  }
 
+  getOrderBestSeller(){
+
+    /*Esta funcion realiza la peticion a la API para obtener
+    todas los product_best_seller_order de los productos destacados
+    parameter: no hay.
+    return: retorna una promesa de la peticion que sera evaluada
+    en el componente apropiado
+    */
+
+    const headers = {
+      'Accept': 'application/json'
+    };
+    return this.http.get(`${ApiSettigns.url}products/order/ocupedBestSeller`,{headers});
   }
 
   getProductsBestSeller(){
@@ -49,25 +92,36 @@ export class ProductsService {
     parameter: no hay.
     return: retorna una promesa de la peticion que sera evaluada
         en el componente apropiado
-    */
+        */
 
-    const headers = {
-      'Accept': 'application/json'
-    };
-    return this.http.get(`${ApiSettigns.url}products/bestSeller`,{headers});
+        const headers = {
+          'Accept': 'application/json'
+        };
+        return this.http.get(`${ApiSettigns.url}products/bestSeller`,{headers});
 
-  }
+      }
 
-  getDataTables(data:any){
-    const headers = {
-			"Accept" : "application/json"
-		};
-    return this.http.post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,data,{ headers });
-  }
+      getDataTables(data:any){
+        const headers = {
+          "Accept" : "application/json"
+        };
+        return this.http.post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,data,{ headers });
+      }
 
-  // deleteProduct(id:number){
-  //
-  // }
+      createProduct(data:FormData){
+
+        const headers = {
+          'Accept' : 'application/json'
+        }
+        return this.http.post(`${ApiSettigns.url}products/create`,data,{headers});
+      }
+
+      deleteProduct(id:number){
+        const headers = {
+          'Accept':'application/json'
+        };
+        return this.http.delete(`${ApiSettigns.url}products/delete/${id}`,{ headers });
+      }
 
 
-}
+    }

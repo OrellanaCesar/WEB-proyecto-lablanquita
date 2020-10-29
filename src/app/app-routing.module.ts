@@ -9,6 +9,8 @@ import { DataTableProductsComponent } from './components/products/data-table-pro
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 import { ModifyCategoryComponent } from './components/categories/modify-category/modify-category.component';
+import {UpdatebrandComponent} from './components/brands/updatebrand/updatebrand.component';
+import { ShowProductComponent } from './components/products/show-product/show-product.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
 {path:'dashboardCategory' , component:DataTableCategoryComponent},
 {path:'dashboardProducts' , component:DataTableProductsComponent},
 {path:'createCategory',component:CreateCategoryComponent},
+{path:'updatebrand/:id' , component:UpdatebrandComponent},
+{path:'products/:id',component:ShowProductComponent},
 {path:'updateCategory/:id',component:ModifyCategoryComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
