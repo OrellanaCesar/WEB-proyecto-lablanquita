@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from "@angular/router";
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
 //Servicios
 import { ProductsService } from 'src/app/services/products.service';
 import { ProductModel } from 'src/app/models/product.model';
@@ -9,6 +10,8 @@ import { ApiSettigns } from 'src/app/API/API.settings';
 import { BrandModel } from 'src/app/models/brand.model';
 import { CategoryModel } from 'src/app/models/category.model';
 import { DataServicesService } from 'src/app/services/data-services.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-product',
@@ -75,7 +78,7 @@ export class UpdateProductComponent implements OnInit {
     */
 
     this.form =this.fb.group({
-      product_image:['', Validators.required],
+      product_image:[''],
       category_id:['',Validators.required],
       brand_id:['',Validators.required],
       product_name:['',Validators.required],
@@ -101,7 +104,7 @@ export class UpdateProductComponent implements OnInit {
 
     this._products.getProduct(this.id)
       .subscribe((resp:any) => {
-        this.Product = new ProductModel(resp);
+        this.Product = new ProductModel(resp[0]);
         this.form.get('product_name').setValue(this.Product.product_name);
         this.form.get('product_description').setValue(this.Product.product_description);
         this.form.get('product_price').setValue(this.Product.product_price);
@@ -344,8 +347,123 @@ export class UpdateProductComponent implements OnInit {
       })
   }
 
+  actualizarValores(item:number){
+
+    /*
+    Esta funcion estaba pensada para que
+    si el valor es 1 devuelva true y 0 caso contrario*/
+
+    if(item == 1){
+      return 1;
+    }else{
+      return 0;
+    }
+  }
+
   update(){
-    console.log("modificando");
+    this.error = false;
+    this.loader = true;
+    if( this.form.invalid){
+      this.loader = false;
+      return Object.values(this.form.controls).forEach(control => {
+          control.markAsTouched();
+      })
+    };
+    this.form.get('product_stock')
+      .setValue(this.actualizarValores(
+        this.form.get('product_stock').value)
+      );
+
+    this.form.get('product_best_seller')
+      .setValue(this.actualizarValores(
+        this.form.get('product_best_seller').value)
+      );
+
+    this.form.get('product_offer_day')
+      .setValue(this.actualizarValores(
+        this.form.get('product_offer_day').value)
+      );
+
+      const data = new FormData();
+      data.append('product_name',
+                  this.form.get('product_name').value
+                );
+
+      data.append('product_description',
+                  this.form.get('product_description').value
+                );
+
+      data.append('brand_id',
+                  this.form.get('brand_id').value
+                );
+      data.append('category_id',
+                  this.form.get('category_id').value
+                );
+
+      data.append('product_price',
+                  this.form.get('product_price').value
+                );
+
+      data.append('product_image',
+                  this.imagen
+                );
+      data.append('product_stock',
+                  this.form.get('product_stock').value
+                );
+      data.append('product_best_seller',
+                  this.form.get('product_best_seller').value
+                );
+      data.append('product_offer_day',
+                  this.form.get('product_offer_day').value);
+
+      data.append('product_best_seller_order',
+                  this.form.get('product_best_seller_order').value);
+
+      data.append('product_offer_day_order',
+                  this.form.get('product_offer_day_order').value);
+
+      this._products.updateProduct(this.id,data)
+        .subscribe((resp:any) => {
+            console.log(resp);
+
+            this.loader = false;
+            this.goGrid();
+            const Toast = Swal.mixin({
+              toast: true,
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              onOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+            Toast.fire({
+              icon: 'success',
+              title: 'Se modifico el producto con exito'
+            })
+        }, (error:any) => {
+          this.loader = false;
+          this.error = true;
+          console.log(error);
+
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            onOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          Toast.fire({
+            icon: 'error',
+            title: error.error.message
+          })
+        });
 
   }
 
