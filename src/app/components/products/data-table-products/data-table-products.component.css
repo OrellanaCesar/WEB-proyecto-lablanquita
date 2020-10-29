@@ -59,28 +59,30 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 
 .product-imagen{
-    width: 40vw;
-    height: 50vh;
-		margin-left: 9rem;
+	width: 40vw;
+	height: 50vh;
+	margin-left: 9rem;
 }
 
 @media (max-width:768px) {
 	.product-imagen{
 		width: 85vw;
-    height: 21vh;
+		height: 21vh;
 	}
 }
 
 @media (width:768px) {
 	.product-imagen{
 		width: 55vw !important;
-    height: 35vh !important;
+		height: 35vh !important;
 	}
 }
 
 @media (width:640px) {
 	.product-imagen{
 		width: 70vw !important;
-    height: 65vh !important;
+		height: 65vh !important;
 	}
 }
+
+
