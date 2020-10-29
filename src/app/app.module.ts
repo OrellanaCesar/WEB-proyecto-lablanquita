@@ -45,7 +45,7 @@ import { ShowProductComponent } from './components/products/show-product/show-pr
   CreateBrandComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
-  ShowProductComponent
+  ShowProductComponent,
   ModifyCategoryComponent
   ],
   imports: [
