@@ -12,12 +12,10 @@ import Swal from 'sweetalert2';
 })
 export class DataTableCategoryComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
-	Categories: any[] = [];
+  Categories: any[] = [];
   listaCategory:CategoryModel[]=[];
 
   constructor(private _categories:CategoryService,private router:Router) {
-    //this.getCategories();
-    //this.getDataTables();
    }
   
   ngOnInit(): void {
@@ -50,16 +48,14 @@ export class DataTableCategoryComponent implements OnInit {
 
 
   createCategory(){
-    /*Esta función llama a la función createCategory del servicio
-      category.service.ts
-		Parametros:no hay
-		*/
-		this.router.navigateByUrl('createCategory');
-	}
+    /*Busca la ruta en app-routing que me llevará al componente CreateCategoryComponent
+	Parámetros: no hay */
+	this.router.navigateByUrl('createCategory');
+  }
 
   deleteCategory(id:number){
 
-		/*Elimina la categoría del identificador que pasa como parámetro
+	/*Elimina la categoría del identificador que pasa como parámetro
      Parámentro: id (identificador de la categoría)*/
      
 		this._categories.deleteCategory(id)
@@ -79,19 +75,10 @@ export class DataTableCategoryComponent implements OnInit {
 				icon: 'success',
 				title: 'Se eliminó la categoría con éxito'
 			});
-			this._categories.getCategories()
-			.subscribe((resp:any) => {
-				this.Categories = resp;
-				this.listaCategory = [];
-				resp.forEach(element => {
-					let category = new CategoryModel(element);
-					this.listaCategory.push(category);
-				});
-			},error =>{
-				console.log(error);
-			})
+			this.getCategories();
 		}
 		,(error:any) => {
+			console.log(error);
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',
@@ -111,7 +98,23 @@ export class DataTableCategoryComponent implements OnInit {
 	}
 
 	update(id:number){
-		//this.router.navigateByUrl(`/updatebrand/${id}`);
+		/*Busca la ruta en app-routing que me llevará al componente ModifyCategoryComponent
+		Parámetros: id de la categoría a modificar */ 
+		this.router.navigateByUrl(`/updateCategory/${id}`);
+	}
+
+	getCategories(){
+		this._categories.getCategories()
+		.subscribe((resp:any) => {
+			this.Categories = resp;
+			this.listaCategory = [];
+			resp.forEach(element => {
+				let category = new CategoryModel(element);
+				this.listaCategory.push(category);
+			});
+		},error =>{
+			console.log(error);
+		})
 	}
 
 }
