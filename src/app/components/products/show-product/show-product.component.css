@@ -1,0 +1,130 @@
+.spinner-loader{
+	text-align: center;
+	color:#ef553c !important;
+	margin-top: 20vh;
+	margin-bottom: 11vw;
+}
+
+
+.product-info
+.product-details h2{
+	text-transform: uppercase;
+	margin-top: 0;
+	font-size: 24px;
+	display: flex;
+	justify-content: center;
+}
+
+.product-info .product-details .manufacturer{
+	color:#808080;
+	text-transform: uppercase;
+}
+
+
+.product-info-box {
+	padding-top: 10px;
+}
+
+.mercado-pago{
+	width:3vw;
+	height:4vh;
+	margin-left: 5px;
+	margin-bottom: 1rem;
+}
+
+
+
+.naranja{
+	height: 4vh;
+	width: 4vw;
+	margin-bottom: 4px;
+}
+
+@media(max-width:768px){
+
+	.mercado-pago{
+		width: 8vw;
+		height: 5vh;
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.naranja{
+		height: 5vh;
+		width: 12vw;
+	}
+
+}
+
+.tarjetas-pago{
+	display: flex;
+}
+
+.tarjeta-item{
+	/* color: blue; */
+	margin-right: 2px;
+}
+
+.atr{
+	min-width: 200px;
+	display: inline-block;
+	color: #2f353b;
+	font-size: 20px;
+}
+
+.btn-comprar{
+	margin-top: 25px;
+	color: #fff;
+	background-color: #ef553c;
+	border-color: #ef553c;
+}
+
+
+.heading{
+	padding: 13px 20px;
+	font-size: 25px;
+	color:#f46b0c;
+	background: #FFFFFF;
+	border-top: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+	border-bottom: 4px solid #f46b0c;
+	border-left: 1px solid #dedede;
+	border-radius: 3px;
+}
+
+.content{
+	color: #212121;
+	font-size: 13px;
+}
+
+.panel-smart-tabla {
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #dedede;
+	border-radius: 6px;
+	word-wrap: break-word;
+	box-shadow: 2px 2px 12px #999;
+}
+
+.name-product{
+	color:#f46b0c;
+}
+
+.badge-danger{
+	background-color: #dc3545 !important;
+}
+
+.badge-stock{
+	background-color: #007bff !important;
+}
+
+hr{
+	border-top: 1px solid #f46b0c !important;
+}
+.img-fluid{
+	max-width: 100%;
+	width: 100vw;
+	height: 50vh !important;
+	vertical-align: middle;
+	border-style: none;
+}

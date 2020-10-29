@@ -1,0 +1,107 @@
+<div class="container mt-5 mb-5">
+  <div class="spinner-loader" *ngIf="loader == true">
+    <i  class="fas fa-spinner fa-spin fa-4x "></i>
+  </div>
+</div>
+
+<div class="container mt-5 mb-5 panel-smart-tabla" *ngIf="Product != undefined" >
+
+  <div class="col-12">
+    <div class="row  mt-3 mt-md-0 product-info">
+      <div class="col-5" *ngIf="scrWidth>768">
+        <figure>
+          <div>
+            <img [src]="url_image + Product.product_image" alt="" class="img-fluid" style="display:inline;">
+          </div>
+        </figure>
+      </div>
+      <div class="col-12" *ngIf="scrWidth<768">
+        <figure>
+          <div>
+            <img [src]="url_image + Product.product_image" alt="" class="img-fluid" style="display:inline;">
+          </div>
+        </figure>
+      </div>
+      <div class="col-sm-7 product-details name-product">
+        <h2>{{Product.product_name}}</h2>
+        <hr>
+        <ul class="list-unstyled manufacturer">
+          <li>
+            <span class="atr">Categoria:</span>
+            {{Product.category.category_name}}
+          </li>
+          <br>
+          <li>
+            <span class="atr">Marca:</span>
+            {{Product.brand.brand_name}}
+          </li>
+          <br>
+          <li>
+            <span class="atr">Precio:</span>
+            $ {{Product.product_price}}
+          </li>
+          <br>
+          <li *ngIf="Product.product_stock == false">
+            <span class="atr">Disponibilidad:</span>
+            <span class="atr badge badge-danger text-white">SIN STOCK</span>
+          </li>
+          <li *ngIf="Product.product_stock == true">
+            <span class="atr">Disponibilidad:</span>
+            <span class="atr badge  badge-stock text-white">HAY STOCK</span>
+          </li>
+        </ul>
+        <hr>
+        <!--
+        <span class="atr">Formas de Pago:</span>
+        <div  class="row">
+          <img class="mercado-pago" src="assets/img/formaspago/mercadoPago.jpg" alt="">
+          <div class="tarjetas-pago">
+            <div class="tarjeta-item">
+              <i class="fab fa-cc-visa fa-2x" ></i>
+            </div>
+            <div class="tarjeta-item">
+              <i class="fab fa-cc-mastercard fa-2x" ></i>
+            </div>
+            <div class="tarjeta-item">
+              <i class="fab fa-cc-amex fa-2x" ></i>
+            </div>
+            <div class="tarjeta-item">
+              <img class="naranja" src="assets/img/formaspago/tarjeta-naranja.png" alt="">
+            </div>
+            <div class="tarjeta-item">
+              <img class="naranja" src="assets/img/formaspago/cabal.png" alt="">
+            </div>
+            <div class="tarjeta-item">
+              <img class="naranja" style="border-radius:3px;" src="assets/img/formaspago/maestro.png" alt="">
+            </div>
+            <div class="tarjeta-item">
+              <img class="naranja" src="assets/img/formaspago/nativa-nacion.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <i class="fas fa-university bank"></i>
+        <span class="atr"> Deposito / Transacciones</span>
+      -->
+      <div class="form-group">
+        <a href="" target="_blank">
+          <button type="button" style="width:100% !important" class="btn btn-primary btn-comprar">
+            <strong >COMPRAR</strong>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="product-info">
+    <h4 class="heading">Descripción</h4>
+    <div class="content panel-smart-tabla">
+
+      <div class="col-md-12">
+        <p class="">
+          {{ description }}
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

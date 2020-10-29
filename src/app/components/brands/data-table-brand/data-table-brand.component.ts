@@ -35,6 +35,15 @@ export class DataTableBrandComponent implements OnInit {
 						recordsFiltered: resp.recordsFiltered,
 						data : []
 					})
+				}
+				,(error:any) =>{
+					this.Brands = [];
+					callback({
+						recordsTotal: 0,
+						recordsFiltered: 0,
+						data : []
+					})
+					console.log(error);
 				})
 			},
 			columns: [{data:'brand_id'},{data: 'brand_name'},{data: 'action'}],
