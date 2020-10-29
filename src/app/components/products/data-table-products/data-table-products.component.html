@@ -31,7 +31,7 @@
                         <td>$ {{ product.product_price | number:'.0-2' }}</td>
                         <td *ngIf="product.product_stock">Si</td>
                         <td *ngIf="!product.product_stock">No</td>
-                        <td>
+                        <td align="center">
                           <button type="button"
                                   class="btn btn-primary"
                                   data-toggle="modal"

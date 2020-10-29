@@ -61,7 +61,6 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 .product-imagen{
     width: 40vw;
     height: 50vh;
-		margin-left: 9rem;
 }
 
 @media (max-width:768px) {
