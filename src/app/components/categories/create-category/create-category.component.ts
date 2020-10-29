@@ -27,19 +27,27 @@ export class CreateCategoryComponent implements OnInit {
   }
   
   createForm(){
+    /*Crea el formulario para la categoría */
     this.forma = this.fb.group({
       category_name:['', Validators.required]
     });
   }
 
   goGrid(){
-    this.router.navigateByUrl('dashboardCategories');
+    /*Busca la ruta en app-routing que me llevará al componente DataTableCategoryComponent
+	  Parámetros: no hay */
+    this.router.navigateByUrl('dashboardCategory');
   }
   get nameNoValido(){
+    /*Verifica si el nombre de la categoría sea válido*/
     return this.forma.get('category_name').invalid && this.forma.get('category_name').touched ;
   }
 
   toRegister(){
+    /*Registra la categoría que se cargó en el formulario
+		Parámetros:no hay
+    Return: devuelve un mensaje indicando si se registró
+    correctamente o no la Categoría*/
     this.error = false;
     this.loader = true;
     if( this.forma.invalid){
