@@ -87,10 +87,8 @@ export class DataTableProductsComponent implements OnInit {
 		Parametros:no hay
 		*/
 
-    // console.log("hola");
-
-    this.router.navigateByUrl('createProduct');
-  }
+		this.router.navigateByUrl('createProduct');
+	}
 
   deleteProduct(id:number){
 
@@ -161,7 +159,15 @@ export class DataTableProductsComponent implements OnInit {
   }
 
   update(id:number){
-    console.log(id);
+
+    /*
+    Se va a la vista de modificar un producto, asociado al componete
+    de modificacion del producto
+		parameter : id del porducto a modificar.
+    return: no hay.
+		*/
+
+    this.router.navigateByUrl(`updateProduct/${id}`);
 
   }
 
