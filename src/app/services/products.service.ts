@@ -14,7 +14,8 @@ export class ProductsService {
 
   getProducts(){
 
-    /*Esta funcion realizara la peticion a la API para
+    /*
+    Esta funcion realizara la peticion a la API para
     obtener todo los productos que hay ne la base de datos.
     parameter: no hay.
     return: retorna una promesa de la peticion que sera evaluada
@@ -103,9 +104,12 @@ export class ProductsService {
     return this.http.post(`${ApiSettigns.url}products/create`,data,{headers});
   }
 
-  // deleteProduct(id:number){
-  //
-  // }
+  deleteProduct(id:number){
+    const headers = {
+      'Accept':'application/json'
+    };
+    return this.http.delete(`${ApiSettigns.url}products/delete/${id}`,{ headers });
+  }
 
 
 }

@@ -151,7 +151,7 @@
 	<div class="container mt-5 text-center " >
 		<b *ngIf="listProduct_OfferDay?.length > 0"
 				class="botones-contacto mb-4 letra">
-				PRODUCTOS DESTACADOS
+				OFERTA DEL DÍA
 		</b>
 		<owl-carousel-o [options]="customOptions">
 
@@ -163,7 +163,7 @@
 					<div class="card tarjetas">
 						<div class="slide">
 
-							<img [src]="offert.product_image"
+							<img [src]="url_image + offert.product_image"
 							class="card-img-top"
 							alt=""
 							height="250" width="500">
@@ -221,7 +221,7 @@
 <div class="row adaptacion " >
 
 	<div class="container mt-5 text-center " >
-		<b *ngIf="listProduct_OfferDay?.length > 0"
+		<b *ngIf="listProduct_BestSeller?.length > 0"
 				class="botones-contacto mb-4 letra">
 				PRODUCTOS DESTACADOS
 		</b>
@@ -235,7 +235,7 @@
 				<div class="card tarjetas">
 					<div class="slide">
 
-						<img [src]="best.product_image"
+						<img [src]="url_image + best.product_image"
 						class="card-img-top"
 						alt=""
 						height="250" width="500">

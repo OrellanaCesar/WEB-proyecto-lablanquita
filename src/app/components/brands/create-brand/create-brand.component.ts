@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { BrandService } from 'src/app/services/brand.service';
 import { BrandModel } from 'src/app/models/brand.model';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 
 @Component({
@@ -15,10 +16,11 @@ export class CreateBrandComponent implements OnInit {
 	form:FormGroup;
 	loader:boolean = false;
 	error:boolean = false;
-	listBrands : BrandModel [] = [];
+	// listBrands : BrandModel [] = [];
 	constructor(private router:Router,
 		private fb:FormBuilder,
-		private _brand:BrandService) { 
+		private _brand:BrandService,
+		private _data:DataServicesService) {
 		this.createForm();
 	}
 
@@ -45,10 +47,10 @@ export class CreateBrandComponent implements OnInit {
 	loadBrand(){
 		this._brand.getBrands()
 		.subscribe((resp:any)=>{
-			this.listBrands = [];
+			this._data.listBrands = [];
 			resp.forEach(element => {
 				let brand = new BrandModel(element);
-				this.listBrands.push(brand);
+				this._data.listBrands.push(brand);
 			});
 		},error=>{
 			console.log(error);
