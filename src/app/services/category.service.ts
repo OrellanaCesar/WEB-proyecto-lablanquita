@@ -22,6 +22,15 @@ export class CategoryService {
 
       return this.http.get(`${ApiSettigns.url}categories`);
   }
+  
+  getCategory(id:number){
+    /*esta función envía una peticion get a la API 
+     obteniendo los datos de una categoría.
+     Parámetros: id de categoría.
+     Retorna: una promesa que será evaluada por el componente apropiado
+    */
+    return this.http.get(`${ApiSettigns.url}categories/${id}`)
+  }
 
   dataTableCategories(data:any){
 
@@ -40,6 +49,11 @@ export class CategoryService {
   }
 
   createCategory(data:FormData){
+    /*esta función envia una peticion POST a la API para crear una
+    nueva categoría.
+    Parámetros: data, los datos que trajo del formulario.
+    Retorna: una promesa que será evaluada por el componente apropiado
+    */
 		const headers = {
 			'Accept': 'application/json'
 		};
@@ -47,6 +61,11 @@ export class CategoryService {
   }
   
   deleteCategory(id:number){
+    /*esta función envía una peticion DELETE a la API para eliminar una
+    categoría.
+    Parámetros: id, de la categoría a eliminar.
+    Retorna: una promesa que será evaluada por el componente apropiado
+    */
 		const headers = {
 			"Accept" : "application/json"
 		};
@@ -54,9 +73,27 @@ export class CategoryService {
 	}
 
 	updateCategory(id:number,data:FormData){
+    /*esta función envía una peticion POST a la API para modificar 
+    datos de una  categoría.
+    Parámetros: id, de la categoría a modificar.
+                data, los datos que trajo del formulario.
+    Retorna: una promesa que será evaluada por el componente apropiado
+    */
 		const headers = {
 			'Accept': 'application/json'
 		}
 		return this.http.post(`${ApiSettigns.url}categories/update/${id}`, data , { headers });
-	}
+  }
+  
+  showCategory(id:number){
+    /*esta función envía una peticion GET a la API para traer los 
+    datos(nombre) de una categoría en particular.
+    Parámetros: id, de la categoría a mostrar.
+    Retorna: una promesa que será evaluada por el componente apropiado
+    */
+    const headers = {
+			'Accept': 'application/json'
+		}
+    return this.http.get(`${ApiSettigns.url}categories/show/${id}`,{headers});   
+  }
 }

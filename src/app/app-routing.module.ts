@@ -8,6 +8,7 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
+import { ModifyCategoryComponent } from './components/categories/modify-category/modify-category.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
 {path:'dashboardCategory' , component:DataTableCategoryComponent},
 {path:'dashboardProducts' , component:DataTableProductsComponent},
 {path:'createCategory',component:CreateCategoryComponent},
+{path:'updateCategory/:id',component:ModifyCategoryComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 
