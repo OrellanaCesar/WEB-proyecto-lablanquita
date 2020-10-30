@@ -28,7 +28,7 @@
 .panel-title {
     font-size: 24px;
     font-family: 'Roboto Condensed', sans-serif;
-    color: #ef9b3c;
+    color: #ef553c !important;
 }
 
 .panel-body {
@@ -52,12 +52,12 @@
 
 .item-contacto {
     display: flex;
-    color: #ef9b3c;
+    color: #ef553c !important;
 }
 
 .item-contacto-small {
     display: flex;
-    color: #ef9b3c;
+    color: #ef553c !important;
     font-size: 1rem;
 }
 
@@ -88,7 +88,7 @@
 }
 
 .botones-contacto {
-    color: #ef9b3c !important;
+    color: #ef553c !important;
     font-size: 24px;
     margin-right: .3rem;
 }

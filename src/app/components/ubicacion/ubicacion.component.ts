@@ -8,13 +8,15 @@ import { Component, OnInit, HostListener } from '@angular/core';
 export class UbicacionComponent implements OnInit {
   prueba:boolean=true;
   scrWidth:any;
-  email:string='lablanquita@gmail.com';
+  scrHeight:any;
+  email:string='limpiezablanquita.contacto@gmail.com';
 
   @HostListener('window:resize', ['$event'])
     getScreenSize(event?) {
-          
+          this.scrHeight = window.innerHeight;
           this.scrWidth = window.innerWidth;
           console.log( this.scrWidth);
+          console.log( this.scrHeight);
     }
   constructor() {
     this.getScreenSize();
