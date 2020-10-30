@@ -10,6 +10,7 @@ import { CreateProductComponent } from './components/products/create-product/cre
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 import {UpdatebrandComponent} from './components/brands/updatebrand/updatebrand.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
 {path:'createCategory',component:CreateCategoryComponent},
 {path:'updatebrand/:id' , component:UpdatebrandComponent},
 {path:'products/:id',component:ShowProductComponent},
+{path:'contacto',component:ContactoComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 

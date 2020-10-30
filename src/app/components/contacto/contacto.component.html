@@ -1,0 +1,137 @@
+<div class="container-contacto panel-smart-tabla">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="titulo-contacto">Contáctenos</h1>
+			<div class="items-contactos">
+				<div class="row">
+					<div class="col-md-6">
+						<h5 class="item-contacto ">
+							<i class="fas fa-map-marker-alt botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Dirección postal: </b></p>
+							<p class="contacto-letra"> Ohiggins 464  Salta-Capital (4400)</p>
+						</h5>
+						<h5 class="item-contacto">
+							<i class="fa fa-phone botones-contacto "></i>
+							<p class="contacto-letra-titulo"><b>Teléfono:</b></p>
+							<p class="contacto-letra"> 387 5 613122</p>
+						</h5>
+						<h5 class="item-contacto">
+							<i class="fab fa-whatsapp botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Celular:</b></p>
+							<p class="contacto-letra"> 387 5 613122</p>
+						</h5>
+						<h5 class="item-contacto">
+							<i class="fa fa-calendar botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Horarios:</b></p>
+							<p class="contacto-letra">Lunes a Viernes de 10 a 19 hs.<br>Sábado de 10 a 13 hs.</p>
+						</h5>
+					</div>
+					<div class="col-md-6">
+						<h5 class="item-contacto">
+							<i class="fab fa-facebook botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Facebook:</b></p>
+							<p class="contacto-letra">Facebook</p>
+						</h5>
+						<h5 class="item-contacto">
+							<i class="fab fa-instagram botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Instagram: </b></p>
+							<p class="contacto-letra">Insagram</p>
+						</h5>
+						<h5 class="item-contacto">
+							<i class="fab fa-twitter botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Twitter: </b></p>
+							<p class="contacto-letra">Twitter</p>
+						</h5>
+						
+						<h5 class="item-contacto">
+							<i class="fa fa-envelope botones-contacto"></i>
+							<p class="contacto-letra-titulo"><b>Correo: </b></p>
+							<p class="contacto-letra">{{email}}</p>
+						</h5>
+					</div>
+				</div>
+			</div>
+			<br>
+			<h3 class="titulo-contacto">Formulario de Contacto</h3>
+			<form [formGroup]="form" class="form-contacto" (ngSubmit)="Send()">
+				<div class="row d-flex justify-content-start">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label ><strong>Nombre:</strong></label>
+							<input class="form-control" type="text"formControlName="nombre">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label ><strong>Apellido:</strong></label>
+							<input class="form-control" type="text"formControlName="apellido">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label ><strong>E-mail:</strong></label>
+							<input class="form-control" type="text"formControlName="email">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label ><strong>Provincia:</strong></label>
+							<select class="form-control" formControlName="provincia">
+								<option value="">Selecione Provincia</option>
+								<option value="Jujuy">Jujuy</option>
+								<option value="Salta">Salta</option>
+								<option value="Formosa">Formosa</option>
+								<option value="Chaco">Chaco</option>
+								<option value="Tucuman">Tucuman</option>
+								<option value="Catamarca">Catamarca</option>
+								<option value="Mendoza">Mendoza</option>
+								<option value="Stgo. del Estero">Stgo. del Estero</option>
+								<option value="Misiones">Misiones</option>
+								<option value="Corriente">Corriente</option>
+								<option value="Entre Rios">Entre Rios</option>
+								<option value="Cordoba">Cordoba</option>
+								<option value="San Juan">San Juan</option>
+								<option value="San Luis">San Luis</option>
+								<option value="San Luis">La Rioja</option>
+								<option value="Santa Fe">Santa Fe</option>
+								<option value="Buenos Aires">Buenos Aires</option>
+								<option value="La Pampa">La Pampa</option>
+								<option value="Chubut">Chubut</option>
+								<option value="Neuquen">Neuquen</option>
+								<option value="Santa Cruz">Santa Cruz</option>
+								<option value="Rio Negro">Rio Negro</option>
+								<option value="Tierra del Fuego">Tierra del Fuego</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group">
+							<label class="form-label"><strong>Comentario:</strong></label>
+							<textarea class="form-control"
+							formControlName="comentario" rows="5"></textarea>
+						</div>
+					</div>
+					<div class="col-md-12" >
+						<div class="form-group">
+							<button type="submit"
+							style="width:100% !important"
+							class="btn btn-primary btn-contacto">
+							<!--*ngIf="loader==false">-->
+							<strong >Enviar</strong>
+						</button>
+						<button type="button"
+						style="width:100% !important; color:white"
+						name="button"
+						class="btn btn-primary btn-contacto"
+						[disabled]="loader"
+						*ngIf="loader">
+						<i  class="fas fa-spinner fa-spin "></i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+</div>
+

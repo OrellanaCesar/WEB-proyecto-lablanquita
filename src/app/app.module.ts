@@ -26,6 +26,7 @@ import { CreateProductComponent } from './components/products/create-product/cre
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
 import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -44,7 +45,8 @@ import { ShowProductComponent } from './components/products/show-product/show-pr
   CreateBrandComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
-  ShowProductComponent
+  ShowProductComponent,
+  ContactoComponent
   ],
   imports: [
   BrowserModule,

@@ -4,15 +4,15 @@
 
 @media (max-width: 767px){
   .hidden-info{
-      display: none !important;
+    display: none !important;
   }
 }
 
 .descripcion {
-    color: #ef9b3c;
-    cursor: pointer;
-    font-size: 13px;
-    line-height: 22px;
+  color: #ef9b3c;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 22px;
 }
 
 .marca-product{
@@ -28,11 +28,11 @@
 }
 
 .contacto {
-    color: #ef9b3c  ;
-    cursor: pointer ;
-    font-size: 13px ;
-    line-height: 22px ;
-    font-weight: 300 ;
+  color: #ef9b3c  ;
+  cursor: pointer ;
+  font-size: 13px ;
+  line-height: 22px ;
+  font-weight: 300 ;
 }
 
 .decoration:link{
@@ -105,4 +105,9 @@
   font-size: 13px ;
   line-height: 22px ;
   font-weight: 300 ;
+}
+
+a.nounderline:link
+{
+text-decoration:none;
 }
