@@ -26,8 +26,8 @@
                     <tr *ngFor="let product of Products">
                         <td>{{ product.product_id }}</td>
                         <td>{{ product.product_name }}</td>
-                        <td>{{ product.category.category_name }}</td>
-                        <td>{{ product.brand.brand_name }}</td>
+                        <td>{{ product.category_name }}</td>
+                        <td>{{ product.brand_name }}</td>
                         <td>$ {{ product.product_price | number:'.0-2' }}</td>
                         <td *ngIf="product.product_stock">Si</td>
                         <td *ngIf="!product.product_stock">No</td>

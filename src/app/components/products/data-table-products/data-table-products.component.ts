@@ -58,10 +58,10 @@ export class DataTableProductsComponent implements OnInit {
         data: 'product_name'
       },
       {
-        data: 'product_category'
+        data: 'category_name'
       },
       {
-        data: 'product_brand'
+        data: 'brand_name'
       },
       {
         data: 'product_price'
@@ -150,7 +150,7 @@ export class DataTableProductsComponent implements OnInit {
     return:no hay.
     */
 
-    this._products.getProducts()
+    this._products.getProductsD()
     .subscribe((resp:any) => {
       this.Products = resp;
     },(error:any) => {
