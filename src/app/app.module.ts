@@ -24,7 +24,9 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
+import { ModifyCategoryComponent } from './components/categories/modify-category/modify-category.component';
 import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
+import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
@@ -45,7 +47,9 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   CreateBrandComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
+  UpdateProductComponent,
   ShowProductComponent,
+  ModifyCategoryComponent
   ContactoComponent
   ],
   imports: [

@@ -59,9 +59,8 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 
 .product-imagen{
-	width: 40vw;
-	height: 50vh;
-	margin-left: 9rem;
+    width: 40vw;
+    height: 50vh;
 }
 
 @media (max-width:768px) {

@@ -58,10 +58,10 @@ export class DataTableProductsComponent implements OnInit {
         data: 'product_name'
       },
       {
-        data: 'product_category'
+        data: 'category_name'
       },
       {
-        data: 'product_brand'
+        data: 'brand_name'
       },
       {
         data: 'product_price'
@@ -87,10 +87,8 @@ export class DataTableProductsComponent implements OnInit {
 		Parametros:no hay
 		*/
 
-    // console.log("hola");
-
-    this.router.navigateByUrl('createProduct');
-  }
+		this.router.navigateByUrl('createProduct');
+	}
 
   deleteProduct(id:number){
 
@@ -152,7 +150,7 @@ export class DataTableProductsComponent implements OnInit {
     return:no hay.
     */
 
-    this._products.getProducts()
+    this._products.getProductsD()
     .subscribe((resp:any) => {
       this.Products = resp;
     },(error:any) => {
@@ -161,7 +159,15 @@ export class DataTableProductsComponent implements OnInit {
   }
 
   update(id:number){
-    console.log(id);
+
+    /*
+    Se va a la vista de modificar un producto, asociado al componete
+    de modificacion del producto
+		parameter : id del porducto a modificar.
+    return: no hay.
+		*/
+
+    this.router.navigateByUrl(`updateProduct/${id}`);
 
   }
 

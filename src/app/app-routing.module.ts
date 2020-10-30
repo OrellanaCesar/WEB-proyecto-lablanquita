@@ -8,7 +8,9 @@ import { DataTableCategoryComponent } from './components/categories/data-table-c
 import { DataTableProductsComponent } from './components/products/data-table-products/data-table-products.component';
 import { CreateProductComponent } from './components/products/create-product/create-product.component';
 import { CreateCategoryComponent } from './components/categories/create-category/create-category.component';
+import { ModifyCategoryComponent } from './components/categories/modify-category/modify-category.component';
 import {UpdatebrandComponent} from './components/brands/updatebrand/updatebrand.component';
+import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 
@@ -23,7 +25,9 @@ const routes: Routes = [
 {path:'dashboardProducts' , component:DataTableProductsComponent},
 {path:'createCategory',component:CreateCategoryComponent},
 {path:'updatebrand/:id' , component:UpdatebrandComponent},
+{path:'updateProduct/:id' , component:UpdateProductComponent},
 {path:'products/:id',component:ShowProductComponent},
+{path:'updateCategory/:id',component:ModifyCategoryComponent},
 {path:'contacto',component:ContactoComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
