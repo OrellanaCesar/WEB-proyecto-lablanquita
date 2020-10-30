@@ -5,6 +5,7 @@ import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryModel } from 'src/app/models/category.model';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 @Component({
   selector: 'app-create-category',
@@ -17,15 +18,15 @@ export class CreateCategoryComponent implements OnInit {
   error:boolean = false;
   constructor(private router:Router,
               private fb:FormBuilder,
-              private _category:CategoryService//,
-              //private _data:DataService) {
+              private _category:CategoryService,
+              private _data:DataServicesService
               ){
         this.createForm();
               }
 
   ngOnInit(): void {
   }
-  
+
   createForm(){
     /*Crea el formulario para la categoría */
     this.forma = this.fb.group({
@@ -80,7 +81,7 @@ export class CreateCategoryComponent implements OnInit {
           icon: 'success',
           title: 'Se registró la categoría con éxito'
         });
-        //this.loadCategory();
+        this.loadCategory();
       },
     (error:any)=>{
       this.error = true;
@@ -103,19 +104,19 @@ export class CreateCategoryComponent implements OnInit {
 
     })
   }
-  
-  /*loadCategory(){
+
+  loadCategory(){
     this._category.getCategories()
       .subscribe((resp:any)=>{
-        this._data.listaCategoria = [];
+        this._data.listCategories = [];
         resp.forEach(element => {
           let category = new CategoryModel(element);
-          this._data.listaCategoria.push(category);
+          this._data.listCategories.push(category);
         });
       },error=>{
         console.log(error);
       });
-  }*/
+  }
 
 
 }

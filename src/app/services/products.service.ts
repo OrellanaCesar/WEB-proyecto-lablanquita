@@ -25,6 +25,20 @@ export class ProductsService {
     return this.http.get(`${ApiSettigns.url}products`);
   }
 
+  getProductsD(){
+
+    /*
+    Esta funcion realizara la peticion a la API para
+    obtener todo los productos que hay ne la base de datos.
+    Para el manejo de DataTable.
+    parameter: no hay.
+    return: retorna una promesa de la peticion que sera evaluada
+    en el componente apropiado
+    */
+
+    return this.http.get(`${ApiSettigns.url}products/getProductsD`);
+  }
+
   getProduct(id:number){
 
   /*
