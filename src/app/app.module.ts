@@ -51,7 +51,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   UpdateProductComponent,
   ShowProductComponent,
   ModifyCategoryComponent,
-  SearchProductsComponent
+  SearchProductsComponent,
   ContactoComponent
   ],
   imports: [

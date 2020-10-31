@@ -52,7 +52,18 @@ export class SearchProductsComponent implements OnInit {
 	}
 
   getProducts(){
-    
+    if(this.tipo == 1){
+      console.log("hola");
+
+    }else{
+      if (this.tipo == 2) {
+          console.log("hola2");
+
+      } else {
+        console.log("hola3");
+
+      }
+    }
   }
 
 
