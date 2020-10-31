@@ -4,7 +4,7 @@
 
 @media (max-width: 767px){
   .hidden-info{
-      display: none !important;
+    display: none !important;
   }
 }
 
@@ -28,7 +28,7 @@
 }
 
 .contacto {
-    color: #ef553c  ;
+    color: #ef9b3c  ;
     cursor: pointer ;
     font-size: 13px ;
     line-height: 22px ;
@@ -99,4 +99,9 @@
   font-size: 13px ;
   line-height: 22px ;
   font-weight: 300 ;
+}
+
+a.nounderline:link
+{
+text-decoration:none;
 }

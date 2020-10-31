@@ -29,6 +29,7 @@ import { UpdatebrandComponent } from './components/brands/updatebrand/updatebran
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { SearchProductsComponent } from './components/search/search-products/search-products.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 
@@ -51,6 +52,7 @@ import { SearchProductsComponent } from './components/search/search-products/sea
   ShowProductComponent,
   ModifyCategoryComponent,
   SearchProductsComponent
+  ContactoComponent
   ],
   imports: [
   BrowserModule,
