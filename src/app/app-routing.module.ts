@@ -12,6 +12,7 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
 import {UpdatebrandComponent} from './components/brands/updatebrand/updatebrand.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
 {path:'updateProduct/:id' , component:UpdateProductComponent},
 {path:'products/:id',component:ShowProductComponent},
 {path:'updateCategory/:id',component:ModifyCategoryComponent},
+{path:'search/:tipo/:id/:valor:',component:SearchProductsComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 

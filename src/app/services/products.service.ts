@@ -178,4 +178,13 @@ export class ProductsService {
 
   }
 
+  searchProduct(data:FormData, tipoBusqueda:number){
+
+    const headers = {
+      'Accept': 'application/json'
+    };
+    return this.http.post(`${ApiSettigns.url}products/searchProducts`,data,{ headers });
+
+  }
+
 }

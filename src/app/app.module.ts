@@ -28,6 +28,7 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
 import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 
 
 
@@ -48,7 +49,8 @@ import { ShowProductComponent } from './components/products/show-product/show-pr
   UpdatebrandComponent,
   UpdateProductComponent,
   ShowProductComponent,
-  ModifyCategoryComponent
+  ModifyCategoryComponent,
+  SearchProductsComponent
   ],
   imports: [
   BrowserModule,

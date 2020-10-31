@@ -48,4 +48,11 @@ export class BrandService {
 		return this.http.post<DataTablesResponse>(`${ApiSettigns.url}brands/dataTable`,data,
 			{ headers });
 	}
+
+	searchProducts(id:number){
+		const headers = {
+			"Accept" : "application/json"
+		};
+		return this.http.get(`${ApiSettigns.url}brands/searchProducts/${id}`, { headers });
+	}
 }
