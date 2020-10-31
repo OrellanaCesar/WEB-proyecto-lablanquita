@@ -49,7 +49,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   UpdatebrandComponent,
   UpdateProductComponent,
   ShowProductComponent,
-  ModifyCategoryComponent
+  ModifyCategoryComponent,
   ContactoComponent
   ],
   imports: [
