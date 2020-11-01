@@ -178,7 +178,7 @@ export class ProductsService {
 
   }
 
-  searchProduct(data:FormData, tipoBusqueda:number){
+  searchProduct(data:FormData){
 
     const headers = {
       'Accept': 'application/json'

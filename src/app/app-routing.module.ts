@@ -29,7 +29,7 @@ const routes: Routes = [
 {path:'updateProduct/:id' , component:UpdateProductComponent},
 {path:'products/:id',component:ShowProductComponent},
 {path:'updateCategory/:id',component:ModifyCategoryComponent},
-{path:'search/:tipo/:id/:valor:',component:SearchProductsComponent},
+{path:'search/:tipo/:id/:valor',component:SearchProductsComponent},
 {path:'contacto',component:ContactoComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];

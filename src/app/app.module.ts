@@ -30,6 +30,7 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CardProductComponent } from './components/search/card-product/card-product.component';
 
 
 
@@ -52,7 +53,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   ShowProductComponent,
   ModifyCategoryComponent,
   SearchProductsComponent,
-  ContactoComponent
+  ContactoComponent,
+  CardProductComponent
   ],
   imports: [
   BrowserModule,

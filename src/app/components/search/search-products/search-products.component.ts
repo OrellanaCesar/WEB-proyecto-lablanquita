@@ -16,22 +16,26 @@ import { ProductModel } from 'src/app/models/product.model';
 })
 export class SearchProductsComponent implements OnInit {
 
-  id:number;
+  id:any;
   tipo:number;
   search:string;
-  listaProducts: ProductModel[] = [];
+  listProducts: ProductModel[] = [];
+  data:FormData;
+  loader:boolean = true;
+  tam:boolean = false;
+
 
   constructor(private router:Router,
               private activate:ActivatedRoute,
               private _products:ProductsService,
               private _brands:BrandService,
-              private _categories:CategoryService) { }
+              private _categories:CategoryService) {
+
+        this.getParam();
+
+    }
 
   ngOnInit(): void {
-    this.id = this.activate.snapshot.params.id;
-    this.tipo = this.activate.snapshot.params.tipo;
-    this.search = this.activate.snapshot.params.valor;
-    this.getParam();
   }
 
   getParam(){
@@ -42,28 +46,98 @@ export class SearchProductsComponent implements OnInit {
     parameter:no hay.
     return : no hay.
     */
-
+    this.id = this.activate.snapshot.params.id;
+    this.tipo = this.activate.snapshot.params.tipo;
+    this.search = this.activate.snapshot.params.valor;
 		this.activate.params
 		.subscribe((params:Params) => {
 			this.id = params.id;
       this.tipo = params.tipo;
       this.search = params.valor;
+      console.log(this.id,this.tipo,this.search);
+      this.creaData();
+      this.loader = true;
+      this.getProducts();
 		})
 	}
 
   getProducts(){
+
     if(this.tipo == 1){
-      console.log("hola");
+      this._brands.searchProducts(this.id)
+        .subscribe((resp:any) => {
+          this.listProducts = [];
+          if(resp.length == undefined){
+            this.listProducts.push(resp);
+            this.loader = false;
+          }else{
+            resp.forEach(element => {
+              let prod = new ProductModel(element);
+              this.listProducts.push(prod);
+            });
+            this.loader = false;
+
+          }
+
+
+        },(error) => {
+          this.listProducts = [];
+          this.loader = false;
+        })
 
     }else{
       if (this.tipo == 2) {
-          console.log("hola2");
+          this._categories.searchProducts(this.id)
+            .subscribe((resp:any) => {
+              this.listProducts = [];
+              if(resp.length == undefined){
+                this.listProducts.push(resp);
+                this.loader= false;
+              }else{
+                resp.forEach(element => {
+                  let prod = new ProductModel(element);
+                  this.listProducts.push(prod);
+                });
+                this.loader = false;
 
-      } else {
-        console.log("hola3");
+              }
+
+            },(error:any) => {
+              this.listProducts = [];
+              this.loader = false;
+            })
+
+      }else {
+        this._products.searchProduct(this.data)
+          .subscribe((resp:any) => {
+            console.log(resp);
+
+            this.listProducts = [];
+            resp.forEach(element => {
+              let prod = new ProductModel(element);
+              this.listProducts.push(prod);
+            });
+            this.loader = false;
+
+          },(error:any) => {
+            this.listProducts = [];
+            this.loader = false;
+
+          })
 
       }
     }
+  }
+
+  creaData(){
+    this.data = new FormData();
+    if (this.tipo == 3){
+      this.data.append('product_name',this.search);
+      this.data.append('product_description',this.search);
+      this.data.append('brand_name', this.search);
+      this.data.append('category_name',this.search);
+    }
+
   }
 
 
