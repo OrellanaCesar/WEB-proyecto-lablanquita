@@ -12,6 +12,7 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
 import {UpdatebrandComponent} from './components/brands/updatebrand/updatebrand.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
 {path:'createBrand',component:CreateBrandComponent},
 {path:'createProduct',component:CreateProductComponent},
 {path:'dashboardBrand' , component:DataTableBrandComponent},
-{path:'dashboardCategory' , component:DataTableCategoryComponent},
+{path:'dashboardCategory' , component:DataTableCategoryComponent,canActivate:[AuthGuard]},
 {path:'dashboardProducts' , component:DataTableProductsComponent},
 {path:'createCategory',component:CreateCategoryComponent},
 {path:'updatebrand/:id' , component:UpdatebrandComponent},
