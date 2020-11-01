@@ -1,0 +1,14 @@
+.spinner-loader{
+	text-align: center;
+	color:#ef553c !important;
+	margin-top: 20vh;
+	margin-bottom: 11vw;
+}
+
+.product-not-found{
+    width: 100% !important;
+    text-align: center;
+    color: white;
+    margin-top: 18vh;
+    margin-bottom: 10vw;
+}

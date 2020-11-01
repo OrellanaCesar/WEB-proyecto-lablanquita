@@ -1,0 +1,87 @@
+
+.sinStock{
+  color:#e86464f2;
+  cursor: pointer ;
+  font-size: 13px ;
+  line-height: 22px ;
+  font-weight: 300 ;
+}
+
+.descripcion {
+    color: #ef553c;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 22px;
+}
+
+.marca-product{
+  color:#ef553c ;
+  font-size: 20px;
+  margin-right: .3rem;
+}
+
+.botones-contacto{
+  color:#ef553c ;
+  font-size: 24px;
+  margin-right: .3rem;
+}
+
+.contacto {
+    color: #ef9b3c  ;
+    cursor: pointer ;
+    font-size: 13px ;
+    line-height: 22px ;
+    font-weight: 300 ;
+}
+
+.decoration:link{
+  text-decoration: none;
+}
+
+.bg-white{
+  background-color: white;
+}
+
+.alto-imagen{
+  height: 60vh;
+}
+
+
+@media (max-width:768px){
+  .alto-imagen{
+    height: 35vh;
+  }
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+
+.letra{
+  font-family: 'Sofia';
+}
+
+.precio{
+  color:#5aee5a;
+}
+
+.tarjetas {
+  width: 18rem ;
+  height: 31rem;
+}
+
+@media(max-width:768px){
+  .tarjetas{
+    width: 100% !important;
+  }
+}
+
+.stock{
+  color:#5aee5a;
+  /* color: #616161 !important; */
+  cursor: pointer ;
+  font-size: 13px ;
+  line-height: 22px ;
+  font-weight: 300 ;
+}
