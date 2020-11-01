@@ -1,0 +1,32 @@
+
+<div class="container mt-5 mb-5">
+  <div class="spinner-loader" *ngIf="loader">
+    <i  class="fas fa-spinner fa-spin fa-4x "></i>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngIf="(listProducts.length == 0  || listProducts.length == undefined) && loader == false ">
+    <div class="card product-not-found"
+         style="background-color: #ef9b3c !important;">
+         <div class="card-body">
+           <h5 class="card-title">Producto no encontrado</h5>
+
+            <p class="card-text">Lo sentimos, no tenemos productos con esas caracteristicas.</p>
+
+          </div>
+    </div>
+
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 mt-5 text-center ml-5"
+       *ngIf="(listProducts.length > 0 || listProducts.length != undefined) && loader != true">
+
+
+    <app-card-product [product]="product"
+                      *ngFor="let product of listProducts; let i = index">
+
+    </app-card-product>
+
+  </div>
+</div>

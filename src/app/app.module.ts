@@ -8,7 +8,7 @@ import { DataTablesModule } from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//  configuracion de localizacion
+//  configuración de localización
 import localeEsAr from '@angular/common/locales/es-AR';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localeEsAr);
@@ -28,6 +28,9 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
 import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { SearchProductsComponent } from './components/search/search-products/search-products.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
+import { CardProductComponent } from './components/search/card-product/card-product.component';
 
 
 
@@ -48,7 +51,10 @@ import { ShowProductComponent } from './components/products/show-product/show-pr
   UpdatebrandComponent,
   UpdateProductComponent,
   ShowProductComponent,
-  ModifyCategoryComponent
+  ModifyCategoryComponent,
+  SearchProductsComponent,
+  ContactoComponent,
+  CardProductComponent
   ],
   imports: [
   BrowserModule,
