@@ -14,6 +14,7 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
@@ -22,7 +23,7 @@ const routes: Routes = [
 {path:'createBrand',component:CreateBrandComponent},
 {path:'createProduct',component:CreateProductComponent},
 {path:'dashboardBrand' , component:DataTableBrandComponent},
-{path:'dashboardCategory' , component:DataTableCategoryComponent},
+{path:'dashboardCategory' , component:DataTableCategoryComponent,canActivate:[AuthGuard]},
 {path:'dashboardProducts' , component:DataTableProductsComponent},
 {path:'createCategory',component:CreateCategoryComponent},
 {path:'updatebrand/:id' , component:UpdatebrandComponent},
