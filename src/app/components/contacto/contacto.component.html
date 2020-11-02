@@ -1,8 +1,9 @@
 <div class="container-contacto panel-smart-tabla">
 	<div class="row">
 		<div class="col-md-12">
-			<h1 class="titulo-contacto">Contáctenos</h1>
-			<div class="items-contactos">
+			<h1 class="titulo-contacto">Contactanos</h1>
+			<hr>
+			<div class="items-contactos animate__animated animate__headShake">
 				<div class="row">
 					<div class="col-md-6">
 						<h5 class="item-contacto ">
@@ -53,7 +54,7 @@
 			</div>
 			<br>
 			<h3 class="titulo-contacto">Formulario de Contacto</h3>
-			<form [formGroup]="form" class="form-contacto" (ngSubmit)="Send()">
+			<form [formGroup]="forma" class="form-contacto" (ngSubmit)="Send_mails()">
 				<div class="row d-flex justify-content-start">
 					<div class="col-md-4">
 						<div class="form-group">
@@ -115,8 +116,9 @@
 						<div class="form-group">
 							<button type="submit"
 							style="width:100% !important"
+							*ngIf="!loader"
 							class="btn btn-primary btn-contacto">
-							<!--*ngIf="loader==false">-->
+							
 							<strong >Enviar</strong>
 						</button>
 						<button type="button"
