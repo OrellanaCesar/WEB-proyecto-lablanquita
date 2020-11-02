@@ -11,10 +11,10 @@ export class CategoryService {
   constructor(private http:HttpClient) {
 
    }
-  
+
   getCategories(){
 
-    /*esta función envia una peticion get a la API 
+    /*esta función envia una peticion get a la API
     obteniendo los datos de categoría.
      Parámetros: no recibe.
      Retorna: una promesa que será evaluada por el componente apropiado
@@ -22,9 +22,9 @@ export class CategoryService {
 
       return this.http.get(`${ApiSettigns.url}categories`);
   }
-  
+
   getCategory(id:number){
-    /*esta función envía una peticion get a la API 
+    /*esta función envía una peticion get a la API
      obteniendo los datos de una categoría.
      Parámetros: id de categoría.
      Retorna: una promesa que será evaluada por el componente apropiado
@@ -34,7 +34,7 @@ export class CategoryService {
 
   dataTableCategories(data:any){
 
-    /*esta función envia una peticion post a la API 
+    /*esta función envia una peticion post a la API
     obteniendo los datos de categoría para el manejo
     del datatable.
      Parámetros: 'data', la búsqueda que se hace en la grilla.
@@ -59,7 +59,7 @@ export class CategoryService {
 		};
 		return this.http.post(`${ApiSettigns.url}categories/create`, data, {headers});
   }
-  
+
   deleteCategory(id:number){
     /*esta función envía una peticion DELETE a la API para eliminar una
     categoría.
@@ -73,7 +73,7 @@ export class CategoryService {
 	}
 
 	updateCategory(id:number,data:FormData){
-    /*esta función envía una peticion POST a la API para modificar 
+    /*esta función envía una peticion POST a la API para modificar
     datos de una  categoría.
     Parámetros: id, de la categoría a modificar.
                 data, los datos que trajo del formulario.
@@ -84,9 +84,9 @@ export class CategoryService {
 		}
 		return this.http.post(`${ApiSettigns.url}categories/update/${id}`, data , { headers });
   }
-  
+
   showCategory(id:number){
-    /*esta función envía una peticion GET a la API para traer los 
+    /*esta función envía una peticion GET a la API para traer los
     datos(nombre) de una categoría en particular.
     Parámetros: id, de la categoría a mostrar.
     Retorna: una promesa que será evaluada por el componente apropiado
@@ -94,6 +94,13 @@ export class CategoryService {
     const headers = {
 			'Accept': 'application/json'
 		}
-    return this.http.get(`${ApiSettigns.url}categories/show/${id}`,{headers});   
+    return this.http.get(`${ApiSettigns.url}categories/show/${id}`,{headers});
   }
+
+  searchProducts(id:number){
+		const headers = {
+			"Accept" : "application/json"
+		};
+		return this.http.get(`${ApiSettigns.url}categories/searchProducts/${id}`, { headers });
+	}
 }

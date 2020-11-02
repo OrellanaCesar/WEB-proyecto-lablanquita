@@ -28,7 +28,9 @@ import { ModifyCategoryComponent } from './components/categories/modify-category
 import { UpdatebrandComponent } from './components/brands/updatebrand/updatebrand.component';
 import { UpdateProductComponent } from './components/products/update-product/update-product.component';
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
+import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { CardProductComponent } from './components/search/card-product/card-product.component';
 
 
 
@@ -50,7 +52,9 @@ import { ContactoComponent } from './components/contacto/contacto.component';
   UpdateProductComponent,
   ShowProductComponent,
   ModifyCategoryComponent,
-  ContactoComponent
+  SearchProductsComponent,
+  ContactoComponent,
+  CardProductComponent
   ],
   imports: [
   BrowserModule,
