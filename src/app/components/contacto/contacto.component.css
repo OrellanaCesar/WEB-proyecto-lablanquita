@@ -1,14 +1,14 @@
 .panel-smart-tabla {
 	padding: 20px;
-	background: #fff;
-	border: 1px solid #dedede;
+	background: #fcf8db;
+	border: 1px solid #fcf8db;
 	border-radius: 6px;
 	word-wrap: break-word;
 	box-shadow: 2px 2px 12px #999;
 }
 
 .titulo-contacto{
-	color: #007bff;
+	color: #ef553c;
 }
 
 
@@ -18,14 +18,14 @@
 
 .contacto-letra-titulo{
 	font-size: 100% !important;
-	color: #007bff;
+	color: #ef553c;
   /*margin-bottom: 15px;
   margin-top: 15px;*/
 }
 @media(max-width:768px){
 	.contacto-letra-titulo{
 		font-size: 90% !important;
-		color: #007bff;
+		color: #ef553c;
 	}
 	.contacto-letra{
 		font-size: 90% !important;
@@ -41,7 +41,7 @@
 }
 
 .botones-contacto{
-	color:#007bff !important;
+	color:#ef553c !important;
 	font-size: 24px;
 	margin-right: .3rem;
 }
@@ -75,4 +75,8 @@
 
 .item-contacto{
 	display: flex;
+}
+
+hr{
+	border-top: 1px solid #ef553c !important;
 }
