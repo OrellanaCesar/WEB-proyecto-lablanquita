@@ -9,18 +9,19 @@ import Swal from 'sweetalert2';
 	styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-	email:string = 'pablofacundoorellana@gmail.com';
-	form: FormGroup;
+	forma: FormGroup;
 	error:boolean = false;
 	loader:boolean = false;
 	constructor(private fb:FormBuilder,
-		private _mail:EmailService) { }
+		private _mail:EmailService) {
+		this.createForm();
+	}
 
 	ngOnInit(): void {
 	}
 
 	createForm(){
-		this.form = this.fb.group({
+		this.forma = this.fb.group({
 			nombre:['',Validators.required],
 			apellido:['',Validators.required],
 			email:['',Validators.required],
@@ -29,18 +30,18 @@ export class ContactoComponent implements OnInit {
 		})
 	}
 
-	Send(){
+	Send_mails(){
 		this.loader = true;
 		const data = new FormData();
-		data.append('nombre',this.form.get('nombre').value);
-		data.append('apellido',this.form.get('apellido').value);
-		data.append('email',this.form.get('email').value);
-		data.append('provincia',this.form.get('provincia').value);
-		data.append('comentario',this.form.get('comentario').value);
+		data.append('nombre',this.forma.get('nombre').value);
+		data.append('apellido',this.forma.get('apellido').value);
+		data.append('email',this.forma.get('email').value);
+		data.append('provincia',this.forma.get('provincia').value);
+		data.append('comentario',this.forma.get('comentario').value);
 		this._mail.sendMail(data)
 		.subscribe((resp:any) =>{
 			this.loader = false;
-			this.form.reset({
+			this.forma.reset({
 				nombre:'',
 				apellido:'',
 				email:'',

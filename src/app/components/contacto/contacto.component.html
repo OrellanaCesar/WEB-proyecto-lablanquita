@@ -54,7 +54,7 @@
 			</div>
 			<br>
 			<h3 class="titulo-contacto">Formulario de Contacto</h3>
-			<form [formGroup]="form" class="form-contacto" (ngSubmit)="Send()">
+			<form [formGroup]="forma" class="form-contacto" (ngSubmit)="Send_mails()">
 				<div class="row d-flex justify-content-start">
 					<div class="col-md-4">
 						<div class="form-group">
@@ -116,8 +116,9 @@
 						<div class="form-group">
 							<button type="submit"
 							style="width:100% !important"
+							*ngIf="!loader"
 							class="btn btn-primary btn-contacto">
-							<!--*ngIf="loader==false">-->
+							
 							<strong >Enviar</strong>
 						</button>
 						<button type="button"
