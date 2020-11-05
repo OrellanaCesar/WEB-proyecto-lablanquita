@@ -19,7 +19,7 @@ import Swal from 'sweetalert2';
 })
 export class MenuComponent implements OnInit {
   letra:string = '';
-  listString : string [] = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']; 
+  listString : string [] = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
   formSearch: FormGroup;
   formLogin:FormGroup;
   formSignup: FormGroup;
@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
     this.createFormSearch();
     this.createFormLogin();
     this.createFormSignup();
-    
+
   }
 
   ngOnInit(): void {
@@ -200,7 +200,7 @@ export class MenuComponent implements OnInit {
 
     this.router.navigateByUrl(`search/${tipo}/${id}/${valor}`);
   }
-  
+
   login(){
     this.disabled = true;
     this.error = false;
@@ -212,12 +212,13 @@ export class MenuComponent implements OnInit {
     }
     this.user.user_email = this.formLogin.value.user_email;
     this.user.user_password = this.formLogin.value.user_password;
-    
+
     this.auth.login(this.user)
       .subscribe((resp:any) =>{
         console.log(resp);
         this.auth.guardarToken(resp.access_token, resp.token_type, resp.expires_at,resp.profile_id);
         this.userData();
+        this.auth.leerToken();
       },(error:any) => {
         this.disabled = false;
         this.error = true;
@@ -315,7 +316,7 @@ export class MenuComponent implements OnInit {
     this.user.user_email = this.formSignup.value.user_email;
     this.user.user_password = this.formSignup.value.user_password;
     this.user.user_password_confirmation = this.formSignup.value.user_password_confirmation;
-    
+
     this.auth.signup(this.user)
       .subscribe((resp:any) =>{
         console.log(resp);
