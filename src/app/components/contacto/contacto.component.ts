@@ -33,6 +33,12 @@ export class ContactoComponent implements OnInit {
 
 	Send_mails(){
 		this.loader = true;
+		if( this.forma.invalid){
+			this.loader = false;
+			return Object.values(this.forma.controls).forEach(control => {
+				control.markAsTouched();
+			})
+		};
 		const data = new FormData();
 		data.append('nombre',this.forma.get('nombre').value);
 		data.append('apellido',this.forma.get('apellido').value);
@@ -81,10 +87,31 @@ export class ContactoComponent implements OnInit {
 			})
 			Toast.fire({
 				icon: 'error',
-				title: error.error.message
+				title: 'Correo no Enviado'
 			});
 		})
 
+	}
+
+
+	get nameInvalid(){
+
+		return this.forma.get('nombre').invalid && this.forma.get('nombre').touched ;
+	}
+
+	get LastnameInvalid(){
+
+		return this.forma.get('apellido').invalid && this.forma.get('apellido').touched ;
+	}
+
+	get emailInvalid(){
+
+		return this.forma.get('email').invalid && this.forma.get('email').touched ;
+	}
+
+	get provinciaInvalid(){
+
+		return this.forma.get('provincia').invalid && this.forma.get('provincia').touched ;
 	}
 
 }
