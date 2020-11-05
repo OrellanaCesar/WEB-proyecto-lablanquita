@@ -24,7 +24,7 @@
 						<h5 class="item-contacto">
 							<i class="fa fa-calendar botones-contacto"></i>
 							<p class="contacto-letra-titulo"><b>Horarios:</b></p>
-							<p class="contacto-letra">Lunes a Viernes de 10 a 19 hs.<br>Sábado de 10 a 13 hs.</p>
+							<p class="contacto-letra">Lunes a Viernes de 09 a 13 hs y 16 a 20 hs.<br>Sábado de 09 a 13 hs.</p>
 						</h5>
 					</div>
 					<div class="col-md-6">
@@ -59,8 +59,8 @@
 					<div class="col-md-4">
 						<div class="form-group">
 							<label ><strong>Nombre:</strong></label>
-							<input  class="form-control" 
-							[class.is-invalid] = "nameInvalid" 
+							<input  class="form-control"
+							[class.is-invalid] = "nameInvalid"
 							type="text"
 							formControlName="nombre">
 							<small *ngIf="nameInvalid" class="text-danger">
@@ -72,7 +72,7 @@
 						<div class="form-group">
 							<label ><strong>Apellido:</strong></label>
 							<input 	class="form-control"
-							[class.is-invalid] = "LastnameInvalid" 
+							[class.is-invalid] = "LastnameInvalid"
 							type="text"
 							formControlName="apellido">
 							<small *ngIf="LastnameInvalid" class="text-danger">
@@ -84,8 +84,8 @@
 						<div class="form-group">
 							<label ><strong>E-mail:</strong></label>
 							<input  class="form-control"
-							[class.is-invalid] = "emailInvalid" 
-							type="text" 
+							[class.is-invalid] = "emailInvalid"
+							type="text"
 							formControlName="email">
 							<small *ngIf="emailInvalid" class="text-danger">
 								El campo nombre es obligatorio.
@@ -96,7 +96,7 @@
 						<div class="form-group">
 							<label ><strong>Provincia:</strong></label>
 							<select class="form-control"
-							[class.is-invalid] = "provinciaInvalid" 
+							[class.is-invalid] = "provinciaInvalid"
 							formControlName="provincia">
 							<option value="">Selecione Provincia</option>
 							<option value="Jujuy">Jujuy</option>
