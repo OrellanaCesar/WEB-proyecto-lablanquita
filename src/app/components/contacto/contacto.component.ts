@@ -12,6 +12,7 @@ export class ContactoComponent implements OnInit {
 	forma: FormGroup;
 	error:boolean = false;
 	loader:boolean = false;
+	email:string = 'limpiezablanquita.contacto@gmail.com'
 	constructor(private fb:FormBuilder,
 		private _mail:EmailService) {
 		this.createForm();

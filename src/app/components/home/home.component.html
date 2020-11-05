@@ -161,8 +161,9 @@
 
 				<ng-template *ngFor="let offert of listProduct_OfferDay"
 				carouselSlide [id]="offert.product_id">
-				<a href="#" [routerLink]="['products/',offert.product_id]" class="nounderline">
+
 					<div class="card tarjetas">
+						<a href="#" [routerLink]="['products/',offert.product_id]" class="nounderline">
 						<div class="slide">
 
 							<img [src]="url_image + offert.product_image"
@@ -170,7 +171,9 @@
 							alt=""
 							height="250" width="500">
 						</div>
+						</a>
 						<div class="card-body bg-fondo">
+							<a href="#" [routerLink]="['products/',offert.product_id]" class="nounderline">
 							<h5 class="card-title botones-contacto">
 								{{offert.product_name}}
 							</h5>
@@ -183,12 +186,13 @@
 									{{ offert.product_description }}
 								</strong>
 							</p>
-							<div  class="row">
-								<h3 class="mr-5 precio">Precio: ${{ offert.product_price | number:'.0-2' }}</h3>
+							<div  class="row" style="display: flex;justify-content: center;">
+								<h3 class=" precio">Precio: ${{ offert.product_price | number:'.0-2' }}</h3>
 								<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
 							</div>
+							</a>
 							<div class="row" style="justify-content:center;">
-								<a href="https://api.whatsapp.com/send?phone=543875851100&amp;text=Hola%20La%20Blanquita" class="decoration" target="_blank">
+								<a href="https://api.whatsapp.com/send?phone=5491153887511&amp;text=Hola%20Limpieza%20Blanquita" class="decoration" target="_blank">
 
 									<button type="button" class="btn btn-success mb-1">
 										<i class="fab fa-whatsapp"></i>
@@ -210,7 +214,6 @@
 
 				</div>
 			</div>
-		</a>
 	</ng-template>
 
 </ng-container>
@@ -233,8 +236,9 @@
 
 				<ng-template *ngFor="let best of listProduct_BestSeller"
 				carouselSlide [id]="best.product_id">
-				<a href="#" [routerLink]="['products/',best.product_id]" class="nounderline">
+				<!-- <a href="#" [routerLink]="['products/',best.product_id]" class="nounderline"> -->
 					<div class="card tarjetas">
+						<a href="#" [routerLink]="['products/',best.product_id]" class="nounderline">
 						<div class="slide">
 
 							<img [src]="url_image + best.product_image"
@@ -242,7 +246,9 @@
 							alt=""
 							height="250" width="500">
 						</div>
+						</a>
 						<div class="card-body bg-fondo">
+							<a href="#" [routerLink]="['products/',best.product_id]" class="nounderline">
 							<h5 class="card-title botones-contacto">
 								{{best.product_name}}
 							</h5>
@@ -255,12 +261,13 @@
 									{{ best.product_description }}
 								</strong>
 							</p>
-							<div  class="row">
-								<h3 class="mr-5 precio">Precio: ${{ best.product_price | number:'.0-2' }}</h3>
+							<div  class="row" style="display: flex;justify-content: center;">
+								<h3 class=" precio">Precio: ${{ best.product_price | number:'.0-2' }}</h3>
 								<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
 							</div>
+							</a>
 							<div class="row" style="justify-content:center;">
-								<a href="https://api.whatsapp.com/send?phone=543875851100&amp;text=Hola%20La%20Blanquita" class="decoration" target="_blank">
+								<a href="https://api.whatsapp.com/send?phone=5491153887511&amp;text=Hola%20Limpieza%20Blanquita" class="decoration" target="_blank">
 
 									<button type="button" class="btn btn-success mb-1">
 										<i class="fab fa-whatsapp"></i>
@@ -282,7 +289,7 @@
 
 				</div>
 			</div>
-		</a>
+		<!-- </a> -->
 	</ng-template>
 
 </ng-container>
