@@ -63,9 +63,9 @@ export class CreateBrandComponent implements OnInit {
 		return: devuelve un mensaje si se registro correctamente o no*/
 		this.error = false;
 		this.loader = true;
-		if(this.form.invalid){
+		if(this.forma.invalid){
 			this.loader = false;
-			return Object.values(this.form.controls).forEach(control => {
+			return Object.values(this.forma.controls).forEach(control => {
 				control.markAsTouched();
 			})
 		}
