@@ -31,6 +31,7 @@ import { ShowProductComponent } from './components/products/show-product/show-pr
 import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardProductComponent } from './components/search/card-product/card-product.component';
+import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 
 
 
@@ -54,7 +55,8 @@ import { CardProductComponent } from './components/search/card-product/card-prod
   ModifyCategoryComponent,
   SearchProductsComponent,
   ContactoComponent,
-  CardProductComponent
+  CardProductComponent,
+  DataTableUserComponent
   ],
   imports: [
   BrowserModule,
