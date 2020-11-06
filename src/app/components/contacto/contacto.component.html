@@ -1,161 +1,302 @@
 <div class="container-contacto panel-smart-tabla">
-	<div class="row">
-		<div class="col-md-12">
-			<h1 class="titulo-contacto">Contactanos</h1>
-			<hr>
-			<div class="items-contactos animate__animated animate__headShake">
-				<div class="row">
-					<div class="col-md-6">
-						<h5 class="item-contacto ">
-							<i class="fas fa-map-marker-alt botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Dirección postal: </b></p>
-							<p class="contacto-letra"> Coronel Olleros 944, Lomas del Mirado  Pcia. Bs. As. - San Justo(7118)</p>
-						</h5>
-						<h5 class="item-contacto">
-							<i class="fa fa-phone botones-contacto "></i>
-							<p class="contacto-letra-titulo"><b>Teléfono:</b></p>
-							<p class="contacto-letra"> 387 5 613122</p>
-						</h5>
-						<h5 class="item-contacto">
-							<i class="fab fa-whatsapp botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Celular:</b></p>
-							<p class="contacto-letra"> 387 5 613122</p>
-						</h5>
-						<h5 class="item-contacto">
-							<i class="fa fa-calendar botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Horarios:</b></p>
-							<p class="contacto-letra">Lunes a Viernes de 09 a 13 hs y 16 a 20 hs.<br>Sábado de 09 a 13 hs.</p>
-						</h5>
-					</div>
-					<div class="col-md-6">
-						<h5 class="item-contacto">
-							<i class="fab fa-facebook botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Facebook:</b></p>
-							<p class="contacto-letra">www.facebook.com/LimpiezaBlanquitaStore</p>
-						</h5>
-						<h5 class="item-contacto">
-							<i class="fab fa-instagram botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Instagram: </b></p>
-							<p class="contacto-letra">www.instagram.com/limpiezablaquita</p>
-						</h5>
-						<h5 class="item-contacto">
-							<i class="fab fa-twitter botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Twitter: </b></p>
-							<p class="contacto-letra">www.twitter.com/Blanqu1Limpieza</p>
-						</h5>
+    <div class="row" *ngIf="scrWidth > 783">
+        <div class="col-md-12">
+            <h1 class="titulo-contacto">Contactanos</h1>
+            <hr>
+            <div class="items-contactos animate__animated animate__headShake">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="item-contacto ">
+                            <i class="fas fa-map-marker-alt botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Dirección postal: </b></p>
+                            <p class="contacto-letra"> Coronel Olleros 944, Lomas del Mirado Pcia. Bs. As. - San Justo(7118)</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fa fa-phone botones-contacto "></i>
+                            <p class="contacto-letra-titulo"><b>Teléfono:</b></p>
+                            <p class="contacto-letra"> 387 5 613122</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fab fa-whatsapp botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Celular:</b></p>
+                            <p class="contacto-letra"> 387 5 613122</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fa fa-calendar botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Horarios:</b></p>
+                            <p class="contacto-letra">Lunes a Viernes de 09 a 13 hs y 16 a 20 hs.<br>Sábado de 09 a 13 hs.</p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto">
+                            <i class="fab fa-facebook botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Facebook:</b></p>
+                            <p class="contacto-letra">www.facebook.com/LimpiezaBlanquitaStore</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fab fa-instagram botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Instagram: </b></p>
+                            <p class="contacto-letra">www.instagram.com/limpiezablanquita</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fab fa-twitter botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Twitter: </b></p>
+                            <p class="contacto-letra">www.twitter.com/Blanqu1Limpieza</p>
+                        </h5>
 
-						<h5 class="item-contacto">
-							<i class="fa fa-envelope botones-contacto"></i>
-							<p class="contacto-letra-titulo"><b>Correo: </b></p>
-							<p class="contacto-letra">{{email}}</p>
-						</h5>
-					</div>
-				</div>
-			</div>
-			<br>
-			<h3 class="titulo-contacto">Formulario de Contacto</h3>
-			<form [formGroup]="forma" class="form-contacto" (ngSubmit)="Send_mails()">
-				<div class="row d-flex justify-content-start">
-					<div class="col-md-4">
-						<div class="form-group">
-							<label ><strong>Nombre:</strong></label>
-							<input  class="form-control"
-							[class.is-invalid] = "nameInvalid"
-							type="text"
-							formControlName="nombre">
-							<small *ngIf="nameInvalid" class="text-danger">
+                        <h5 class="item-contacto">
+                            <i class="fa fa-envelope botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Correo: </b></p>
+                            <p class="contacto-letra">{{email}}</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h3 class="titulo-contacto">Formulario de Contacto</h3>
+            <form [formGroup]="forma" class="form-contacto" (ngSubmit)="Send_mails()">
+                <div class="row d-flex justify-content-start">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>Nombre:</strong></label>
+                            <input class="form-control" [class.is-invalid]="nameInvalid" type="text" formControlName="nombre">
+                            <small *ngIf="nameInvalid" class="text-danger">
+									El campo nombre es obligatorio.
+								</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>Apellido:</strong></label>
+                            <input class="form-control" [class.is-invalid]="LastnameInvalid" type="text" formControlName="apellido">
+                            <small *ngIf="LastnameInvalid" class="text-danger">
+									El campo nombre es obligatorio.
+								</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>E-mail:</strong></label>
+                            <input class="form-control" [class.is-invalid]="emailInvalid" type="text" formControlName="email">
+                            <small *ngIf="emailInvalid" class="text-danger">
+									El campo nombre es obligatorio.
+								</small>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><strong>Provincia:</strong></label>
+                            <select class="form-control" [class.is-invalid]="provinciaInvalid" formControlName="provincia">
+								<option value="">Selecione Provincia</option>
+								<option value="Jujuy">Jujuy</option>
+								<option value="Salta">Salta</option>
+								<option value="Formosa">Formosa</option>
+								<option value="Chaco">Chaco</option>
+								<option value="Tucuman">Tucuman</option>
+								<option value="Catamarca">Catamarca</option>
+								<option value="Mendoza">Mendoza</option>
+								<option value="Stgo. del Estero">Stgo. del Estero</option>
+								<option value="Misiones">Misiones</option>
+								<option value="Corriente">Corriente</option>
+								<option value="Entre Rios">Entre Rios</option>
+								<option value="Cordoba">Cordoba</option>
+								<option value="San Juan">San Juan</option>
+								<option value="San Luis">San Luis</option>
+								<option value="San Luis">La Rioja</option>
+								<option value="Santa Fe">Santa Fe</option>
+								<option value="Buenos Aires">Buenos Aires</option>
+								<option value="La Pampa">La Pampa</option>
+								<option value="Chubut">Chubut</option>
+								<option value="Neuquen">Neuquen</option>
+								<option value="Santa Cruz">Santa Cruz</option>
+								<option value="Rio Negro">Rio Negro</option>
+								<option value="Tierra del Fuego">Tierra del Fuego</option>
+							</select>
+                            <small *ngIf="provinciaInvalid" class="text-danger">
 								El campo nombre es obligatorio.
 							</small>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label ><strong>Apellido:</strong></label>
-							<input 	class="form-control"
-							[class.is-invalid] = "LastnameInvalid"
-							type="text"
-							formControlName="apellido">
-							<small *ngIf="LastnameInvalid" class="text-danger">
-								El campo nombre es obligatorio.
-							</small>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="form-group">
-							<label ><strong>E-mail:</strong></label>
-							<input  class="form-control"
-							[class.is-invalid] = "emailInvalid"
-							type="text"
-							formControlName="email">
-							<small *ngIf="emailInvalid" class="text-danger">
-								El campo nombre es obligatorio.
-							</small>
-						</div>
-					</div>
-					<div class="col-md-12">
-						<div class="form-group">
-							<label ><strong>Provincia:</strong></label>
-							<select class="form-control"
-							[class.is-invalid] = "provinciaInvalid"
-							formControlName="provincia">
-							<option value="">Selecione Provincia</option>
-							<option value="Jujuy">Jujuy</option>
-							<option value="Salta">Salta</option>
-							<option value="Formosa">Formosa</option>
-							<option value="Chaco">Chaco</option>
-							<option value="Tucuman">Tucuman</option>
-							<option value="Catamarca">Catamarca</option>
-							<option value="Mendoza">Mendoza</option>
-							<option value="Stgo. del Estero">Stgo. del Estero</option>
-							<option value="Misiones">Misiones</option>
-							<option value="Corriente">Corriente</option>
-							<option value="Entre Rios">Entre Rios</option>
-							<option value="Cordoba">Cordoba</option>
-							<option value="San Juan">San Juan</option>
-							<option value="San Luis">San Luis</option>
-							<option value="San Luis">La Rioja</option>
-							<option value="Santa Fe">Santa Fe</option>
-							<option value="Buenos Aires">Buenos Aires</option>
-							<option value="La Pampa">La Pampa</option>
-							<option value="Chubut">Chubut</option>
-							<option value="Neuquen">Neuquen</option>
-							<option value="Santa Cruz">Santa Cruz</option>
-							<option value="Rio Negro">Rio Negro</option>
-							<option value="Tierra del Fuego">Tierra del Fuego</option>
-						</select>
-						<small *ngIf="provinciaInvalid" class="text-danger">
-							El campo nombre es obligatorio.
-						</small>
-					</div>
-				</div>
-				<div class="col-md-12">
-					<div class="form-group">
-						<label class="form-label"><strong>Comentario:</strong></label>
-						<textarea class="form-control"
-						formControlName="comentario" rows="5"></textarea>
-					</div>
-				</div>
-				<div class="col-md-12" >
-					<div class="form-group">
-						<button type="submit"
-						style="width:100% !important"
-						*ngIf="!loader"
-						class="btn btn-primary btn-contacto">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label"><strong>Comentario:</strong></label>
+                            <textarea class="form-control" formControlName="comentario" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="submit" style="width:100% !important" *ngIf="!loader" class="btn btn-primary btn-contacto">
 
-						<strong >Enviar</strong>
+							<strong >Enviar</strong>
+						</button>
+                            <button type="button" style="width:100% !important; color:white" name="button" class="btn btn-primary btn-contacto" [disabled]="loader" *ngIf="loader">
+						<i  class="fas fa-spinner fa-spin "></i>
 					</button>
-					<button type="button"
-					style="width:100% !important; color:white"
-					name="button"
-					class="btn btn-primary btn-contacto"
-					[disabled]="loader"
-					*ngIf="loader">
-					<i  class="fas fa-spinner fa-spin "></i>
-				</button>
-			</div>
-		</div>
-	</div>
-</form>
-</div>
-</div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="scrWidth <= 783">
+        <div class="col-md-12">
+            <h1 class="titulo-contacto">Contactanos</h1>
+            <hr>
+            <div class="items-contactos animate__animated animate__headShake">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="item-contacto ">
+                            <i class="fas fa-map-marker-alt botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Dirección postal: </b></p>
+                            <p class="contacto-letra"> Coronel Olleros 944, Lomas del Mirado Pcia. Bs. As. - San Justo(7118)</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fa fa-phone botones-contacto "></i>
+                            <p class="contacto-letra-titulo"><b>Teléfono:</b></p>
+                            <p class="contacto-letra"> 387 5 613122</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fab fa-whatsapp botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Celular:</b></p>
+                            <p class="contacto-letra"> 387 5 613122</p>
+                        </h5>
+                        <h5 class="item-contacto">
+                            <i class="fa fa-calendar botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Horarios:</b></p>
+                            <p class="contacto-letra">Lunes a Viernes de 09 a 13 hs y 16 a 20 hs.<br>Sábado de 09 a 13 hs.</p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto">
+                            <i class="fab fa-facebook botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Facebook:</b></p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto-small">
+                            <p class="contacto-letra">www.facebook.com/LimpiezaBlanquitaStore</p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto">
+                            <i class="fab fa-instagram botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Instagram: </b></p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto-small">
+                            <p class="contacto-letra">www.instagram.com/limpiezablanquita</p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto">
+                            <i class="fab fa-twitter botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Twitter: </b></p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto-small">
+                            <p class="contacto-letra">www.twitter.com/Blanqu1Limpieza</p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto">
+                            <i class="fa fa-envelope botones-contacto"></i>
+                            <p class="contacto-letra-titulo"><b>Correo: </b></p>
+                        </h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="item-contacto-small">
+                            <p class="contacto-letra">{{email}}</p>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h3 class="titulo-contacto">Formulario de Contacto</h3>
+            <form [formGroup]="forma" class="form-contacto" (ngSubmit)="Send_mails()">
+                <div class="row d-flex justify-content-start">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>Nombre:</strong></label>
+                            <input class="form-control" [class.is-invalid]="nameInvalid" type="text" formControlName="nombre">
+                            <small *ngIf="nameInvalid" class="text-danger">
+										El campo nombre es obligatorio.
+									</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>Apellido:</strong></label>
+                            <input class="form-control" [class.is-invalid]="LastnameInvalid" type="text" formControlName="apellido">
+                            <small *ngIf="LastnameInvalid" class="text-danger">
+										El campo nombre es obligatorio.
+									</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>E-mail:</strong></label>
+                            <input class="form-control" [class.is-invalid]="emailInvalid" type="text" formControlName="email">
+                            <small *ngIf="emailInvalid" class="text-danger">
+										El campo nombre es obligatorio.
+									</small>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label><strong>Provincia:</strong></label>
+                            <select class="form-control" [class.is-invalid]="provinciaInvalid" formControlName="provincia">
+									<option value="">Selecione Provincia</option>
+									<option value="Jujuy">Jujuy</option>
+									<option value="Salta">Salta</option>
+									<option value="Formosa">Formosa</option>
+									<option value="Chaco">Chaco</option>
+									<option value="Tucuman">Tucuman</option>
+									<option value="Catamarca">Catamarca</option>
+									<option value="Mendoza">Mendoza</option>
+									<option value="Stgo. del Estero">Stgo. del Estero</option>
+									<option value="Misiones">Misiones</option>
+									<option value="Corriente">Corriente</option>
+									<option value="Entre Rios">Entre Rios</option>
+									<option value="Cordoba">Cordoba</option>
+									<option value="San Juan">San Juan</option>
+									<option value="San Luis">San Luis</option>
+									<option value="San Luis">La Rioja</option>
+									<option value="Santa Fe">Santa Fe</option>
+									<option value="Buenos Aires">Buenos Aires</option>
+									<option value="La Pampa">La Pampa</option>
+									<option value="Chubut">Chubut</option>
+									<option value="Neuquen">Neuquen</option>
+									<option value="Santa Cruz">Santa Cruz</option>
+									<option value="Rio Negro">Rio Negro</option>
+									<option value="Tierra del Fuego">Tierra del Fuego</option>
+								</select>
+                            <small *ngIf="provinciaInvalid" class="text-danger">
+									El campo nombre es obligatorio.
+								</small>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="form-label"><strong>Comentario:</strong></label>
+                            <textarea class="form-control" formControlName="comentario" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <button type="submit" style="width:100% !important" *ngIf="!loader" class="btn btn-primary btn-contacto">
+	
+								<strong >Enviar</strong>
+							</button>
+                            <button type="button" style="width:100% !important; color:white" name="button" class="btn btn-primary btn-contacto" [disabled]="loader" *ngIf="loader">
+							<i  class="fas fa-spinner fa-spin "></i>
+						</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

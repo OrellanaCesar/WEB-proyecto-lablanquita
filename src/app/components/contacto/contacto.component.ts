@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { EmailService } from 'src/app/services/email.service';
 import Swal from 'sweetalert2';
@@ -12,7 +12,14 @@ export class ContactoComponent implements OnInit {
 	forma: FormGroup;
 	error:boolean = false;
 	loader:boolean = false;
-	email:string = 'limpiezablanquita.contacto@gmail.com'
+	email:string = 'limpiezablanquita.contacto@gmail.com';
+	scrWidth:any;
+
+	@HostListener('window:resize', ['$event'])
+    getScreenSize(event?) {
+          this.scrWidth = window.innerWidth;
+          console.log( this.scrWidth);
+    }
 	constructor(private fb:FormBuilder,
 		private _mail:EmailService) {
 		this.createForm();
