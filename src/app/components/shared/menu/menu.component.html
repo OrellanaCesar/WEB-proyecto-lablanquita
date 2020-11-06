@@ -217,8 +217,12 @@
       Contacto
   </a>
 </li>
-<li class="nav-item" routerLinkActive="activo">
-    <a class="nav-link  letra" [routerLink]="['dashboardUsers']"  [class.margen-item-menu]="scrWidth>990">
+<li class="nav-item"
+    routerLinkActive="activo"
+    *ngIf="isAuthAdmin()">
+    <a class="nav-link  letra"
+       [routerLink]="['dashboardUsers']"
+       [class.margen-item-menu]="scrWidth>990">
       Usuarios
   </a>
 </li>
@@ -288,7 +292,8 @@
                             name="button">
                             Ingresar
                     </button>
-                    <a (click)="goRecoverPass()">
+                    <a (click)="goRecoverPass()"
+                        style="color:#007bff;cursor:pointer;">
                        ¿Has olvidado la contraseña?
                     </a>
                 </div>
@@ -296,10 +301,7 @@
         </div>
     </div>
 </div>
-</form>
-</div>
-</div>
-</div>
+
 
 <!-- modal registrar -->
 <div class="modal fade animate__animated animate__fadeInUp" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -362,6 +364,7 @@
               Registrar
           </button>
       </div>
+      
   </form>
 </div>
 </div>
