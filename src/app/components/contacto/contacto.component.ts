@@ -23,6 +23,7 @@ export class ContactoComponent implements OnInit {
 	constructor(private fb:FormBuilder,
 		private _mail:EmailService) {
 		this.createForm();
+		this.getScreenSize();
 	}
 
 	ngOnInit(): void {
