@@ -13,7 +13,7 @@ import { DataServicesService } from 'src/app/services/data-services.service';
 	styleUrls: ['./create-brand.component.css']
 })
 export class CreateBrandComponent implements OnInit {
-	form:FormGroup;
+	forma:FormGroup;
 	loader:boolean = false;
 	error:boolean = false;
 	// listBrands : BrandModel [] = [];
@@ -29,7 +29,7 @@ export class CreateBrandComponent implements OnInit {
 
 	createForm(){
 		/*Crea el formulario para la marca */
-		this.form = this.fb.group({
+		this.forma = this.fb.group({
 			brand_name:['',Validators.required]
 		})
 	}
@@ -41,7 +41,7 @@ export class CreateBrandComponent implements OnInit {
 
 	get InvalidName(){
 		/*Verifica si el nombre de la marca es valido*/
-		return this.form.get('brand_name').invalid && this.form.get('brand_name').touched;
+		return this.forma.get('brand_name').invalid && this.forma.get('brand_name').touched;
 	}
 
 	loadBrand(){
@@ -63,18 +63,18 @@ export class CreateBrandComponent implements OnInit {
 		return: devuelve un mensaje si se registro correctamente o no*/
 		this.error = false;
 		this.loader = true;
-		if(this.form.invalid){
+		if(this.forma.invalid){
 			this.loader = false;
-			return Object.values(this.form.controls).forEach(control => {
+			return Object.values(this.forma.controls).forEach(control => {
 				control.markAsTouched();
 			})
 		}
 		const data = new FormData();
-		data.append('brand_name',this.form.get('brand_name').value);
+		data.append('brand_name',this.forma.get('brand_name').value);
 		this._brand.createBrand(data)
 		.subscribe((resp:any) => {
 			this.loader = false;
-			this.form.reset({
+			this.forma.reset({
 				brand_name:''
 			});
 			const Toast = Swal.mixin({

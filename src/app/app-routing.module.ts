@@ -14,21 +14,22 @@ import { UpdateProductComponent } from './components/products/update-product/upd
 import { ShowProductComponent } from './components/products/show-product/show-product.component';
 import { SearchProductsComponent } from './components/search/search-products/search-products.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
 {path:'' , component:HomeComponent},
 {path:'ubicacion' , component:UbicacionComponent},
-{path:'createBrand',component:CreateBrandComponent},
-{path:'createProduct',component:CreateProductComponent},
-{path:'dashboardBrand' , component:DataTableBrandComponent},
-{path:'dashboardCategory' , component:DataTableCategoryComponent},
-{path:'dashboardProducts' , component:DataTableProductsComponent},
-{path:'createCategory',component:CreateCategoryComponent},
-{path:'updatebrand/:id' , component:UpdatebrandComponent},
-{path:'updateProduct/:id' , component:UpdateProductComponent},
+{path:'createBrand',component:CreateBrandComponent, canActivate:[AuthGuard]},
+{path:'createProduct',component:CreateProductComponent, canActivate:[AuthGuard]},
+{path:'dashboardBrand' , component:DataTableBrandComponent, canActivate:[AuthGuard]},
+{path:'dashboardCategory' , component:DataTableCategoryComponent, canActivate:[AuthGuard]},
+{path:'dashboardProducts' , component:DataTableProductsComponent, canActivate:[AuthGuard]},
+{path:'createCategory',component:CreateCategoryComponent, canActivate:[AuthGuard]},
+{path:'updatebrand/:id' , component:UpdatebrandComponent, canActivate:[AuthGuard]},
+{path:'updateProduct/:id' , component:UpdateProductComponent, canActivate:[AuthGuard]},
 {path:'products/:id',component:ShowProductComponent},
-{path:'updateCategory/:id',component:ModifyCategoryComponent},
+{path:'updateCategory/:id',component:ModifyCategoryComponent, canActivate:[AuthGuard]},
 {path:'search/:tipo/:id/:valor',component:SearchProductsComponent},
 {path:'contacto',component:ContactoComponent},
 {path:'**', pathMatch:'full', redirectTo:''},

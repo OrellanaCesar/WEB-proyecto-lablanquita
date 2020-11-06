@@ -9,18 +9,20 @@ import Swal from 'sweetalert2';
 	styleUrls: ['./contacto.component.css']
 })
 export class ContactoComponent implements OnInit {
-	email:string = 'pablofacundoorellana@gmail.com';
-	form: FormGroup;
+	forma: FormGroup;
 	error:boolean = false;
 	loader:boolean = false;
+	email:string = 'limpiezablanquita.contacto@gmail.com'
 	constructor(private fb:FormBuilder,
-		private _mail:EmailService) { }
+		private _mail:EmailService) {
+		this.createForm();
+	}
 
 	ngOnInit(): void {
 	}
 
 	createForm(){
-		this.form = this.fb.group({
+		this.forma = this.fb.group({
 			nombre:['',Validators.required],
 			apellido:['',Validators.required],
 			email:['',Validators.required],
@@ -29,18 +31,24 @@ export class ContactoComponent implements OnInit {
 		})
 	}
 
-	Send(){
+	Send_mails(){
 		this.loader = true;
+		if( this.forma.invalid){
+			this.loader = false;
+			return Object.values(this.forma.controls).forEach(control => {
+				control.markAsTouched();
+			})
+		};
 		const data = new FormData();
-		data.append('nombre',this.form.get('nombre').value);
-		data.append('apellido',this.form.get('apellido').value);
-		data.append('email',this.form.get('email').value);
-		data.append('provincia',this.form.get('provincia').value);
-		data.append('comentario',this.form.get('comentario').value);
+		data.append('nombre',this.forma.get('nombre').value);
+		data.append('apellido',this.forma.get('apellido').value);
+		data.append('email',this.forma.get('email').value);
+		data.append('provincia',this.forma.get('provincia').value);
+		data.append('comentario',this.forma.get('comentario').value);
 		this._mail.sendMail(data)
 		.subscribe((resp:any) =>{
 			this.loader = false;
-			this.form.reset({
+			this.forma.reset({
 				nombre:'',
 				apellido:'',
 				email:'',
@@ -79,10 +87,31 @@ export class ContactoComponent implements OnInit {
 			})
 			Toast.fire({
 				icon: 'error',
-				title: error.error.message
+				title: 'Correo no Enviado'
 			});
 		})
 
+	}
+
+
+	get nameInvalid(){
+
+		return this.forma.get('nombre').invalid && this.forma.get('nombre').touched ;
+	}
+
+	get LastnameInvalid(){
+
+		return this.forma.get('apellido').invalid && this.forma.get('apellido').touched ;
+	}
+
+	get emailInvalid(){
+
+		return this.forma.get('email').invalid && this.forma.get('email').touched ;
+	}
+
+	get provinciaInvalid(){
+
+		return this.forma.get('provincia').invalid && this.forma.get('provincia').touched ;
 	}
 
 }

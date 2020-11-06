@@ -17,7 +17,7 @@ export class UpdatebrandComponent implements OnInit {
 	brand :BrandModel ;
 	loader:boolean = false;
 	error:boolean = false;
-	form: FormGroup;
+	forma: FormGroup;
 	constructor(private router:Router,
 		private routerA: ActivatedRoute,
 		private _brand:BrandService,
@@ -41,7 +41,7 @@ export class UpdatebrandComponent implements OnInit {
 		this._brand.getBrand(this.id)
 		.subscribe((resp:any) => {
 			this.brand = new BrandModel(resp[0]);
-			this.form.get('brand_name').setValue(this.brand.brand_name);
+			this.forma.get('brand_name').setValue(this.brand.brand_name);
 			console.log(resp[0]);
 		},
 		(error:any) => {
@@ -56,7 +56,7 @@ export class UpdatebrandComponent implements OnInit {
 
 	get InvalidName(){
 		/*Verifica si el nombre de la marca es valido*/
-		return this.form.get('brand_name').invalid ;
+		return this.forma.get('brand_name').invalid ;
 	}
 
 
@@ -64,15 +64,15 @@ export class UpdatebrandComponent implements OnInit {
 
 		this.error = false;
 		this.loader = true;
-		if( this.form.invalid){
+		if( this.forma.invalid){
 			this.loader = false;
-			return Object.values(this.form.controls).forEach(control => {
+			return Object.values(this.forma.controls).forEach(control => {
 				control.markAsTouched();
 			})
 
 		}
 		const data = new FormData();
-		data.append('brand_name',this.form.get('brand_name').value );
+		data.append('brand_name',this.forma.get('brand_name').value );
 		console.log(data);
 
 		this._brand.updateBrand(this.id,data)
@@ -124,7 +124,7 @@ export class UpdatebrandComponent implements OnInit {
 
 	createForm(){
 
-		this.form =this.fb.group({
+		this.forma =this.fb.group({
 			brand_name:['',Validators.required]
 
 		});
