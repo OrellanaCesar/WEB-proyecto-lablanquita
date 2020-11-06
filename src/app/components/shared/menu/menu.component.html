@@ -172,45 +172,45 @@
               <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
 
                 <a class="nav-link dropdown-toggle letra" id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Marcas
-             </a>
+                   Marcas
+               </a>
 
-             <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
+               <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
                 <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardBrand']">
                   Gestión de Marcas
               </a>
               <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
               <a class="dropdown-item nav-link brand-item " style="color:white;" (click)="searchProducts(brand.brand_id,1,'')" *ngFor="let brand of _data.listBrands">
-                 {{ brand.brand_name }}
-             </a>
-         </div>
-     </li>
+               {{ brand.brand_name }}
+           </a>
+       </div>
+   </li>
 
-     <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+   <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
 
-        <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Productos
-        </a>
+    <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Productos
+    </a>
 
-        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
-            <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
-             Gestión de Categorías
-         </a>
-         <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-         <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
-             Gestión de Productos
-         </a>
-         <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-         <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
-             {{ category.category_name }}
-         </a>
-     </div>
- </li>
- <li class="nav-item" routerLinkActive="activo">
+    <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
+        <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
+           Gestión de Categorías
+       </a>
+       <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+       <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
+           Gestión de Productos
+       </a>
+       <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+       <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
+           {{ category.category_name }}
+       </a>
+   </div>
+</li>
+<li class="nav-item" routerLinkActive="activo">
 
     <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
-     Ubicación
- </a>
+       Ubicación
+   </a>
 </li>
 <li class="nav-item" routerLinkActive="activo">
     <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
@@ -256,10 +256,10 @@
                     <label>Password</label>
                     <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValido ">
                     <small *ngIf="passwordNoValido" class="text-danger">
-                     El password es obligatorio.
-                 </small>
-             </div>
-             <div class="form-group">
+                       El password es obligatorio.
+                   </small>
+               </div>
+               <div class="form-group">
 
                 <small *ngIf="error" class="text-danger">
                   No existe el usuario. Ingrese nuevamente los datos
@@ -301,10 +301,10 @@
                         <input type="text" placeholder="Ingresar nombre" class="form-control" formControlName="user_name" [class.is-invalid]="nameNoValido ">
 
                         <small *ngIf="nameNoValido" class="text-danger">
-                           El nombre es obligatorio.
-                       </small>
-                   </div>
-                   <div class="form-group">
+                         El nombre es obligatorio.
+                     </small>
+                 </div>
+                 <div class="form-group">
                     <label>Email</label>
                     <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValidoSignup ">
 
