@@ -1,0 +1,104 @@
+
+<div class=" mt-5 mb-5 margin">
+	<div class="row">
+		<div class="col-lg-12 table-responsive panel-smart-tabla">
+			<button type="button"
+			class="btn  mb-5 float-right btn-info">
+			<i class="fas fa-plus"></i>
+			<strong>Usuario</strong>
+		</button>
+		<table id="tablaM"
+		datatable [dtOptions]="dtOptions"
+		class="table table-responsive-sm table-bordered table-striped table-sm hover">
+		<thead class="dashboard">
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>Perfil</th>
+				<th>Fecha de Creacion</th>
+				<th>Fecha de Modificacion</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody *ngIf="Users?.length != 0">
+			<tr *ngFor="let user of Users">
+				<td>{{ user.user_id }}</td>
+
+				<td>{{ user.user_name }}</td>
+
+				<td>{{ user.user_email}}</td>
+
+				<td>{{ user.profile_name}}</td>
+
+				<td>{{ user.user_create_date}}</td>
+
+				<td>{{ user.user_change_date}}</td>
+
+
+
+				<td align="center">
+					<div class="row datatable-botones" >
+
+						<button type="button"
+						class="btn btn-modify mr-1 px-2">
+						<i style="color:white !important" class="far fa-edit"></i>
+					</button>
+					<button type="button"
+					class="btn btn-danger px-2"
+
+					data-toggle="modal" [attr.data-target]="'#modal' + user.user_id">
+					<i class="far fa-trash-alt" style="color:white !important"></i>
+				</button>
+
+				<!-- Modal para eliminacion -->
+
+				<div class="modal fade" [attr.id]="'modal' + user.user_id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">Confirmación de Operación</h5>
+								<button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								¿Esta seguro de eliminar la marca?
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary boton-modal" data-dismiss="modal">Si</button>
+								<button type="button" class="btn btn-secondary boton-modal" data-dismiss="modal" aria-label="Close">No</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Fin de Modal -->
+			</div>
+
+
+		</td>
+	</tr>
+
+</tbody>
+<tbody *ngIf="Users?.length == 0">
+	<tr>
+		<td colspan="3" class="no-data-available text-center">No hay datos</td>
+	</tr>
+	<tbody>
+		<tfoot>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Email</th>
+				<th>Perfil</th>
+				<th>Fecha de Creacion</th>
+				<th>Fecha de Modificacion</th>
+				<th>Acciones</th>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+</div>
+</div>
