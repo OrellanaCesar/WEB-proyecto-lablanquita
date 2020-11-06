@@ -47,25 +47,22 @@ export class DataTableUserComponent implements OnInit {
 			},
 			columns: [
 			{
-				data:'product_id'
+				data:'user_id'
 			},
 			{
-				data: 'product_name'
+				data: 'user_name'
 			},
 			{
-				data: 'category_name'
+				data: 'user_email'
 			},
 			{
-				data: 'brand_name'
+				data: 'profile_name'
 			},
 			{
-				data: 'product_price'
+				data: 'user_create_date'
 			},
 			{
-				data: 'product_stock'
-			},
-			{
-				data: 'product_image'
+				data: 'user_change_date'	
 			},
 			{
 				data: 'action'
