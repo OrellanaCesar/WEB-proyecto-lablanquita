@@ -16,11 +16,13 @@ import { SearchProductsComponent } from './components/search/search-products/sea
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
 
 
 const routes: Routes = [
 {path:'' , component:HomeComponent},
 {path:'ubicacion' , component:UbicacionComponent},
+{path:'recoverPassword',component:RecoverPasswordComponent},
 {path:'createBrand',component:CreateBrandComponent, canActivate:[AuthGuard]},
 {path:'createProduct',component:CreateProductComponent, canActivate:[AuthGuard]},
 {path:'dashboardBrand' , component:DataTableBrandComponent, canActivate:[AuthGuard]},
