@@ -1,0 +1,68 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-lg-12">
+			<button type="button"
+			class="btn btn-primary float-left "
+			(click)="goGrid()">
+			<i class="fas fa-angle-left"></i> Volver a Grilla</button>
+		</div>
+
+	</div>
+</div>
+
+<div class="container mt-5">
+	<form [formGroup]="forma" (ngSubmit)="update()" class="form-brand" >
+		<div class="row d-flex justify-content-start">
+			<div class="media col-md-12">
+				<div class="media-body " align="center">
+					<br>
+					<h1>Modificar Marca</h1>
+
+				</div>
+        <!-- <div class="media-right product-images" align="center">
+          <img class="imagen-producto" [src]="url_image"   alt="">
+
+        </div> -->
+      </div>
+      <div class="col-md-12">
+       <div class="form-group">
+        <label for="brand_name"><strong>Nombre de Marca:</strong></label>
+        <input type="text"
+        id="brand_name"
+        placeholder="Ingresar nombre de la marca"
+        class="form-control"
+        [class.is]="InvalidName"
+        formControlName="brand_name">
+        <small *ngIf="InvalidName" class="text-danger">
+         El campo nombre es obligatorio.
+       </small>
+     </div>
+   </div>
+   <div class="col-md-12" *ngIf="error">
+     <div class="form-group">
+      <strong class="text-danger">
+       No se pudo registrar la marca. Hubo error al enviar los datos
+     </strong>
+   </div>
+ </div>
+ <div class="col-md-12" >
+   <div class="form-group">
+    <button type="submit" style="width:100% !important" class="btn btn-primary">
+     <strong >Guardar Cambios</strong>
+   </button>
+
+ </div>
+</div>
+<div class="col-md-12" *ngIf="loader">
+ <div class="form-group">
+  <button type="submit" [disabled]="loader" style="width:100% !important" class="btn btn-primary">
+   <i  class="fas fa-spinner fa-spin "></i>
+ </button>
+
+
+</div>
+</div>
+</div>
+</form>
+
+</div>

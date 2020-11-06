@@ -1,0 +1,19 @@
+.product-images{
+    border: 1px solid ;
+    color: black ;
+    background-color: #fff ;
+    width: 150px;
+    height: 150px;
+}
+
+.imagen-producto{
+  width: 150px;
+  height: 150px;
+}
+
+.ocupado{
+  background-color: #f98a8a;
+}
+.libre{
+  background-color: #75c375;
+}

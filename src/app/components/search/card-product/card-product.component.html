@@ -1,0 +1,51 @@
+<div class="col mb-4">
+  <div class="card tarjetas">
+    <div class="slide">
+      <img [src]="url + product.product_image"
+           class="card-img-top"
+           alt=""
+           height="250" width="500">
+    </div>
+    <div class="card-body bg-fondo">
+      <h5 class="card-title botones-contacto">
+        {{product.product_name}}
+      </h5>
+      <h4 class="card-title marca-product">
+        {{ product.brand.brand_name }}
+      </h4>
+      <p class="card-text descripcion">
+        <strong>
+
+          {{ product.product_description }}
+        </strong>
+      </p>
+      <div  class="row">
+        <h3 class="mr-5 precio">
+          Precio: ${{ product.product_price | number:'.0-2' }}
+        </h3>
+        <!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
+      </div>
+      <div class="row" style="justify-content:center;">
+        <a href="https://api.whatsapp.com/send?phone=543875851100&amp;text=Hola%20La%20Blanquita" class="decoration" target="_blank">
+
+          <button type="button" class="btn btn-success mb-1">
+            <i class="fab fa-whatsapp"></i>
+            Realizar Consulta
+          </button>
+        </a>
+      </div>
+      <div class="row">
+        <h3 *ngIf="product.product_stock"
+            class="mr-5 stock precio">
+            Hay stock
+        </h3>
+        <h3 *ngIf="!product.product_stock"
+            class="mr-5 stock sinStock">
+            No Hay stock
+        </h3>
+
+      </div>
+
+    </div>
+  </div>
+</div>
