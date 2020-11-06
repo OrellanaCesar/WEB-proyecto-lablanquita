@@ -233,9 +233,14 @@
 
                 <div class="modal-header modal-header-color">
                     <h5 class="modal-title" id="exampleModalLabel">Ingresá a mi cuenta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal()" id="botonModal">
-            <span aria-hidden="true">&times;</span>
-          </button>
+                      <button type="button"
+                              class="close"
+                              data-dismiss="modal"
+                              aria-label="Close"
+                              (click)="modal()"
+                              id="botonModal">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
@@ -243,34 +248,41 @@
                         <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValido ">
 
                         <small *ngIf="emailNoValido" class="text-danger">
-              El email es obligatorio.
-            </small>
+                          El email es obligatorio.
+                        </small>
                     </div>
                     <div class="form-group">
                         <label>Password</label>
                         <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValido ">
                         <small *ngIf="passwordNoValido" class="text-danger">
-               El password es obligatorio.
-             </small>
+                          El password es obligatorio.
+                        </small>
                     </div>
                     <div class="form-group">
 
                         <small *ngIf="error" class="text-danger">
-              No existe el usuario. Ingrese nuevamente los datos
-            </small>
+                          No existe el usuario. Ingrese nuevamente los datos
+                        </small>
                     </div>
                 </div>
                 <div class="modal-footer" *ngIf="disabled">
 
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-              <i  class="fas fa-spinner fa-spin "></i>
-            </button>
+                    <button type="submit"
+                            [disabled]="disabled"
+                            class="btn boton-login"
+                            name="button">
+                      <i  class="fas fa-spinner fa-spin "></i>
+                    </button>
                 </div>
                 <div class="modal-footer" *ngIf="!disabled">
 
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-              Ingresar
-            </button>
+                    <button type="submit"
+                            [disabled]="disabled"
+                            class="btn boton-login"
+                            name="button">
+                            Ingresar
+                    </button>
+                    <a href="#">¿Has olvidado la contraseña?</a>
                 </div>
             </form>
         </div>
