@@ -132,6 +132,16 @@
     }
 }
 
+@media (max-width:414px) and (min-width:375px) {
+    .btn-acceder {
+        font-size: 11px;
+        /* margin-left: 2px; */
+        margin-right: 6px;
+        margin-bottom: 1rem;
+        width: 7rem;
+    }
+}
+
 @media (width:640px) {
     .btn-acceder {
         width: 15rem;
@@ -161,6 +171,8 @@
         /* width: 100% ; */
     }
 }
+
+
 
 .letra {
     font-family: Georgia, Cambria, Times, "Times New Roman";

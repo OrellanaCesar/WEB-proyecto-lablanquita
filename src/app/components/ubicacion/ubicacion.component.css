@@ -61,6 +61,15 @@
     font-size: 1rem;
 }
 
+@media(max-width:768px){
+
+  .item-contacto-small {
+    display: flex;
+    color: #ef553c !important;
+    font-size: 0.8rem;
+  }
+}
+
 .item-contacto-small:hover {
     font-size: 1.2rem;
 }
