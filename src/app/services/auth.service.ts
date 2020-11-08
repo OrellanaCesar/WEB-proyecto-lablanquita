@@ -7,7 +7,7 @@ import { ApiSettigns } from 'src/app/API/API.settings';
   providedIn: 'root'
 })
 export class AuthService {
-  
+
   user_token = '';
   type_token = '';
   profile = '';
@@ -31,10 +31,10 @@ export class AuthService {
   }
 
   login(user:UserModel){
- 
+
     const auth = {
       user_email:user.user_email,
-      user_password:user.user_password, 
+      user_password:user.user_password,
       remember_me:true
     }
 
@@ -48,7 +48,7 @@ export class AuthService {
   }
 
   logout(){
-    
+
     const headers = {
       "Authorization":`${this.type_token} ${this.user_token}`
     }
@@ -99,5 +99,17 @@ export class AuthService {
     }
       return this.http.get(`${ApiSettigns.url}auth/user`,{ headers });
 
+  }
+
+  recoverPass(usar_email:any){
+    const headers = {
+      'Content-Type': 'application/json',
+      'X-Requested-With': 'XMLHttpRequest'
+    };
+    const data = {
+      user_email:usar_email
+    };
+
+    return this.http.post(`${ApiSettigns.url}auth/recoverPass`,data,{ headers });
   }
 }
