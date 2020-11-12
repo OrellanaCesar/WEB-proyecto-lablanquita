@@ -1,0 +1,116 @@
+.fondo-footer {
+	background-color:#ef9b3c !important;
+	/* background-image: url(assets/images/logo.png); */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-size: 250%;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-attachment: fixed;
+	/* height: 15rem; */
+}
+
+.contacto-footer{
+	color: #c1bdbd !important;
+	cursor: pointer !important;
+	font-size: 13px !important;
+	line-height: 22px !important;
+	font-weight: 300 !important;
+}
+
+.botones-contacto-footer{
+	color: #297582 !important;
+	font-size: 15px;
+	/* margin-right: .3rem; */
+	margin: .3rem;
+}
+
+.botones-sociales-footer{
+	color: #297582 !important;
+	font-size: 25px;
+	/* margin-right: .3rem; */
+	margin: .3rem;
+}
+
+.botones-sociales-camion-footer{
+	color: #297582 !important;
+	font-size: 18px;
+	/* margin-right: .3rem; */
+	margin: .3rem;
+}
+
+
+.contacto {
+	color: #616161 !important;
+	cursor: pointer !important;
+	font-size: 13px !important;
+	line-height: 22px !important;
+	font-weight: 300 !important;
+}
+
+.decoration:link{
+	text-decoration: none !important;
+}
+
+.bank-pago{
+	width: 0.7em !important;
+	height: 0.7em !important;
+	color : #297582 !important;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+}
+
+.mercado-pago{
+	width:3vw;
+	height:4vh;
+	margin-left: 5px;
+	margin-bottom: 1rem;
+}
+.naranja{
+	height: 5vh;
+	width: 4vw;
+	margin-bottom: 4px;
+}
+@media(max-width:768px){
+	.mercado-pago{
+		width: 8vw;
+		height: 5vh;
+		margin-left: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.bank-pago{
+		margin-left: 1rem;
+	}
+	.naranja{
+		height: 5vh;
+		width: 17vw;
+	}
+}
+
+.tarjetas-pago{
+	display: flex;
+}
+
+.tarjeta-item{
+	margin-right: 2px;
+}
+
+
+
+
+.derechos{
+	color: #297582 !important;
+}
+
+@media(max-width:768px){
+	.derechos{
+		font-size: 10px !important;
+	}
+}
+
+.item-contacto {
+	display: flex;
+	margin-left: 1px;
+}
+
