@@ -33,6 +33,8 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardProductComponent } from './components/search/card-product/card-product.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
+import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
+import { SendMailComponent } from './components/users/send-mail/send-mail.component';
 
 
 
@@ -58,7 +60,9 @@ import { RecoverPasswordComponent } from './components/users/recover-password/re
   ContactoComponent,
   CardProductComponent,
   DataTableUserComponent,
-  RecoverPasswordComponent
+  RecoverPasswordComponent,
+  UsersClientsComponent,
+  SendMailComponent
   ],
   imports: [
   BrowserModule,

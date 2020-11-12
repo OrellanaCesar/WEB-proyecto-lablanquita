@@ -17,6 +17,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
+import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
 {path:'updateCategory/:id',component:ModifyCategoryComponent, canActivate:[AuthGuard]},
 {path:'search/:tipo/:id/:valor',component:SearchProductsComponent},
 {path:'contacto',component:ContactoComponent},
+{path:'clients',component:UsersClientsComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 

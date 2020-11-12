@@ -1,0 +1,54 @@
+.no-data-available {
+    text-align: center !important;
+}
+
+.panel-smart-tabla {
+    padding: 20px;
+    background: #fcf8db;
+    border: 1px solid #fcf8db;
+    border-radius: 6px;
+    word-wrap: break-word;
+    box-shadow: 2px 2px 12px #999;
+}
+
+.panel-smart .panel-heading {
+    padding: 5px 0 15px 0;
+    color: #252a2f;
+    border-bottom: 1px solid #929497;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #eee;
+}
+
+table.dataTable.hover tbody tr:hover,
+table.dataTable.display tbody tr:hover {
+    background-color: #b1b1eb;
+}
+
+.dashboard {
+    background-color: #ef9b3c;
+    color: white;
+}
+
+.check{
+  height: 3vh;
+  width: 3vw;
+}
+
+@media(max-width:768px){
+  .check{
+    height: 6vh;
+    width: 6vw;
+  }
+}
+
+.select-all{
+  display: flex;
+  align-items: center;
+}
+
+.instructivo{
+  margin-top: 3rem;
+  font-size: 22px;
+}

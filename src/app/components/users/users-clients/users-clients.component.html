@@ -1,0 +1,107 @@
+<div class="container">
+	<p class="instructivo">
+
+		Seleccione los usuarios a los que quiere enviar email.
+	</p>
+	<div class=" mt-5 mb-5 margin">
+		<div class="row">
+			<div class="col-lg-12 table-responsive panel-smart-tabla">
+				<!-- <button type="button"
+				class="btn  mb-5 float-right btn-info">
+				<i class="fas fa-plus"></i>
+				<strong>Clientes</strong>
+			</button> -->
+			<label class="float-right  mb-3 select-all">
+
+				<input type="checkbox"
+				class="check"
+				(change)="allSelect($event)">&nbsp;
+				<strong >
+
+					Seleccionar todo
+				</strong>
+			</label>
+			<table id="tablaM"
+			datatable [dtOptions]="dtOptions"
+			class="table table-responsive-sm table-bordered table-striped table-sm hover">
+			<thead class="dashboard">
+				<tr align="center">
+					<th >Nombre</th>
+					<th >Email</th>
+					<th >Acciones</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="clients?.length != 0">
+				<tr *ngFor="let client of clients">
+
+
+					<td align="center">{{ client.user_name }}</td>
+
+					<td align="center">{{ client.user_email}}</td>
+
+
+
+					<td align="center">
+
+						<!-- <button type="button"
+										class="btn btn-primary">
+										Ver
+						</button> -->
+						<input type="checkbox"
+									 [id]="client.user_id"
+									 class="check"
+									 (change)="check($event,client.user_id)">&nbsp;
+
+					</td>
+				</tr>
+
+			</tbody>
+			<tbody *ngIf="clients?.length == 0">
+				<tr>
+					<td colspan="3" class="no-data-available text-center">No hay datos</td>
+				</tr>
+				<tbody>
+					<tfoot>
+						<tr>
+							<th>Nombre</th>
+							<th>Email</th>
+							<th>Acciones</th>
+						</tr>
+					</tfoot>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+		<button type="button"
+					  class="btn btn-info"
+						style="width:100%;"
+						(click)="next()">
+						Siguiente
+	  </button>
+		<div class="row">
+
+			<div class="col-md-6">
+
+				<button type="button"
+								class="btn btn-info"
+								style="width:100%;"
+								(click)="back()">
+								Atras
+				</button>
+
+			</div>
+			<div class="col-md-6">
+
+						<button type="button"
+										class="btn btn-info"
+										style="width:100%;"
+										(click)="sendMail()">
+										Enviar email
+					 </button>
+			</div>
+		</div>
+
+
+</div>
