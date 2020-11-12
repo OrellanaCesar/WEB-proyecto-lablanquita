@@ -35,7 +35,7 @@ import { DataTableUserComponent } from './components/users/data-table-user/data-
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
 import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
 import { SendMailComponent } from './components/users/send-mail/send-mail.component';
-
+import {FooterComponent} from './components/shared/footer/footer.component';
 
 
 
@@ -63,6 +63,7 @@ import { SendMailComponent } from './components/users/send-mail/send-mail.compon
   RecoverPasswordComponent,
   UsersClientsComponent,
   SendMailComponent
+  FooterComponent
   ],
   imports: [
   BrowserModule,
