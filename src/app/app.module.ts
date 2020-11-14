@@ -59,7 +59,7 @@ import {FooterComponent} from './components/shared/footer/footer.component';
   ContactoComponent,
   CardProductComponent,
   DataTableUserComponent,
-  ModifyUserComponent
+  ModifyUserComponent,
   RecoverPasswordComponent,
   FooterComponent
   ],
