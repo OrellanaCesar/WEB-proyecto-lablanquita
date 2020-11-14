@@ -32,6 +32,7 @@ import { SearchProductsComponent } from './components/search/search-products/sea
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardProductComponent } from './components/search/card-product/card-product.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
+import { ModifyUserComponent } from './components/users/modify-user/modify-user.component';
 
 
 
@@ -56,7 +57,8 @@ import { DataTableUserComponent } from './components/users/data-table-user/data-
   SearchProductsComponent,
   ContactoComponent,
   CardProductComponent,
-  DataTableUserComponent
+  DataTableUserComponent,
+  ModifyUserComponent
   ],
   imports: [
   BrowserModule,

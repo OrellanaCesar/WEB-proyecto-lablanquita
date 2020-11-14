@@ -16,6 +16,7 @@ import { SearchProductsComponent } from './components/search/search-products/sea
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { AuthGuard } from './guards/auth.guard';
+import { ModifyUserComponent } from './components/users/modify-user/modify-user.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,7 @@ const routes: Routes = [
 {path:'updateCategory/:id',component:ModifyCategoryComponent, canActivate:[AuthGuard]},
 {path:'search/:tipo/:id/:valor',component:SearchProductsComponent},
 {path:'contacto',component:ContactoComponent},
+{path:'updateUser',component:ModifyUserComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
 
