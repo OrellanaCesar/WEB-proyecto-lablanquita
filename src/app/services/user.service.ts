@@ -37,4 +37,22 @@ export class UserService {
 		};
 		return this.http.post(`${ApiSettigns.url}users/sendMailClients/${type}`,data, { headers } );
 	}
+
+	getUsers(){
+		return this.http.get(`${ApiSettigns.url}users`)
+	}
+
+	deleteUser(id:number){
+		const headers = {
+			"Accept" : "application/json"
+		};
+		return this.http.delete(`${ApiSettigns.url}users/delete/${id}`, { headers });
+	}
+
+	createUser(data:FormData){
+		const headers = {
+			'Accept': 'application/json'
+		};
+		return this.http.post(`${ApiSettigns.url}auth/signupAdministrador`, data, {headers});
+	}
 }

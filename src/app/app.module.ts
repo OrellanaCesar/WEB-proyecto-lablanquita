@@ -37,6 +37,9 @@ import { RecoverPasswordComponent } from './components/users/recover-password/re
 import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
 import { SendMailComponent } from './components/users/send-mail/send-mail.component';
 import {FooterComponent} from './components/shared/footer/footer.component';
+import { CreateUserAdminComponent } from './components/users/create-user-admin/create-user-admin.component';
+
+
 
 
 
@@ -52,6 +55,7 @@ import {FooterComponent} from './components/shared/footer/footer.component';
   CreateProductComponent,
   CreateCategoryComponent,
   CreateBrandComponent,
+  CreateUserAdminComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
   UpdateProductComponent,
