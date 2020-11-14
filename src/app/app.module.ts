@@ -34,6 +34,7 @@ import { CardProductComponent } from './components/search/card-product/card-prod
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
 import {FooterComponent} from './components/shared/footer/footer.component';
+import { CreateUserAdminComponent } from './components/users/create-user-admin/create-user-admin.component';
 
 
 
@@ -49,6 +50,7 @@ import {FooterComponent} from './components/shared/footer/footer.component';
   CreateProductComponent,
   CreateCategoryComponent,
   CreateBrandComponent,
+  CreateUserAdminComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
   UpdateProductComponent,
@@ -59,7 +61,7 @@ import {FooterComponent} from './components/shared/footer/footer.component';
   CardProductComponent,
   DataTableUserComponent,
   RecoverPasswordComponent,
-  FooterComponent
+  FooterComponent,
   ],
   imports: [
   BrowserModule,

@@ -17,7 +17,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
-
+import { CreateUserAdminComponent } from './components/users/create-user-admin/create-user-admin.component';
 
 const routes: Routes = [
 {path:'' , component:HomeComponent},
@@ -25,6 +25,7 @@ const routes: Routes = [
 {path:'recoverPassword',component:RecoverPasswordComponent},
 {path:'createBrand',component:CreateBrandComponent, canActivate:[AuthGuard]},
 {path:'createProduct',component:CreateProductComponent, canActivate:[AuthGuard]},
+{path:'createUserAdmin',component:CreateUserAdminComponent , canActivate:[AuthGuard]},
 {path:'dashboardBrand' , component:DataTableBrandComponent, canActivate:[AuthGuard]},
 {path:'dashboardCategory' , component:DataTableCategoryComponent, canActivate:[AuthGuard]},
 {path:'dashboardProducts' , component:DataTableProductsComponent, canActivate:[AuthGuard]},
