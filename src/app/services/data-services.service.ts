@@ -12,6 +12,7 @@ export class DataServicesService {
   listBrands : BrandModel [] = [];
   listCategories : CategoryModel[] = [];
   searchProducts : ProductModel[] = [];
+  sendMail: string[] = [];
   listUsers : UserModel[] = [];
   constructor() { }
 }
