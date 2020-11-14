@@ -206,6 +206,7 @@ export class MenuComponent implements OnInit {
     this.error = false;
     this.invalid = true;
     if( this.formLogin.invalid){
+      this.disabled = false;
       return Object.values(this.formLogin.controls).forEach(control => {
           control.markAsTouched();
       })
@@ -311,6 +312,7 @@ export class MenuComponent implements OnInit {
     this.error = false;
     this.invalid = true;
     if( this.formSignup.invalid){
+      this.disabled = false;
       return Object.values(this.formSignup.controls).forEach(control => {
           control.markAsTouched();
       })
@@ -350,5 +352,10 @@ export class MenuComponent implements OnInit {
   goRecoverPass(){
     $('#botonModal').click();
     this.router.navigateByUrl('recoverPassword');
+  }
+
+  goUpdate(){
+    $('#perfilModal').click();
+    this.router.navigateByUrl('updateUser');
   }
 }

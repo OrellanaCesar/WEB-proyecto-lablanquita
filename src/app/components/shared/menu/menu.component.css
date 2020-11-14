@@ -223,6 +223,11 @@
     width: 9rem;
     height: 2rem;
     display: flex;
+    color: #343a40!important;
+    background-color: #ff6529;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-logo-big {
@@ -244,7 +249,13 @@
 
 @media (max-width:360px) {
     .dropdown-menu-big {
-        left: -63px !important;
+        left: -43px !important;
+    }
+}
+
+@media (max-width:411px) {
+    .dropdown-menu-big {
+        left: -40px !important;
     }
 }
 
@@ -254,8 +265,51 @@
     }
 }
 
+@media (width:1024px) {
+    .dropdown-menu-big {
+        left: -40px !important;
+    }
+}
+
+@media(min-width: 768px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
+@media(width: 731px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
+@media(width: 667px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
+@media(width: 736px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
+@media(width: 720px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
+@media(width: 653px) {
+    .alineacion-user {
+        display: flex;
+    }
+}
+
 .dropdown-item-big {
     color: white !important;
+    cursor: pointer;
 }
 
 .dropdown-item-big:hover {
@@ -274,15 +328,17 @@
 
 @media (max-width:360px) {
     .btn-logout {
-        font-size: 1rem;
-        /*margin-left: 38px;*/
-        margin-left: -233px;
+        font-size: 1.3rem;
+        margin-left: -250px;
         margin-right: 2px;
         margin-bottom: 1rem;
         /*width: 70%;*/
         width: 64%;
         display: flex;
         justify-content: center;
+        color: #343a40!important;
+        background-color: #ff6529;
+        border-radius: 8px;
     }
 }
 
@@ -306,7 +362,7 @@
 
 @media (width:1024px) {
     .btn-logout {
-        font-size: 0.6rem;
+        font-size: 1rem;
         margin-left: 1rem;
         margin-right: 2px;
         margin-bottom: 4rem;
@@ -328,6 +384,18 @@
 
 .cerrar-sesion {
     display: flex;
+}
+
+.perfil-modal-image {
+    display: flex;
+    justify-content: center;
+}
+
+.perfil-modal {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 
