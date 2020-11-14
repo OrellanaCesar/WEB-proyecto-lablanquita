@@ -1,1 +1,91 @@
-<p>send-mail works!</p>
+<div class="container">
+
+  <form [formGroup]="form" (ngSubmit)="sendMail()" class="formulario">
+
+      <p class="instructivo">
+
+    		Seleccione que tipo de datos quiere enviar por email.
+    	</p>
+
+    <div class="row ">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label >Tipo de email:</label>
+          <select
+              class="form-control"
+              [class.is-invalid] = "sendNoValida"
+              formControlName="type_send">
+              <option value="">Seleccione que datos quiere enviar</option>
+              <option [value]="type.id"
+                      *ngFor="let type of types">
+                      {{type.tipo}}
+              </option>
+          </select>
+          <small *ngIf="sendNoValida"
+                 class="text-danger">
+            Debe seleccionar un tipo de envio.
+          </small>
+        </div>
+      </div>
+
+
+      <div class="col-md-6">
+
+        <button type="button"
+                class="btn btn-info"
+                style="width:100%;"
+                (click)="back()">
+                Atras
+        </button>
+
+      </div>
+      <div class="col-md-6" *ngIf="!loader">
+
+            <button type="submit"
+                    class="btn btn-info"
+                    style="width:100%;">
+                    Enviar email
+           </button>
+      </div>
+      <div class="col-md-6" *ngIf="loader">
+        <button type="submit"
+                [disabled]="loader"
+                style="width:100%;"
+                class="btn btn-info">
+          <i  class="fas fa-spinner fa-spin "></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- <div class="modal fade animate__animated animate__fadeInUp"
+       id="loginSend"
+       tabindex="-1"
+       role="dialog"
+       aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="row">
+                <div *ngFor="let m of mails">
+                    <div class="col-md-6">
+                      <p>{{m.mail}}</p>
+                    </div>
+                    <div class="col-md-6"
+                         *ngIf="m.staus">
+                      <p class="text-success">Enviado</p>
+                    </div>
+                    <div class="col-md-6"
+                         *ngIf="!m.staus">
+                      <p class="text-Danger">No Enviado</p>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+
+
+
+
+</div>

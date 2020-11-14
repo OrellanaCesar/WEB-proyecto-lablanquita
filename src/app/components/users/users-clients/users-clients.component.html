@@ -50,6 +50,7 @@
 						<input type="checkbox"
 									 [id]="client.user_id"
 									 class="check"
+									 [value] = "client.user_email"
 									 (change)="check($event,client.user_id)">&nbsp;
 
 					</td>
@@ -73,35 +74,17 @@
 		</div>
 	</div>
 
-
+		<small *ngIf="selected"
+					 class="text-danger">
+			{{ mensaje }}
+		</small>
 		<button type="button"
-					  class="btn btn-info"
+					  class="btn btn-info mb-5"
 						style="width:100%;"
 						(click)="next()">
 						Siguiente
 	  </button>
-		<div class="row">
 
-			<div class="col-md-6">
-
-				<button type="button"
-								class="btn btn-info"
-								style="width:100%;"
-								(click)="back()">
-								Atras
-				</button>
-
-			</div>
-			<div class="col-md-6">
-
-						<button type="button"
-										class="btn btn-info"
-										style="width:100%;"
-										(click)="sendMail()">
-										Enviar email
-					 </button>
-			</div>
-		</div>
 
 
 </div>

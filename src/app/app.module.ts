@@ -62,7 +62,7 @@ import {FooterComponent} from './components/shared/footer/footer.component';
   DataTableUserComponent,
   RecoverPasswordComponent,
   UsersClientsComponent,
-  SendMailComponent
+  SendMailComponent,
   FooterComponent
   ],
   imports: [

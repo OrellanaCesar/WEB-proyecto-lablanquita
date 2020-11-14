@@ -29,4 +29,12 @@ export class UserService {
 		};
 		return this.http.post<DataTablesResponse>(`${ApiSettigns.url}users/usersClients`,data, { headers });
 	}
+
+	sendMailClients(data:any, type:any){
+		const headers = {
+			"Content-Type" : "application/json",
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
+		};
+		return this.http.post(`${ApiSettigns.url}users/sendMailClients/${type}`,data, { headers } );
+	}
 }
