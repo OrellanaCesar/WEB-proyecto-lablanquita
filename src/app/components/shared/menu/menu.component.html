@@ -8,7 +8,7 @@
 
 
                 <a class="navbar-brand margen-logo mt-3 " href="#" [routerLink]="['']">
-                    <img src="assets/img/test_logo.jpg" alt="" class="logo">
+                    <img src="assets/img/logo.png" alt="" class="logo">
                 </a>
             </div>
 
@@ -245,38 +245,24 @@
                         <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
       Contacto
   </a>
-</li>
-<li class="nav-itemmr-5 ml-2 dropdown"
-    routerLinkActive="activo"
-    *ngIf="isAuthAdmin()">
+                    </li>
+                    <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
 
-    <a class="nav-link dropdown-toggle letra "
-       id="navbarDropdownUser"
-       role="button"
-       data-toggle="dropdown"
-       aria-haspopup="true"
-       aria-expanded="false">
+                        <a class="nav-link dropdown-toggle letra " id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Usuarios
     </a>
-    <div class="dropdown-menu bg-primary "
-         aria-labelledby="navbarDropdownUser">
+                        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownUser">
 
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['dashboardUsers']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['dashboardUsers']" [class.margen-item-menu]="scrWidth>990">
             Gestión de Usuarios
          </a>
-         <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['clients']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['clients']" [class.margen-item-menu]="scrWidth>990">
               Enviar emails
          </a>
-    </div>
+                        </div>
 
-</li>
+                    </li>
 
 
                 </ul>
@@ -399,7 +385,7 @@
                     <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
               Registrar
           </button>
-      </div>
+                </div>
 
   </form>
 </div>
