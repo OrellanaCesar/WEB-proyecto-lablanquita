@@ -1,6 +1,19 @@
 .logo {
+    border-radius: 15px;
     width: 7rem;
     height: 6rem;
+    /*margin-top: 10px;*/
+    margin-bottom: 10px;
+}
+
+@media(width:360px) {
+    .logo {
+        border-radius: 39px;
+        width: 12rem;
+        height: 14rem;
+        margin-bottom: -35px;
+        margin-left: 70px;
+    }
 }
 
 .logo-adaptado {
