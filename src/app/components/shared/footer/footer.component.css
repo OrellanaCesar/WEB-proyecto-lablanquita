@@ -86,6 +86,10 @@
 		height: 5vh;
 		width: 17vw;
 	}
+	.naranjas{
+		height: 3vh;
+		width: 7vw;
+	}
 }
 
 .tarjetas-pago{
@@ -112,5 +116,15 @@
 .item-contacto {
 	display: flex;
 	margin-left: 1px;
+}
+.naranjas{
+	height: 3vh;
+	width: 7vw;
+}
+@media(max-width: 1024px){
+	.naranjas{
+		height: 3vh;
+		width: 7vw;
+	}
 }
 
