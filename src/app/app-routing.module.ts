@@ -18,7 +18,9 @@ import { DataTableUserComponent } from './components/users/data-table-user/data-
 import { AuthGuard } from './guards/auth.guard';
 import { ModifyUserComponent } from './components/users/modify-user/modify-user.component';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
-
+import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
+import { SendMailComponent } from './components/users/send-mail/send-mail.component';
+import { CreateUserAdminComponent } from './components/users/create-user-admin/create-user-admin.component';
 
 const routes: Routes = [
 {path:'' , component:HomeComponent},
@@ -26,6 +28,7 @@ const routes: Routes = [
 {path:'recoverPassword',component:RecoverPasswordComponent},
 {path:'createBrand',component:CreateBrandComponent, canActivate:[AuthGuard]},
 {path:'createProduct',component:CreateProductComponent, canActivate:[AuthGuard]},
+{path:'createUserAdmin',component:CreateUserAdminComponent , canActivate:[AuthGuard]},
 {path:'dashboardBrand' , component:DataTableBrandComponent, canActivate:[AuthGuard]},
 {path:'dashboardCategory' , component:DataTableCategoryComponent, canActivate:[AuthGuard]},
 {path:'dashboardProducts' , component:DataTableProductsComponent, canActivate:[AuthGuard]},
@@ -37,6 +40,8 @@ const routes: Routes = [
 {path:'updateCategory/:id',component:ModifyCategoryComponent, canActivate:[AuthGuard]},
 {path:'search/:tipo/:id/:valor',component:SearchProductsComponent},
 {path:'contacto',component:ContactoComponent},
+{path:'clients',component:UsersClientsComponent,  canActivate:[AuthGuard]},
+{path:'sendMailClients',component:SendMailComponent,  canActivate:[AuthGuard]},
 {path:'updateUser',component:ModifyUserComponent},
 {path:'**', pathMatch:'full', redirectTo:''},
 ];
