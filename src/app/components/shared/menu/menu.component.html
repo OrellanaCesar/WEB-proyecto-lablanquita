@@ -8,7 +8,7 @@
 
 
                 <a class="navbar-brand margen-logo mt-3 " href="#" [routerLink]="['']">
-                    <img src="assets/img/test_logo.jpg" alt="" class="logo">
+                    <img src="assets/img/logo.png" alt="" class="logo">
                 </a>
             </div>
 
@@ -71,7 +71,7 @@
 
 
         <a class=" margen-logo mt-3 " [routerLink]="['']">
-            <img src="assets/img/test_logo.jpg" alt="" class="logo">
+            <img src="assets/img/logo.png" alt="" class="logo">
         </a>
 
 
@@ -129,7 +129,7 @@
     <div class="" *ngIf="(scrWidth < 1024 && scrWidth > 640) && scrWidth != 768">
         <div class="row adapatacion logo-adaptado">
             <a class=" margen-logo mt-3 " [routerLink]="['']">
-                <img src="assets/img/test_logo.jpg" alt="" class="logo">
+                <img src="assets/img/logo.png" alt="" class="logo">
             </a>
         </div>
         <div class="row adapatacion">
@@ -245,38 +245,24 @@
                         <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
       Contacto
   </a>
-</li>
-<li class="nav-itemmr-5 ml-2 dropdown"
-    routerLinkActive="activo"
-    *ngIf="isAuthAdmin()">
+                    </li>
+                    <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
 
-    <a class="nav-link dropdown-toggle letra "
-       id="navbarDropdownUser"
-       role="button"
-       data-toggle="dropdown"
-       aria-haspopup="true"
-       aria-expanded="false">
+                        <a class="nav-link dropdown-toggle letra " id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Usuarios
     </a>
-    <div class="dropdown-menu bg-primary "
-         aria-labelledby="navbarDropdownUser">
+                        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownUser">
 
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['dashboardUsers']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['dashboardUsers']" [class.margen-item-menu]="scrWidth>990">
             Gestión de Usuarios
          </a>
-         <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['clients']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['clients']" [class.margen-item-menu]="scrWidth>990">
               Enviar emails
          </a>
-    </div>
+                        </div>
 
-</li>
+                    </li>
 
 
                 </ul>
@@ -399,42 +385,42 @@
                     <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
               Registrar
           </button>
-      </div>
+                </div>
 
-  </form>
-</div>
+            </form>
+        </div>
 
-<!-- modal Perfil -->
+        <!-- modal Perfil -->
 
-<div class="modal fade animate__animated animate__fadeInUp" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content ">
-            <div class="modal-header modal-header-color">
-                <h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botonModalPerfil">
+        <div class="modal fade animate__animated animate__fadeInUp" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content ">
+                    <div class="modal-header modal-header-color">
+                        <h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botonModalPerfil">
                     <span aria-hidden="true">&times;</span>
                 </button>
-            </div>
-            <div class="container">
-                <div class="row perfil-modal-image">
-                    <img class="perfil-modal" src="assets/img/img_user/{{letra}}.svg" alt="">
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Usuario: </label>
-                            <input class="form-control" readonly [placeholder]="user.user_name">
-                        </div>
-                        <div class="form-group">
-                            <label>E-mail: </label>
-                            <input class="form-control" readonly [placeholder]="user.user_email">
-                        </div>
-                        <br>
-                        <p>Haga click <a (click)="goUpdate()" style="color:blue; cursor: pointer !important;">aquí </a>si desea modificar sus datos</p>
                     </div>
+                    <div class="container">
+                        <div class="row perfil-modal-image">
+                            <img class="perfil-modal" src="assets/img/img_user/{{letra}}.svg" alt="">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Usuario: </label>
+                                    <input class="form-control" readonly [placeholder]="user.user_name">
+                                </div>
+                                <div class="form-group">
+                                    <label>E-mail: </label>
+                                    <input class="form-control" readonly [placeholder]="user.user_email">
+                                </div>
+                                <br>
+                                <p>Haga click <a (click)="goUpdate()" style="color:blue; cursor: pointer !important;">aquí </a>si desea modificar sus datos</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
         </div>
-    </div>
-</div>
