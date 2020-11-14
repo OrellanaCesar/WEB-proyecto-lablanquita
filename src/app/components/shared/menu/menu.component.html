@@ -8,7 +8,7 @@
 
 
                 <a class="navbar-brand margen-logo mt-3 " href="#" [routerLink]="['']">
-                    <img src="assets/img/test_logo.jpg" alt="" class="logo">
+                    <img src="assets/img/logo.png" alt="" class="logo">
                 </a>
             </div>
 
@@ -33,10 +33,8 @@
                 <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
                     <i class="fab fa-twitter  mr-2 icono-RedesSociales "></i>
                 </a>
+                <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
 
-                <button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout btn-logout-big letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
-                <i class="fas fa-user mr-2"></i> Cerrar Session
-            </button>
 
                 <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout btn-logout-big letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
@@ -46,7 +44,11 @@
                         <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
                         </button>
                     <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                        <div class="dropdown-divider "></div>
                         <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                        <div class="dropdown-divider "></div>
+                        <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
                     </div>
                 </div>
 
@@ -93,18 +95,23 @@
             <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
         </div>
         <div class="col-md-8 cerrar-sesion" *ngIf="estaAutenticado()">
-            <button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout-ipad  letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
+            <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout-ipad  letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> Cerrar Session
             </button>
             <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-            </button>
+            </button>-->
+            <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
             <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
                 <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
                     </button>
                 <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                    <div class="dropdown-divider "></div>
                     <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                    <div class="dropdown-divider "></div>
+                    <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
                 </div>
             </div>
         </div>
@@ -138,25 +145,30 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 alineacion-user">
                 <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
                 <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
                 <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
             </div>
 
-            <div class="col-md-8 " *ngIf="estaAutenticado()">
-                <button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
+            <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
+                <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> Cerrar Session
             </button>
                 <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-            </button>
+            </button>-->
+                <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
                 <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
                     <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
                     </button>
                     <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                        <div class="dropdown-divider "></div>
                         <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                        <div class="dropdown-divider "></div>
+                        <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
                     </div>
                 </div>
             </div>
@@ -233,38 +245,24 @@
                         <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
       Contacto
   </a>
-</li>
-<li class="nav-itemmr-5 ml-2 dropdown"
-    routerLinkActive="activo"
-    *ngIf="isAuthAdmin()">
+                    </li>
+                    <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
 
-    <a class="nav-link dropdown-toggle letra "
-       id="navbarDropdownUser"
-       role="button"
-       data-toggle="dropdown"
-       aria-haspopup="true"
-       aria-expanded="false">
+                        <a class="nav-link dropdown-toggle letra " id="navbarDropdownUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Usuarios
     </a>
-    <div class="dropdown-menu bg-primary "
-         aria-labelledby="navbarDropdownUser">
+                        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownUser">
 
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['dashboardUsers']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['dashboardUsers']" [class.margen-item-menu]="scrWidth>990">
             Gestión de Usuarios
          </a>
-         <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-         <a class="dropdown-item nav-link brand-item letra"
-            style="color:white;"
-            [routerLink]="['clients']"
-            [class.margen-item-menu]="scrWidth>990">
+                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" [routerLink]="['clients']" [class.margen-item-menu]="scrWidth>990">
               Enviar emails
          </a>
-    </div>
+                        </div>
 
-</li>
+                    </li>
 
 
                 </ul>
@@ -281,13 +279,8 @@
             <form [formGroup]="formLogin" (ngSubmit)="login()">
 
                 <div class="modal-header modal-header-color">
-                    <h5 class="modal-title" id="exampleModalLabel">Ingresá a mi cuenta</h5>
-                      <button type="button"
-                              class="close"
-                              data-dismiss="modal"
-                              aria-label="Close"
-                              (click)="modal()"
-                              id="botonModal">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingresar a mi cuenta</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal()" id="botonModal">
                           <span aria-hidden="true">&times;</span>
                       </button>
                 </div>
@@ -392,7 +385,42 @@
                     <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
               Registrar
           </button>
-      </div>
+                </div>
 
   </form>
+</div>
+
+<!-- modal Perfil -->
+
+<div class="modal fade animate__animated animate__fadeInUp" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content ">
+            <div class="modal-header modal-header-color">
+                <h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botonModalPerfil">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="container">
+                <div class="row perfil-modal-image">
+                    <img class="perfil-modal" src="assets/img/img_user/{{letra}}.svg" alt="">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Usuario: </label>
+                            <input class="form-control" readonly [placeholder]="user.user_name">
+                        </div>
+                        <div class="form-group">
+                            <label>E-mail: </label>
+                            <input class="form-control" readonly [placeholder]="user.user_email">
+                        </div>
+                        <br>
+                        <p>Haga click <a (click)="goUpdate()" style="color:blue; cursor: pointer !important;">aquí </a>si desea modificar sus datos</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
