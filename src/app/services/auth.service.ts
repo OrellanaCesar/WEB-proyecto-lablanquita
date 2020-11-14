@@ -29,6 +29,22 @@ export class AuthService {
     };
     return this.http.post(`${ApiSettigns.url}auth/signupCliente`,data,{ headers });
   }
+  
+  updateUser(data){
+    /*esta función envía una peticion POST a la API para modificar
+    datos de un usuario.
+    Parámetros: data, los datos que trajo del formulario.
+    Retorna: una promesa que será evaluada por el componente apropiado
+    */
+
+   const headers = {
+    'Content-Type': 'application/json',
+    'X-Requested-With' : 'XMLHttpRequest',
+    'Authorization' : `${this.type_token} ${this.user_token}`
+    };
+    return this.http.post(`${ApiSettigns.url}auth/update`, data , { headers });
+  }
+
 
   login(user:UserModel){
 
