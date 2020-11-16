@@ -250,17 +250,21 @@ export class MenuComponent implements OnInit {
   leerDatos(){
 
     if(this.estaAutenticado()){
+
+
       this.auth.leerToken();
       this.auth.user()
         .subscribe((resp:any) => {
+          let nombre;
           this.user.user_email = resp.user_email;
           this.user.user_name = resp.user_name;
           this.user.user_id = resp.user_id;
           this.user.profile_id = resp.profile_id;
-          this.letra = this.user.user_name[0];
-          this.letra.toLocaleLowerCase();
+          nombre = this.user.user_name;
+          console.log(nombre.toLowerCase()[0]);
+          this.letra = nombre.toLowerCase()[0];;
           if(!this.listString.includes(this.letra)){
-            this.letra = String(Math.random() * ( 10 - 0 ) + 0);
+            this.letra = String(Math.trunc(Math.random() * ( 10 - 0 ) + 0));
           }
         })
     }

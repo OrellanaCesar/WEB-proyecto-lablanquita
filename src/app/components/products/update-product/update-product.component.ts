@@ -361,6 +361,14 @@ export class UpdateProductComponent implements OnInit {
   }
 
   update(){
+
+    /*
+    Esta funcion modifica los datos de un producto , haciendo consumo de la
+    api para ello.
+    parameter: no hay.
+    return: no hay.
+    */
+    
     this.error = false;
     this.loader = true;
     if( this.form.invalid){

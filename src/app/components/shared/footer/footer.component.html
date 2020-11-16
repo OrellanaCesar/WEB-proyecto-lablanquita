@@ -68,11 +68,17 @@
 						<div class="tarjeta-item">
 							<i class="fab fa-cc-amex fa-lg" style="color:white"></i>
 						</div>
-						<div class="tarjeta-item">
+						<div class="tarjeta-item" *ngIf ="scrWidth!=768 && scrWidth!=1024">
 							<img class="naranja" src="assets/img/formaspago/tarjeta-naranja.png" alt="">
 						</div>
-						<div class="tarjeta-item">
+						<div class="tarjeta-item" *ngIf ="scrWidth!=768 && scrWidth!=1024">
 							<img class="naranja" style="border-radius:3px;" src="assets/img/formaspago/maestro.png" alt="">
+						</div>
+						<div class="tarjeta-item" *ngIf ="scrWidth<=1024 && scrWidth>414">
+							<img class="naranjas" src="assets/img/formaspago/tarjeta-naranja.png" alt="">
+						</div>
+						<div class="tarjeta-item" *ngIf ="scrWidth<=1024 && scrWidth>414">
+							<img class="naranjas" style="border-radius:3px;" src="assets/img/formaspago/maestro.png" alt="">
 						</div>
 					</div>
 				</h3>
