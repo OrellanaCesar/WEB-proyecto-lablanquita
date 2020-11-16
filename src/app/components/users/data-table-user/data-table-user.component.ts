@@ -30,9 +30,14 @@ export class DataTableUserComponent implements OnInit {
 			ajax:(dataTablesParameters :any,callback) => {
 				that._user.getDataTable(dataTablesParameters)
 				.subscribe(resp => {
-					resp.data[0]['user_create_date'] = new Date(resp.data[0]['user_create_date']).toLocaleString();
-					resp.data[0]['user_change_date'] = new Date(resp.data[0]['user_change_date']).toLocaleString();
+
+					// resp.data[0]['user_create_date'] = new Date(resp.data[0]['user_create_date']).toLocaleString();
+					// resp.data[0]['user_change_date'] = new Date(resp.data[0]['user_change_date']).toLocaleString();
 					that.Users = resp.data;
+					that.Users.forEach(user => {
+						user.user_create_date = new Date(user.user_create_date).toLocaleString();
+						user.user_change_date = new Date(user.user_change_date).toLocaleString();
+					});
 					callback({
 						recordsTotal: resp.recordsTotal,
 						recordsFiltered: resp.recordsFiltered,
@@ -66,7 +71,7 @@ export class DataTableUserComponent implements OnInit {
 				data: 'user_create_date'
 			},
 			{
-				data: 'user_change_date'	
+				data: 'user_change_date'
 			},
 			{
 				data: 'action'
