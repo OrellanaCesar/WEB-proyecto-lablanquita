@@ -16,7 +16,6 @@ export class ShowProductComponent implements OnInit {
 	getScreenSize(event?) {
 		this.scrHeight = window.innerHeight;
 		this.scrWidth = window.innerWidth;
-		console.log(this.scrHeight, this.scrWidth);
 	}
 	id:number;
 	Product:ProductModel;
@@ -44,7 +43,6 @@ export class ShowProductComponent implements OnInit {
 
 	getProduct(){
 		this.loader = true;
-		console.log(this.loader);
 
 		this._products.getProduct(this.id)
 		.subscribe( (resp:any) => {
@@ -62,5 +60,3 @@ export class ShowProductComponent implements OnInit {
 	}
 
 }
-
-

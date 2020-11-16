@@ -38,7 +38,6 @@ export class RecoverPasswordComponent implements OnInit {
   }
 
   recoverPass(){
-    console.log("recuperando");
     this.error = false;
     this.loader = true;
     if( this.formRecover.invalid){
@@ -53,8 +52,7 @@ export class RecoverPasswordComponent implements OnInit {
         this.loader = false;
         this.mensaje = resp.message;
         this.status = resp.status;
-        console.log(resp);
-        console.log(resp.message);
+
 
       },(error:any) =>{
         console.log(error);
@@ -62,8 +60,6 @@ export class RecoverPasswordComponent implements OnInit {
         this.error = true;
         this.mensaje = error.error.message;
         this.status = error.error.status;
-        console.log(this.error);
-
 
       })
 

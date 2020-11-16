@@ -368,7 +368,7 @@ export class UpdateProductComponent implements OnInit {
     parameter: no hay.
     return: no hay.
     */
-    
+
     this.error = false;
     this.loader = true;
     if( this.form.invalid){
@@ -432,7 +432,6 @@ export class UpdateProductComponent implements OnInit {
 
       this._products.updateProduct(this.id,data)
         .subscribe((resp:any) => {
-            console.log(resp);
 
             this.loader = false;
             this.goGrid();

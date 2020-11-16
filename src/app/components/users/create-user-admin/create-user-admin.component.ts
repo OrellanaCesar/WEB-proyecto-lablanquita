@@ -57,7 +57,7 @@ export class CreateUserAdminComponent implements OnInit {
 	}
 
 	get InvalidPasswordConfirmation(){
-		return this.forma.get('user_password_confirmation').invalid && 
+		return this.forma.get('user_password_confirmation').invalid &&
 		this.forma.get('user_password_confirmation').touched;
 	}
 
@@ -75,9 +75,13 @@ export class CreateUserAdminComponent implements OnInit {
 	}
 
 	register(){
-		/*registra la marca que se cargo en el formulario
+
+		/*
+		registra la marca que se cargo en el formulario
 		parametros:no hay
-		return: devuelve un mensaje si se registro correctamente o no*/
+		return: devuelve un mensaje si se registro correctamente o no
+		*/
+
 		this.error = false;
 		this.loader = true;
 		if(this.forma.invalid){
@@ -139,4 +143,3 @@ export class CreateUserAdminComponent implements OnInit {
 	}
 
 }
-

@@ -117,7 +117,6 @@ export class SendMailComponent implements OnInit {
       let type = this.form.get('type_send').value;
       this._users.sendMailClients(data, type)
         .subscribe((resp:any) => {
-          console.log(resp);
           this.mails[i].status = true;
 
         },(error:any) => {

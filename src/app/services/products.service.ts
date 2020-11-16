@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http';
 import { ApiSettigns } from 'src/app/API/API.settings';
 import { DataTablesResponse } from '../models/dataTable.model';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsService {
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,
+              private auth:AuthService) {
 
   }
 
@@ -82,7 +84,8 @@ export class ProductsService {
     */
 
     const headers = {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.get(`${ApiSettigns.url}products/order/ocupedOfferDay`,{headers});
   }
@@ -98,7 +101,8 @@ export class ProductsService {
     */
 
     const headers = {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.get(`${ApiSettigns.url}products/order/ocupedBestSeller`,{headers});
   }
@@ -115,7 +119,8 @@ export class ProductsService {
     */
 
     const headers = {
-      'Accept': 'application/json'
+      'Accept': 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.get(`${ApiSettigns.url}products/bestSeller`,{headers});
 
@@ -131,7 +136,8 @@ export class ProductsService {
      */
 
     const headers = {
-      "Accept" : "application/json"
+      "Accept" : "application/json",
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.post<DataTablesResponse>(`${ApiSettigns.url}products/dataTable`,data,{ headers });
   }
@@ -146,7 +152,8 @@ export class ProductsService {
     */
 
     const headers = {
-      'Accept' : 'application/json'
+      'Accept' : 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     }
     return this.http.post(`${ApiSettigns.url}products/create`,data,{headers});
   }
@@ -159,7 +166,8 @@ export class ProductsService {
     return: una promesa de la peticion al componente correspondiente.
     */
     const headers = {
-      'Accept':'application/json'
+      'Accept':'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.delete(`${ApiSettigns.url}products/delete/${id}`,{ headers });
   }
@@ -172,13 +180,21 @@ export class ProductsService {
   */
 
     const headers = {
-      'Accept' : 'application/json'
+      'Accept' : 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
     };
     return this.http.post(`${ApiSettigns.url}products/update/${id}`, data ,{headers});
 
   }
 
   searchProduct(data:FormData){
+
+    /*
+    Esta funcion busca los productos mediante la musqueda del buscador
+    consumiendo un recurso de la API.
+    parameter: el texto ingresado en el campo de busqueda.
+    return: una promesa de la peticion al componente correspondiente.
+    */
 
     const headers = {
       'Accept': 'application/json'
