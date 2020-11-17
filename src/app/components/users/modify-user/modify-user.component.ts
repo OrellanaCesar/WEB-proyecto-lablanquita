@@ -13,7 +13,7 @@ import { UserModel } from 'src/app/models/user.model';
   styleUrls: ['./modify-user.component.css']
 })
 export class ModifyUserComponent implements OnInit {
-  
+
   user:UserModel;
   id:number;
   form: FormGroup;
@@ -36,14 +36,14 @@ export class ModifyUserComponent implements OnInit {
 
   getParam(){
     /*Esta función obtiene el parámetro id que trae de la URL
-      Parámetros: no tiene*/ 
+      Parámetros: no tiene*/
     this.routerA.params
       .subscribe((params:Params) => {
         this.id = params.id;
       })
   }
-  
- 
+
+
 
   goHome(){
     /*Busca la ruta en app-routing que me llevará al inicio
@@ -71,13 +71,12 @@ export class ModifyUserComponent implements OnInit {
   showUser(){
     /*LLama a la función del auth.service (auth.service->user)
     para que en el Formulario muestre los datos de éste usuario(nombre e email en este caso)
-    Parámetros: no recibe*/ 
+    Parámetros: no recibe*/
     this._users.user()
     .subscribe((resp:any) => {
-      console.log(resp);
       this.form.get('user_name').setValue(resp.user_name);
       this.form.get('user_email').setValue(resp.user_email);
-        
+
     },
     (error:any) => {
       this.form.get('user_name').setValue('');
@@ -100,21 +99,20 @@ export class ModifyUserComponent implements OnInit {
 			})
 
     }
-    
+
 		const data = {
       user_name : this.form.get('user_name').value,
       user_email : this.form.get('user_email').value,
       user_password : this.form.get('user_password').value,
       user_password_confirmation : this.form.get('user_password_confirmation').value
     } ;
-		console.log(data);
+
 
 		this._users.updateUser(data)
 		.subscribe((resp) => {
-			console.log(resp);
 			this.loader = false;
       this.goHome();
-      
+
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -170,7 +168,7 @@ export class ModifyUserComponent implements OnInit {
     }
   }
 
- 
+
 
   createForm(){
 

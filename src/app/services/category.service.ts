@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http';
 import {DataTablesResponse} from 'src/app/models/dataTable.model';
 import { ApiSettigns } from 'src/app/API/API.settings';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
 
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient,
+              private auth:AuthService) {
 
    }
 
@@ -42,7 +44,8 @@ export class CategoryService {
     */
 
     const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post<DataTablesResponse>(`${ApiSettigns.url}categories/dataTable`,data,
 			{ headers });
@@ -55,7 +58,8 @@ export class CategoryService {
     Retorna: una promesa que será evaluada por el componente apropiado
     */
 		const headers = {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post(`${ApiSettigns.url}categories/create`, data, {headers});
   }
@@ -67,7 +71,8 @@ export class CategoryService {
     Retorna: una promesa que será evaluada por el componente apropiado
     */
 		const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.delete(`${ApiSettigns.url}categories/delete/${id}`, { headers });
 	}
@@ -80,7 +85,8 @@ export class CategoryService {
     Retorna: una promesa que será evaluada por el componente apropiado
     */
 		const headers = {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+      "Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		}
 		return this.http.post(`${ApiSettigns.url}categories/update/${id}`, data , { headers });
   }

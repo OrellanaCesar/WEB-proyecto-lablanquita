@@ -16,7 +16,8 @@ export class UserService {
 
 	getDataTable(data:any){
 		const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post<DataTablesResponse>(`${ApiSettigns.url}users/dataTable`,data,
 			{ headers });
@@ -44,14 +45,16 @@ export class UserService {
 
 	deleteUser(id:number){
 		const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.delete(`${ApiSettigns.url}users/delete/${id}`, { headers });
 	}
 
 	createUser(data:FormData){
 		const headers = {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post(`${ApiSettigns.url}auth/signupAdministrador`, data, {headers});
 	}

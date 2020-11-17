@@ -108,6 +108,8 @@ export class DataTableUserComponent implements OnInit {
 				this.listUser = [];
 				resp.forEach(element => {
 					let user = element;
+					user.user_create_date = new Date(user.user_create_date).toLocaleString();
+					user.user_change_date = new Date(user.user_change_date).toLocaleString();
 					this.listUser.push(user);
 				});
 			},error =>{
