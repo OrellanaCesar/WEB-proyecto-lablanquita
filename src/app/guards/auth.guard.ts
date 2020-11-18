@@ -16,8 +16,6 @@ export class AuthGuard implements CanActivate {
   }
   canActivate(): boolean {
     if(this._auth.isAuth()){
-        console.log("estoy aca");
-
         if(this._auth.profile=='1'){
           return true;
         }else{

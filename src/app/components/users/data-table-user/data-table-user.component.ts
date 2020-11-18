@@ -1,24 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BrandService } from 'src/app/services/brand.service';
-import { BrandModel } from 'src/app/models/brand.model';
+import {UserService} from 'src/app/services/user.service';
+import {UserModel} from 'src/app/models/user.model';
 import Swal from 'sweetalert2';
 
 @Component({
-	selector: 'app-data-table-brand',
-	templateUrl: './data-table-brand.component.html',
-	styleUrls: ['./data-table-brand.component.css']
+	selector: 'app-data-table-user',
+	templateUrl: './data-table-user.component.html',
+	styleUrls: ['./data-table-user.component.css']
 })
-export class DataTableBrandComponent implements OnInit {
+export class DataTableUserComponent implements OnInit {
+
 	dtOptions: DataTables.Settings = {};
-	Brands: any[] = [];
-	listBrands : BrandModel [] = [];
-	constructor(private _brands:BrandService,
-		private router:Router) {
-	}
+	Users:any[] = [];
+	listUser : UserModel [] = [];
+
+	constructor(private router:Router,
+		private _user:UserService) { }
 
 	ngOnInit(): void {
-		/*Crea el dataTable con sus campos*/
+
 		const that = this;
 		this.dtOptions = {
 			pagingType: 'full_numbers',
@@ -27,9 +28,16 @@ export class DataTableBrandComponent implements OnInit {
 			processing: true,
 
 			ajax:(dataTablesParameters :any,callback) => {
-				that._brands.getDataTable(dataTablesParameters)
+				that._user.getDataTable(dataTablesParameters)
 				.subscribe(resp => {
-					that.Brands = resp.data;
+
+					// resp.data[0]['user_create_date'] = new Date(resp.data[0]['user_create_date']).toLocaleString();
+					// resp.data[0]['user_change_date'] = new Date(resp.data[0]['user_change_date']).toLocaleString();
+					that.Users = resp.data;
+					that.Users.forEach(user => {
+						user.user_create_date = new Date(user.user_create_date).toLocaleString();
+						user.user_change_date = new Date(user.user_change_date).toLocaleString();
+					});
 					callback({
 						recordsTotal: resp.recordsTotal,
 						recordsFiltered: resp.recordsFiltered,
@@ -37,7 +45,7 @@ export class DataTableBrandComponent implements OnInit {
 					})
 				}
 				,(error:any) =>{
-					this.Brands = [];
+					this.Users = [];
 					callback({
 						recordsTotal: 0,
 						recordsFiltered: 0,
@@ -46,25 +54,39 @@ export class DataTableBrandComponent implements OnInit {
 					console.log(error);
 				})
 			},
-			columns: [{data:'brand_id'},{data: 'brand_name'},{data: 'action'}],
+			columns: [
+			{
+				data:'user_id'
+			},
+			{
+				data: 'user_name'
+			},
+			{
+				data: 'user_email'
+			},
+			{
+				data: 'profile_name'
+			},
+			{
+				data: 'user_create_date'
+			},
+			{
+				data: 'user_change_date'
+			},
+			{
+				data: 'action'
+			}
+			],
 			responsive:true,
 		};
 	}
 
-	createBrand(){
-		/*Se va a la vista de crear una marca
-		Parametros:no hay
-		*/
-		this.router.navigateByUrl('createBrand');
-	}
 
-	deleteBrand(id:number){
+	deleteUser(id:number){
 		/*Elimina la marca del identificador que pasa como parametro
 		paramentro:id (identificador de la marca)*/
-		this._brands.deleteBrand(id)
+		this._user.deleteUser(id)
 		.subscribe((resp:any) => {
-			console.log(resp);
-
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',
@@ -80,13 +102,15 @@ export class DataTableBrandComponent implements OnInit {
 				icon: 'success',
 				title: 'Se elimino la marca con exito'
 			});
-			this._brands.getBrands()
+			this._user.getUsers()
 			.subscribe((resp:any) => {
-				this.Brands = resp;
-				this.listBrands = [];
+				this.Users = resp;
+				this.listUser = [];
 				resp.forEach(element => {
-					let brand = new BrandModel(element);
-					this.listBrands.push(brand);
+					let user = element;
+					user.user_create_date = new Date(user.user_create_date).toLocaleString();
+					user.user_change_date = new Date(user.user_change_date).toLocaleString();
+					this.listUser.push(user);
 				});
 			},error =>{
 				console.log(error);
@@ -111,8 +135,8 @@ export class DataTableBrandComponent implements OnInit {
 		})
 	}
 
-	update(id:number){
-		this.router.navigateByUrl(`/updatebrand/${id}`);
+	createUserAdmin(){
+		this.router.navigateByUrl('createUserAdmin');
 	}
 
 }
