@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import{ HttpClient } from '@angular/common/http';
 import {DataTablesResponse} from 'src/app/models/dataTable.model';
 import { ApiSettigns } from 'src/app/API/API.settings';
+import { AuthService } from './auth.service';
 
 
 @Injectable({
@@ -9,7 +10,8 @@ import { ApiSettigns } from 'src/app/API/API.settings';
 })
 export class BrandService {
 
-	constructor(private http:HttpClient) { }
+	constructor(private http:HttpClient,
+							private auth:AuthService) { }
 
 	getBrands(){
 		return this.http.get(`${ApiSettigns.url}brands`);
@@ -21,21 +23,24 @@ export class BrandService {
 
 	createBrand(data:FormData){
 		const headers = {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post(`${ApiSettigns.url}brands/create`, data, {headers});
 	}
 
 	deleteBrand(id:number){
 		const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.delete(`${ApiSettigns.url}brands/delete/${id}`, { headers });
 	}
 
 	updateBrand(id:number,data:FormData){
 		const headers = {
-			'Accept': 'application/json'
+			'Accept': 'application/json',
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		}
 		return this.http.post(`${ApiSettigns.url}brands/update/${id}`, data , { headers });
 	}
@@ -43,7 +48,8 @@ export class BrandService {
 
 	getDataTable(data:any){
 		const headers = {
-			"Accept" : "application/json"
+			"Accept" : "application/json",
+			"Authorization" : `${this.auth.type_token} ${this.auth.user_token}`
 		};
 		return this.http.post<DataTablesResponse>(`${ApiSettigns.url}brands/dataTable`,data,
 			{ headers });

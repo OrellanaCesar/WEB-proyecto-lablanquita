@@ -1,0 +1,102 @@
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-lg-12">
+			<button type="button"
+			class="btn btn-primary float-left "
+			(click)="goGrid()">
+			<i class="fas fa-angle-left"></i> Volver a Grilla</button>
+		</div>
+
+	</div>
+</div>
+
+<div class="container mt-5">
+	<form [formGroup]="forma" (ngSubmit)="register()" class="form-user" >
+		<div class="row d-flex justify-content-start">
+			<div class="media col-md-12">
+				<div class="media-body " align="center">
+					<br>
+					<h1>Registrar Usuario Administrador</h1>
+
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label><strong>Nombre de Usuario:</strong></label>
+					<input type="text"
+					placeholder="Ingresar nombre del usuario"
+					class="form-control"
+					[class.is]="InvalidName"
+					formControlName="user_name">
+					<small *ngIf="InvalidName" class="text-danger">
+						El campo nombre es obligatorio.
+					</small>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label><strong>Email:</strong></label>
+					<input type="email"
+					placeholder="Ingresar email"
+					class="form-control"
+					[class.is]="Invalidemail"
+					formControlName="user_email">
+					<small *ngIf="Invalidemail" class="text-danger">
+						El campo email es obligatorio.
+					</small>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label><strong>Contraseña:</strong></label>
+					<input type="password"
+					placeholder="Ingresar contraseña"
+					class="form-control"
+					[class.is]="InvalidPassword"
+					formControlName="user_password">
+					<small *ngIf="InvalidPassword" class="text-danger">
+						El campo contraseña es obligatorio.
+					</small>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label><strong>Confirmar Contraseña:</strong></label>
+					<input type="password"
+					placeholder="Confirmar contraseña"
+					class="form-control"
+					[class.is]="InvalidPasswordConfirmation"
+					formControlName="user_password_confirmation">
+					<small *ngIf="InvalidPasswordConfirmation" class="text-danger">
+						El campo Confirmar contraseña es obligatorio.
+					</small>
+				</div>
+			</div>
+			<div class="col-md-12" *ngIf="error">
+				<div class="form-group">
+					<strong class="text-danger">
+						No se pudo registrar el usuario. Hubo error al enviar los datos
+					</strong>
+				</div>
+			</div>
+			<div class="col-md-12" *ngIf="!loader">
+				<div class="form-group">
+					<button type="submit" style="width:100% !important" class="btn btn-primary">
+						<strong >Registrar Usuario</strong>
+					</button>
+
+				</div>
+			</div>
+			<div class="col-md-12" *ngIf="loader">
+				<div class="form-group">
+					<button type="submit" [disabled]="loader" style="width:100% !important" class="btn btn-primary">
+						<i  class="fas fa-spinner fa-spin "></i>
+					</button>
+
+
+				</div>
+			</div>
+		</div>
+	</form>
+
+</div>

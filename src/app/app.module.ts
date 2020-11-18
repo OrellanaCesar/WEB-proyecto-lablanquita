@@ -32,7 +32,13 @@ import { SearchProductsComponent } from './components/search/search-products/sea
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { CardProductComponent } from './components/search/card-product/card-product.component';
 import { DataTableUserComponent } from './components/users/data-table-user/data-table-user.component';
+import { ModifyUserComponent } from './components/users/modify-user/modify-user.component';
 import { RecoverPasswordComponent } from './components/users/recover-password/recover-password.component';
+import { UsersClientsComponent } from './components/users/users-clients/users-clients.component';
+import { SendMailComponent } from './components/users/send-mail/send-mail.component';
+import {FooterComponent} from './components/shared/footer/footer.component';
+import { CreateUserAdminComponent } from './components/users/create-user-admin/create-user-admin.component';
+
 
 
 
@@ -49,6 +55,7 @@ import { RecoverPasswordComponent } from './components/users/recover-password/re
   CreateProductComponent,
   CreateCategoryComponent,
   CreateBrandComponent,
+  CreateUserAdminComponent,
   DataTableCategoryComponent,
   UpdatebrandComponent,
   UpdateProductComponent,
@@ -58,7 +65,11 @@ import { RecoverPasswordComponent } from './components/users/recover-password/re
   ContactoComponent,
   CardProductComponent,
   DataTableUserComponent,
-  RecoverPasswordComponent
+  ModifyUserComponent,
+  RecoverPasswordComponent,
+  UsersClientsComponent,
+  SendMailComponent,
+  FooterComponent
   ],
   imports: [
   BrowserModule,

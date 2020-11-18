@@ -14,7 +14,7 @@ export class DataTableBrandComponent implements OnInit {
 	Brands: any[] = [];
 	listBrands : BrandModel [] = [];
 	constructor(private _brands:BrandService,
-		private router:Router) { 
+		private router:Router) {
 	}
 
 	ngOnInit(): void {
@@ -63,6 +63,8 @@ export class DataTableBrandComponent implements OnInit {
 		paramentro:id (identificador de la marca)*/
 		this._brands.deleteBrand(id)
 		.subscribe((resp:any) => {
+			console.log(resp);
+
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',

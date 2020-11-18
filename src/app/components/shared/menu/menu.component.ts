@@ -36,7 +36,6 @@ export class MenuComponent implements OnInit {
   getScreenSize(event?) {
     this.scrHeight = window.innerHeight;
     this.scrWidth = window.innerWidth;
-    console.log(this.scrHeight, this.scrWidth);
   }
 
   constructor( private _brand:BrandService,
@@ -206,6 +205,7 @@ export class MenuComponent implements OnInit {
     this.error = false;
     this.invalid = true;
     if( this.formLogin.invalid){
+      this.disabled = false;
       return Object.values(this.formLogin.controls).forEach(control => {
           control.markAsTouched();
       })
@@ -215,7 +215,6 @@ export class MenuComponent implements OnInit {
 
     this.auth.login(this.user)
       .subscribe((resp:any) =>{
-        console.log(resp);
         this.auth.guardarToken(resp.access_token, resp.token_type, resp.expires_at,resp.profile_id);
         this.userData();
         this.auth.leerToken();
@@ -249,17 +248,20 @@ export class MenuComponent implements OnInit {
   leerDatos(){
 
     if(this.estaAutenticado()){
+
+
       this.auth.leerToken();
       this.auth.user()
         .subscribe((resp:any) => {
+          let nombre;
           this.user.user_email = resp.user_email;
           this.user.user_name = resp.user_name;
           this.user.user_id = resp.user_id;
           this.user.profile_id = resp.profile_id;
-          this.letra = this.user.user_name[0];
-          this.letra.toLocaleLowerCase();
+          nombre = this.user.user_name;
+          this.letra = nombre.toLowerCase()[0];;
           if(!this.listString.includes(this.letra)){
-            this.letra = String(Math.random() * ( 10 - 0 ) + 0);
+            this.letra = String(Math.trunc(Math.random() * ( 10 - 0 ) + 0));
           }
         })
     }
@@ -274,14 +276,11 @@ export class MenuComponent implements OnInit {
         this.user.user_id = resp.user_id;
         this.user.profile_id = resp.profile_id;
         nombre = this.user.user_name;
-        console.log(nombre.toLowerCase()[0]);
         this.letra = nombre.toLowerCase()[0];;
-        console.log(this.letra);
-
         if(!this.listString.includes(this.letra)){
           this.letra = String(Math.trunc(Math.random() * ( 10 - 0 ) + 0));
         }
-        // console.log(this.usuario);
+
         $('#botonModal').click();
         this.disabled = false;
       }, (err)=>{
@@ -306,11 +305,12 @@ export class MenuComponent implements OnInit {
   }
 
   signup(){
-    console.log('registrando');
+
     this.disabled = true;
     this.error = false;
     this.invalid = true;
     if( this.formSignup.invalid){
+      this.disabled = false;
       return Object.values(this.formSignup.controls).forEach(control => {
           control.markAsTouched();
       })
@@ -322,7 +322,6 @@ export class MenuComponent implements OnInit {
 
     this.auth.signup(this.user)
       .subscribe((resp:any) =>{
-        console.log(resp);
         $('#botonModalSignup').click();
         this.disabled = false;
         const Toast = Swal.mixin({
@@ -350,5 +349,10 @@ export class MenuComponent implements OnInit {
   goRecoverPass(){
     $('#botonModal').click();
     this.router.navigateByUrl('recoverPassword');
+  }
+
+  goUpdate(){
+    $('#perfilModal').click();
+    this.router.navigateByUrl('updateUser');
   }
 }
