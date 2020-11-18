@@ -1,444 +1,444 @@
 <header class="bg-orange">
 
-    <!-- Para WEB y Telefono Celular -->
-    <div *ngIf="(scrWidth > 768 && scrWidth > 1024) || (scrWidth >= 320 && scrWidth <= 640)">
-        <div class="row adaptacion bg-orange">
+  <!-- Para WEB y Telefono Celular -->
+  <div *ngIf="(scrWidth > 768 && scrWidth > 1024) || (scrWidth >= 320 && scrWidth <= 640)">
+    <div class="row adaptacion bg-orange">
 
-            <div class="row  logo-adaptado">
-
-
-                <a class="navbar-brand margen-logo mt-3 " href="#" [routerLink]="['']">
-                    <img src="assets/img/logo.png" alt="" class="logo">
-                </a>
-            </div>
-
-            <div class="col-md-6 padding-columna">
-                <form [formGroup]="formSearch" (ngSubmit)="search()">
-                    <div class="input-group mb-3 mt-5">
-                        <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
-                        <button class="btn btn-outline-search  my-sm-0" type="submit">
-                          <i class="fas fa-search "></i>
-                      </button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-4 padding-columna " [class.cerrar-sesion]="estaAutenticado()">
-
-                <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
-                    <i class="fab fa-facebook   mr-2 icono-RedesSociales "></i>
-                </a>
-                <a href="https://www.instagram.com/limpiezablaquita/" target="_blank">
-                    <i class="fab fa-instagram  mr-2 icono-RedesSociales "></i>
-                </a>
-                <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
-                    <i class="fab fa-twitter  mr-2 icono-RedesSociales "></i>
-                </a>
-                <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
+      <div class="row  logo-adaptado">
 
 
-                <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout btn-logout-big letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
-                <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-            </button>
-                <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
-                    <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
-                        </button>
-                    <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
-                        <div class="dropdown-divider "></div>
-                        <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
-                        <div class="dropdown-divider "></div>
-                        <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
-                    </div>
-                </div>
-
-                <button type="button" *ngIf="!estaAutenticado()" class="btn btn-info btn-acceder letra" [class.btn-acomodado]="scrWidth == 640" data-toggle="modal" data-target="#loginModal">
-                <i class="fas fa-user mr-2"></i> Acceder
-            </button>
-                <button type="button" *ngIf="!estaAutenticado()" class="btn btn-info btn-acceder letra" [class.btn-acomodado]="scrWidth == 640" data-toggle="modal" data-target="#signupModal">
-                <i class="fas fa-user-plus mr-2"></i> Registrate
-            </button>
-
-
-
-            </div>
-
-        </div>
-    </div>
-    <!-- Para Ipad o Tablet -->
-    <div class="row bg-orange logo-adaptado adapatacion" *ngIf="scrWidth == 768 || scrWidth == 1024">
-
-
-
-        <a class=" margen-logo mt-3 " [routerLink]="['']">
-            <img src="assets/img/logo.png" alt="" class="logo">
+        <a class="navbar-brand margen-logo mt-3 " href="#" [routerLink]="['']">
+          <img src="assets/img/logo.png" alt="" class="logo">
         </a>
+      </div>
 
+      <div class="col-md-6 padding-columna">
+        <form [formGroup]="formSearch" (ngSubmit)="search()">
+          <div class="input-group mb-3 mt-5">
+            <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
+            <button class="btn btn-outline-search  my-sm-0" type="submit">
+              <i class="fas fa-search "></i>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4 padding-columna " [class.cerrar-sesion]="estaAutenticado()">
+
+        <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
+          <i class="fab fa-facebook   mr-2 icono-RedesSociales "></i>
+        </a>
+        <a href="https://www.instagram.com/limpiezablaquita/" target="_blank">
+          <i class="fab fa-instagram  mr-2 icono-RedesSociales "></i>
+        </a>
+        <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
+          <i class="fab fa-twitter  mr-2 icono-RedesSociales "></i>
+        </a>
+        <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
+
+
+        <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout btn-logout-big letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
+          <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
+        </button>
+        <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
+          <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
+          </button>
+          <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+            <div class="dropdown-divider "></div>
+            <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+            <div class="dropdown-divider "></div>
+            <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
+          </div>
+        </div>
+
+        <button type="button" *ngIf="!estaAutenticado()" class="btn btn-info btn-acceder letra" [class.btn-acomodado]="scrWidth == 640" data-toggle="modal" data-target="#loginModal">
+          <i class="fas fa-user mr-2"></i> Acceder
+        </button>
+        <button type="button" *ngIf="!estaAutenticado()" class="btn btn-info btn-acceder letra" [class.btn-acomodado]="scrWidth == 640" data-toggle="modal" data-target="#signupModal">
+          <i class="fas fa-user-plus mr-2"></i> Registrate
+        </button>
+
+
+
+      </div>
 
     </div>
-    <!-- Para width igual 768px -->
-    <div class="row  adapatacion bg-orange" *ngIf="scrWidth == 768  || scrWidth == 1024">
-        <div class="col-md-12 ">
-            <form [formGroup]="formSearch" (ngSubmit)="search()">
-                <div class="input-group  mt-5">
+  </div>
+  <!-- Para Ipad o Tablet -->
+  <div class="row bg-orange logo-adaptado adapatacion" *ngIf="scrWidth == 768 || scrWidth == 1024">
 
-                    <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
-                    <button class="btn btn-outline-search  my-sm-0" type="submit" (click)="searchProducts(0,3,buscadorText.value)">
-                  <i class="fas fa-search "></i>
-              </button>
-                </div>
-            </form>
+
+
+    <a class=" margen-logo mt-3 " [routerLink]="['']">
+      <img src="assets/img/logo.png" alt="" class="logo">
+    </a>
+
+
+  </div>
+  <!-- Para width igual 768px -->
+  <div class="row  adapatacion bg-orange" *ngIf="scrWidth == 768  || scrWidth == 1024">
+    <div class="col-md-12 ">
+      <form [formGroup]="formSearch" (ngSubmit)="search()">
+        <div class="input-group  mt-5">
+
+          <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
+          <button class="btn btn-outline-search  my-sm-0" type="submit" (click)="searchProducts(0,3,buscadorText.value)">
+            <i class="fas fa-search "></i>
+          </button>
         </div>
-        <div class="col-md-4">
-            <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
-            <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
-            <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
-        </div>
-        <div class="col-md-8 cerrar-sesion" *ngIf="estaAutenticado()">
+      </form>
+    </div>
+    <div class="col-md-4">
+      <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
+      <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+      <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
+    </div>
+    <div class="col-md-8 cerrar-sesion" *ngIf="estaAutenticado()">
             <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout-ipad  letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> Cerrar Session
             </button>
             <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-            </button>-->
-            <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
-            <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
+              </button>-->
+              <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
+              <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
                 <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
-                    </button>
+                  <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
+                </button>
                 <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
-                    <div class="dropdown-divider "></div>
-                    <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
-                    <div class="dropdown-divider "></div>
-                    <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
+                  <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                  <div class="dropdown-divider "></div>
+                  <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                  <div class="dropdown-divider "></div>
+                  <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
                 </div>
+              </div>
             </div>
-        </div>
-        <div class="col-md-8 " *ngIf="!estaAutenticado()">
-            <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
-        <i class="fas fa-user mr-2"></i> Acceder
-    </button>
-            <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
-        <i class="fas fa-user-plus mr-2"></i> Registrate
-    </button>
-        </div>
-    </div>
+            <div class="col-md-8 " *ngIf="!estaAutenticado()">
+              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
+                <i class="fas fa-user mr-2"></i> Acceder
+              </button>
+              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
+                <i class="fas fa-user-plus mr-2"></i> Registrate
+              </button>
+            </div>
+          </div>
 
-    <!-- Entre 1024 px y 640 -->
-    <div class="" *ngIf="(scrWidth < 1024 && scrWidth > 640) && scrWidth != 768">
-        <div class="row adapatacion logo-adaptado">
-            <a class=" margen-logo mt-3 " [routerLink]="['']">
+          <!-- Entre 1024 px y 640 -->
+          <div class="" *ngIf="(scrWidth < 1024 && scrWidth > 640) && scrWidth != 768">
+            <div class="row adapatacion logo-adaptado">
+              <a class=" margen-logo mt-3 " [routerLink]="['']">
                 <img src="assets/img/logo.png" alt="" class="logo">
-            </a>
-        </div>
-        <div class="row adapatacion">
-
-            <div class="col-md-12 ">
-                <form [formGroup]="formSearch" (ngSubmit)="search()">
-                    <div class="input-group  mt-5">
-
-                        <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
-                        <button class="btn btn-outline-search  my-sm-0" type="submit" (click)="searchProducts(0,3,'')">
-                        <i class="fas fa-search "></i>
-                    </button>
-                    </div>
-                </form>
+              </a>
             </div>
-            <div class="col-md-4 alineacion-user">
+            <div class="row adapatacion">
+
+              <div class="col-md-12 ">
+                <form [formGroup]="formSearch" (ngSubmit)="search()">
+                  <div class="input-group  mt-5">
+
+                    <input type="search" class="form-control input-Search" placeholder="Buscar Producto, Marcas y mas ..." aria-label="Search" formControlName="search" (keyup.enter)="searchProducts(0,3,buscadorText.value)" #buscadorText>
+                    <button class="btn btn-outline-search  my-sm-0" type="submit" (click)="searchProducts(0,3,'')">
+                      <i class="fas fa-search "></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="col-md-4 alineacion-user">
                 <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
                 <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
                 <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
-            </div>
+              </div>
 
-            <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
+              <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
                 <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> Cerrar Session
             </button>
                 <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
                 <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-            </button>-->
-                <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
-                <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
-                    <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
-                        <div class="dropdown-divider "></div>
-                        <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
-                        <div class="dropdown-divider "></div>
-                        <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
-                    </div>
+              </button>-->
+              <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
+              <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
+                <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
+                </button>
+                <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                  <div class="dropdown-divider "></div>
+                  <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                  <div class="dropdown-divider "></div>
+                  <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
                 </div>
+              </div>
             </div>
             <div class="col-md-8 " *ngIf="!estaAutenticado()">
-                <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
+              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
                 <i class="fas fa-user mr-2"></i> Acceder
-            </button>
-                <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
+              </button>
+              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
                 <i class="fas fa-user-plus mr-2"></i> Registrate
-            </button>
+              </button>
             </div>
+          </div>
+
         </div>
 
-    </div>
-
-    <div class="row adaptacion bg-primary">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+        <div class="row adaptacion bg-primary">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.margen-menu]="scrWidth > 990 ">
 
-                <ul class="navbar-nav">
-                    <li class="nav-item " routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">
+              <ul class="navbar-nav">
+                <li class="nav-item " routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">
 
-                        <a class="nav-link   letra" [routerLink]="['']" [class.margen-item-menu]="scrWidth>990">
-                      Inicio
+                  <a class="nav-link   letra" [routerLink]="['']" [class.margen-item-menu]="scrWidth>990">
+                    Inicio
                   </a>
-                    </li>
-                    <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+                </li>
+                <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
 
-                        <a class="nav-link dropdown-toggle letra" id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle letra" id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    Marcas
-               </a>
+                 </a>
 
-                        <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
-                            <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardBrand']">
-                  Gestión de Marcas
+                 <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
+                  <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardBrand']">
+                    Gestión de Marcas
+                  </a>
+                  <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                  <a class="dropdown-item nav-link brand-item " style="color:white;" (click)="searchProducts(brand.brand_id,1,'')" *ngFor="let brand of _data.listBrands">
+                   {{ brand.brand_name }}
+                 </a>
+               </div>
+             </li>
+
+             <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+
+              <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Productos
               </a>
-                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-                            <a class="dropdown-item nav-link brand-item " style="color:white;" (click)="searchProducts(brand.brand_id,1,'')" *ngFor="let brand of _data.listBrands">
-               {{ brand.brand_name }}
+
+              <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
+                <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
+                 Gestión de Categorías
+               </a>
+               <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+               <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
+                 Gestión de Productos
+               </a>
+               <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+               <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
+                 {{ category.category_name }}
+               </a>
+             </div>
+           </li>
+           <li class="nav-item" routerLinkActive="activo">
+
+            <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
+             Ubicación
            </a>
-                        </div>
-                    </li>
+         </li>
+         <li class="nav-item" routerLinkActive="activo">
+          <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
+            Contacto
+          </a>
+        </li>
+        <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
 
-                    <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+          <li class="nav-itemmr-5 ml-2 dropdown"
+          routerLinkActive="activo"
+          *ngIf="isAuthAdmin()">
 
-                        <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Productos
+          <a class="nav-link dropdown-toggle letra "
+          id="navbarDropdownUser" role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false">
+          Usuarios
+        </a>
+        <div class="dropdown-menu bg-primary "
+        aria-labelledby="navbarDropdownUser">
+
+        <a class="dropdown-item nav-link brand-item letra"
+        style="color:white;"
+        [routerLink]="['dashboardUsers']"
+        [class.margen-item-menu]="scrWidth>990">
+        Gestión de Usuarios
+      </a>
+      <div *ngIf="isAuthAdmin()"
+      class="dropdown-divider "></div>
+      <a class="dropdown-item nav-link brand-item letra"
+      style="color:white;"
+      [routerLink]="['clients']"
+      [class.margen-item-menu]="scrWidth>990">
+      Enviar emails
     </a>
+  </div>
 
-                        <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
-                            <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
-           Gestión de Categorías
-       </a>
-                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-                            <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
-           Gestión de Productos
-       </a>
-                            <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-                            <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
-           {{ category.category_name }}
-       </a>
-                        </div>
-                    </li>
-                    <li class="nav-item" routerLinkActive="activo">
-
-                        <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
-       Ubicación
-   </a>
-                    </li>
-                    <li class="nav-item" routerLinkActive="activo">
-                        <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
-      Contacto
-  </a>
-                    </li>
-                    <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
-
-                    <li class="nav-itemmr-5 ml-2 dropdown"
-                        routerLinkActive="activo"
-                        *ngIf="isAuthAdmin()">
-
-                        <a class="nav-link dropdown-toggle letra "
-                           id="navbarDropdownUser" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true"
-                           aria-expanded="false">
-                          Usuarios
-                        </a>
-                        <div class="dropdown-menu bg-primary "
-                        aria-labelledby="navbarDropdownUser">
-
-                            <a class="dropdown-item nav-link brand-item letra"
-                               style="color:white;"
-                               [routerLink]="['dashboardUsers']"
-                               [class.margen-item-menu]="scrWidth>990">
-                              Gestión de Usuarios
-                            </a>
-                            <div *ngIf="isAuthAdmin()"
-                            class="dropdown-divider "></div>
-                            <a class="dropdown-item nav-link brand-item letra"
-                               style="color:white;"
-                               [routerLink]="['clients']"
-                               [class.margen-item-menu]="scrWidth>990">
-                              Enviar emails
-                            </a>
-                        </div>
-
-                   </li>
+</li>
 
 
-                </ul>
-            </div>
-        </nav>
-    </div>
+</ul>
+</div>
+</nav>
+</div>
 
 </header>
 <!-- modal login -->
 
 <div class="modal fade animate__animated animate__fadeInUp" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form [formGroup]="formLogin" (ngSubmit)="login()">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="formLogin" (ngSubmit)="login()">
 
-                <div class="modal-header modal-header-color">
-                    <h5 class="modal-title" id="exampleModalLabel">Ingresar a mi cuenta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal()" id="botonModal">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValido ">
-
-                        <small *ngIf="emailNoValido" class="text-danger">
-                          El email es obligatorio.
-                      </small>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValido ">
-                        <small *ngIf="passwordNoValido" class="text-danger">
-                       El password es obligatorio.
-                   </small>
-                    </div>
-                    <div class="form-group">
-
-                        <small *ngIf="error" class="text-danger">
-                  No existe el usuario. Ingrese nuevamente los datos
-              </small>
-                    </div>
-                </div>
-                <div class="modal-footer" *ngIf="disabled">
-
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-          <i  class="fas fa-spinner fa-spin "></i>
-      </button>
-                </div>
-                <div class="modal-footer" *ngIf="!disabled">
-
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-      Ingresar
-  </button>
-                </div>
-            </form>
+        <div class="modal-header modal-header-color">
+          <h5 class="modal-title" id="exampleModalLabel">Ingresar a mi cuenta</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modal()" id="botonModal">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-    </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValido ">
+
+            <small *ngIf="emailNoValido" class="text-danger">
+              El email es obligatorio.
+            </small>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValido ">
+            <small *ngIf="passwordNoValido" class="text-danger">
+             El password es obligatorio.
+           </small>
+         </div>
+         <div class="form-group">
+
+          <small *ngIf="error" class="text-danger">
+            No existe el usuario. Ingrese nuevamente los datos
+          </small>
+        </div>
+      </div>
+      <div class="modal-footer" *ngIf="disabled">
+
+        <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
+          <i  class="fas fa-spinner fa-spin "></i>
+        </button>
+      </div>
+      <div class="modal-footer" *ngIf="!disabled">
+
+        <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
 </div>
 
 
 <!-- modal registrar -->
 <div class="modal fade animate__animated animate__fadeInUp" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form [formGroup]="formSignup" (ngSubmit)="signup()">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form [formGroup]="formSignup" (ngSubmit)="signup()">
 
-                <div class="modal-header modal-header-color">
-                    <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalSignup()" id="botonModalSignup">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Nombre Usuario</label>
-                        <input type="text" placeholder="Ingresar nombre" class="form-control" formControlName="user_name" [class.is-invalid]="nameNoValido ">
-
-                        <small *ngIf="nameNoValido" class="text-danger">
-                         El nombre es obligatorio.
-                     </small>
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValidoSignup ">
-
-                        <small *ngIf="emailNoValidoSignup" class="text-danger">
-                        El email es obligatorio.
-                    </small>
-                    </div>
-                    <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValidoSignup ">
-                        <small *ngIf="passwordNoValidoSignup" class="text-danger">
-                        El password es obligatorio.
-                    </small>
-                    </div>
-                    <div class="form-group">
-                        <label>Confirmar Password</label>
-                        <input type="password" placeholder="Confirmar password" class="form-control" formControlName="user_password_confirmation" [class.is-invalid]="confirmationNoValidoSignup ">
-                        <small *ngIf="confirmationNoValidoSignup" class="text-danger">
-                        La confirmación de password es obligatoria.
-                    </small>
-                    </div>
-                    <div class="form-group">
-                        <small *ngIf="error" class="text-danger">
-                        Los datos ingresados son incorrectos. Por favor ingrese nuevamente los datos
-                    </small>
-                    </div>
-                </div>
-                <div class="modal-footer" *ngIf="disabled">
-
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-                  <i  class="fas fa-spinner fa-spin "></i>
-              </button>
-                </div>
-                <div class="modal-footer" *ngIf="!disabled">
-
-                    <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
-              Registrar
+        <div class="modal-header modal-header-color">
+          <h5 class="modal-title" id="exampleModalLabel">Registrate</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="modalSignup()" id="botonModalSignup">
+            <span aria-hidden="true">&times;</span>
           </button>
-                </div>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Nombre Usuario</label>
+            <input type="text" placeholder="Ingresar nombre" class="form-control" formControlName="user_name" [class.is-invalid]="nameNoValido ">
 
-            </form>
+            <small *ngIf="nameNoValido" class="text-danger">
+             El nombre es obligatorio.
+           </small>
+         </div>
+         <div class="form-group">
+          <label>Email</label>
+          <input type="text" placeholder="Ingresar email" class="form-control" formControlName="user_email" [class.is-invalid]="emailNoValidoSignup ">
+
+          <small *ngIf="emailNoValidoSignup" class="text-danger">
+            El email es obligatorio.
+          </small>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Ingresar password" class="form-control" formControlName="user_password" [class.is-invalid]="passwordNoValidoSignup ">
+          <small *ngIf="passwordNoValidoSignup" class="text-danger">
+            El password es obligatorio.
+          </small>
+        </div>
+        <div class="form-group">
+          <label>Confirmar Password</label>
+          <input type="password" placeholder="Confirmar password" class="form-control" formControlName="user_password_confirmation" [class.is-invalid]="confirmationNoValidoSignup ">
+          <small *ngIf="confirmationNoValidoSignup" class="text-danger">
+            La confirmación de password es obligatoria.
+          </small>
+        </div>
+        <div class="form-group">
+          <small *ngIf="error" class="text-danger">
+            Los datos ingresados son incorrectos. Por favor ingrese nuevamente los datos
+          </small>
         </div>
       </div>
+      <div class="modal-footer" *ngIf="disabled">
+
+        <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
+          <i  class="fas fa-spinner fa-spin "></i>
+        </button>
+      </div>
+      <div class="modal-footer" *ngIf="!disabled">
+
+        <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
+          Registrar
+        </button>
+      </div>
+
+    </form>
   </div>
+</div>
+</div>
 
-        <!-- modal Perfil -->
+<!-- modal Perfil -->
 
-        <div class="modal fade animate__animated animate__fadeInUp" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content ">
-                    <div class="modal-header modal-header-color">
-                        <h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botonModalPerfil">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                    </div>
-                    <div class="container">
-                        <div class="row perfil-modal-image">
-                            <img class="perfil-modal" src="assets/img/img_user/{{letra}}.svg" alt="">
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label>Usuario: </label>
-                                    <input class="form-control" readonly [placeholder]="user.user_name">
-                                </div>
-                                <div class="form-group">
-                                    <label>E-mail: </label>
-                                    <input class="form-control" readonly [placeholder]="user.user_email">
-                                </div>
-                                <br>
-                                <p>Haga click <a (click)="goUpdate()" style="color:blue; cursor: pointer !important;">aquí </a>si desea modificar sus datos</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+<div class="modal fade animate__animated animate__fadeInUp" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content ">
+      <div class="modal-header modal-header-color">
+        <h5 class="modal-title" id="exampleModalLabel">Mi Perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="botonModalPerfil">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="container">
+        <div class="row perfil-modal-image">
+          <img class="perfil-modal" src="assets/img/img_user/{{letra}}.svg" alt="">
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Usuario: </label>
+              <input class="form-control" readonly [placeholder]="user.user_name">
+            </div>
+            <div class="form-group">
+              <label>E-mail: </label>
+              <input class="form-control" readonly [placeholder]="user.user_email">
+            </div>
+            <br>
+            <p>Haga click <a (click)="goUpdate()" style="color:blue; cursor: pointer !important;">aquí </a>si desea modificar sus datos</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
