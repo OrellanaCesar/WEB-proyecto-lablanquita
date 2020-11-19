@@ -27,7 +27,7 @@
         <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
           <i class="fab fa-facebook   mr-2 icono-RedesSociales "></i>
         </a>
-        <a href="https://www.instagram.com/limpiezablaquita/" target="_blank">
+        <a href="https://www.instagram.com/limpiezablanquita/" target="_blank">
           <i class="fab fa-instagram  mr-2 icono-RedesSociales "></i>
         </a>
         <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
@@ -90,9 +90,18 @@
       </form>
     </div>
     <div class="col-md-4">
+      <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
       <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
-      <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+      </a>
+      <a href="https://www.instagram.com/limpiezablanquita/" target="_blank">
+        <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+      </a>
+      <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
       <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
+      </a>
+
+
+
     </div>
     <div class="col-md-8 cerrar-sesion" *ngIf="estaAutenticado()">
             <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout-ipad  letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
@@ -146,18 +155,22 @@
                 </form>
               </div>
               <div class="col-md-4 alineacion-user">
+                <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
                 <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
-                <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+                </a>
+                <a href="https://www.instagram.com/limpiezablanquita/" target="_blank">
+                  <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+                </a>
+                <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
                 <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
+                </a>
+                <!-- <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
+                <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
+                <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i> -->
               </div>
 
               <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
-                <!--<button type="button" *ngIf="estaAutenticado() && !disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
-                <i class="fas fa-user mr-2"></i> Cerrar Session
-            </button>
-                <button type="button" *ngIf="estaAutenticado() && disabled" [disabled]="disabled" class="btn btn-info btn-logout letra" [class.btn-acomodado]="scrWidth == 640" (click)="logout()">
-                <i class="fas fa-user mr-2"></i> <i  class="fas fa-spinner fa-spin "></i>
-              </button>-->
+              
               <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
               <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
                 <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
