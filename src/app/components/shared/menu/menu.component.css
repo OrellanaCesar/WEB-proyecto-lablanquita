@@ -8,144 +8,144 @@
 
 @media(width:360px) {
     .logo {
-        border-radius: 39px;
-        width: 12rem;
-        height: 14rem;
-        margin-bottom: -35px;
-        margin-left: 70px;
+        border-radius: 39px !important;
+        width: 12rem !important;
+        height: 14rem !important;
+        margin-bottom: -35px !important;
+        margin-left: 70px !important;
     }
 }
 
 @media(width:640px) {
     .logo {
-        border-radius: 36px;
-        width: 13rem;
-        height: 15rem;
-        margin-bottom: -34px;
-        margin-left: 200px;
+        border-radius: 36px !important;
+        width: 13rem !important;
+        height: 15rem !important;
+        margin-bottom: -34px !important;
+        margin-left: 200px !important;
     }
 }
 
 @media(width:411px) {
     .logo {
-        border-radius: 32px;
-        width: 10rem;
-        height: 12rem;
-        margin-bottom: -35px;
-        margin-left: 110px;
+        border-radius: 32px !important;
+        width: 10rem !important;
+        height: 12rem !important;
+        margin-bottom: -35px !important;
+        margin-left: 110px !important;
     }
 }
 
 @media(width:731px) {
     .logo {
-        border-radius: 64px;
-        width: 15rem;
-        height: 15rem;
-        margin-bottom: -30px;
+        border-radius: 64px !important;
+        width: 15rem !important;
+        height: 15rem !important;
+        margin-bottom: -30px !important;
     }
 }
 
 @media(width:823px) {
     .logo {
-        border-radius: 59px;
-        width: 12rem;
-        height: 15rem;
-        margin-bottom: -31px;
+        border-radius: 59px !important;
+        width: 12rem !important;
+        height: 15rem !important;
+        margin-bottom: -31px !important;
     }
 }
 
 @media(width:320px) {
     .logo {
-        border-radius: 42px;
-        width: 9rem;
-        height: 10rem;
-        margin-bottom: -35px;
-        margin-left: 70px;
+        border-radius: 42px !important;
+        width: 9rem !important;
+        height: 10rem !important;
+        margin-bottom: -35px !important;
+        margin-left: 70px !important;
     }
 }
 
 @media(width:568px) {
     .logo {
-        border-radius: 45px;
-        width: 12rem;
-        height: 13rem;
-        margin-bottom: -35px;
-        margin-left: 175px;
+        border-radius: 45px !important;
+        width: 12rem !important;
+        height: 13rem !important;
+        margin-bottom: -35px !important;
+        margin-left: 175px !important;
     }
 }
 
 @media(width:375px) {
     .logo {
-        border-radius: 37px;
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: -30px;
-        margin-left: 85px;
+        border-radius: 37px !important;
+        width: 10rem !important;
+        height: 11rem !important;
+        margin-bottom: -30px !important;
+        margin-left: 85px !important;
     }
 }
 
 @media(width:667px) {
     .logo {
-        border-radius: 40px;
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: -33px;
+        border-radius: 40px !important;
+        width: 10rem !important;
+        height: 11rem !important;
+        margin-bottom: -33px !important;
     }
 }
 
 @media(width:414px) {
     .logo {
-        border-radius: 30px;
-        width: 9rem;
-        height: 10rem;
-        margin-bottom: -37px;
-        margin-left: 115px;
+        border-radius: 30px !important;
+        width: 9rem !important;
+        height: 10rem !important;
+        margin-bottom: -37px !important;
+        margin-left: 115px !important;
     }
 }
 
 @media(width:736px) {
     .logo {
-        border-radius: 35px;
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: -28px;
+        border-radius: 35px !important;
+        width: 10rem !important;
+        height: 11rem !important;
+        margin-bottom: -28px !important;
     }
 }
 
 @media(width:812px) {
     .logo {
-        border-radius: 25px;
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: -32px;
+        border-radius: 25px !important;
+        width: 10rem !important;
+        height: 11rem !important;
+        margin-bottom: -32px !important;
     }
 }
 
 @media(width:768px) {
     .logo {
-        border-radius: 15px;
-        width: 10rem;
-        height: 11rem;
-        margin-bottom: -32px;
+        border-radius: 15px !important;
+        width: 10rem !important;
+        height: 11rem !important;
+        margin-bottom: -32px !important;
     }
 }
 
 @media(width:540px) {
     .logo {
-        border-radius: 15px;
-        width: 7rem;
-        height: 8rem;
-        margin-bottom: -37px;
-        margin-left: 200px;
+        border-radius: 15px !important;
+        width: 7rem !important;
+        height: 8rem !important;
+        margin-bottom: -37px !important;
+        margin-left: 200px !important;
     }
 }
 
 @media(width:720px) {
     .logo {
-        border-radius: 25px;
-        width: 9rem;
-        height: 10rem;
-        margin-bottom: -32px;
+        border-radius: 25px !important;
+        width: 9rem !important;
+        height: 10rem !important;
+        margin-bottom: -32px !important;
     }
 }
 
