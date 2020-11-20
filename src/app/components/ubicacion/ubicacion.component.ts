@@ -15,8 +15,7 @@ export class UbicacionComponent implements OnInit {
     getScreenSize(event?) {
           this.scrHeight = window.innerHeight;
           this.scrWidth = window.innerWidth;
-          console.log( this.scrWidth);
-          console.log( this.scrHeight);
+
     }
   constructor() {
     this.getScreenSize();

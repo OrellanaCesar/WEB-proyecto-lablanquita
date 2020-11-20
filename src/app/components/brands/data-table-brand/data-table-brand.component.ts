@@ -65,7 +65,6 @@ export class DataTableBrandComponent implements OnInit {
 		paramentro:id (identificador de la marca)*/
 		this._brands.deleteBrand(id)
 		.subscribe((resp:any) => {
-			console.log(resp);
 
 			const Toast = Swal.mixin({
 				toast: true,
@@ -90,7 +89,7 @@ export class DataTableBrandComponent implements OnInit {
 					let brand = new BrandModel(element);
 					this.listBrands.push(brand);
 				});
-				this._data.listBrands = this.listBrands; 
+				this._data.listBrands = this.listBrands;
 			},error =>{
 				console.log(error);
 			})

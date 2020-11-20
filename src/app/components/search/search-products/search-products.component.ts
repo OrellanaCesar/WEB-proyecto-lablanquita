@@ -54,7 +54,6 @@ export class SearchProductsComponent implements OnInit {
 			this.id = params.id;
       this.tipo = params.tipo;
       this.search = params.valor;
-      console.log(this.id,this.tipo,this.search);
       this.creaData();
       this.loader = true;
       this.getProducts();
@@ -110,7 +109,6 @@ export class SearchProductsComponent implements OnInit {
       }else {
         this._products.searchProduct(this.data)
           .subscribe((resp:any) => {
-            console.log(resp);
 
             this.listProducts = [];
             resp.forEach(element => {

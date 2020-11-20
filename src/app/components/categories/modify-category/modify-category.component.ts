@@ -36,20 +36,20 @@ export class ModifyCategoryComponent implements OnInit {
     this.showCategory();
   }
 
-  
+
   getParam(){
     /*Esta función obtiene el parámetro id que trae de la URL
-      Parámetros: no tiene*/ 
+      Parámetros: no tiene*/
     this.routerA.params
       .subscribe((params:Params) => {
         this.id = params.id;
       })
   }
-  
- 
+
+
 
   goGrid(){
-    /*Busca la ruta en app-routing que me llevará al componente 
+    /*Busca la ruta en app-routing que me llevará al componente
       DataTableCategoryComponent
 	    Parámetros: no hay */
     this.router.navigateByUrl('/dashboardCategory')
@@ -63,13 +63,12 @@ export class ModifyCategoryComponent implements OnInit {
   showCategory(){
     /*LLama a la función del servicio de categoría (category.service->showCategory)
     para que en el Formulario muestre nos datos de ésta categoría(nombre enn este caso)
-    Parámetros: no recibe*/ 
+    Parámetros: no recibe*/
     this._categories.showCategory(this.id)
     .subscribe((resp:any) => {
-      console.log(resp);
       let category = new CategoryModel(resp);
       this.form.get('category_name').setValue(category.category_name);
-        
+
     },
     (error:any) => {
       this.form.get('category_name').setValue('');
@@ -93,14 +92,12 @@ export class ModifyCategoryComponent implements OnInit {
 		}
 		const data = new FormData();
 		data.append('category_name',this.form.get('category_name').value );
-		console.log(data);
 
 		this._categories.updateCategory(this.id,data)
 		.subscribe((resp) => {
-			console.log(resp);
 			this.loader = false;
       this.goGrid();
-      
+
       const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -156,7 +153,7 @@ export class ModifyCategoryComponent implements OnInit {
     }
   }
 
- 
+
 
   createForm(){
 
