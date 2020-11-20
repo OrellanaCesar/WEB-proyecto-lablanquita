@@ -170,7 +170,7 @@
               </div>
 
               <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
-              
+
               <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
               <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
                 <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -347,7 +347,18 @@
         <button type="submit" [disabled]="disabled" class="btn boton-login" name="button">
           Ingresar
         </button>
+        <br>
+        <p>
+          <a (click)="goRecoverPass()" style="color:blue; cursor: pointer !important;">
+            ¿Ha olvidado su contraseña?
+          </a>
+        </p>
       </div>
+
+
+
+
+
     </form>
   </div>
 </div>
