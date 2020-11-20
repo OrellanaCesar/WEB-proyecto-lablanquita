@@ -6,6 +6,7 @@ import { BrandService } from 'src/app/services/brand.service';
 import { BrandModel } from 'src/app/models/brand.model';
 import { ApiSettigns } from 'src/app/API/API.settings';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 @Component({
 	selector: 'app-updatebrand',
@@ -18,10 +19,13 @@ export class UpdatebrandComponent implements OnInit {
 	loader:boolean = false;
 	error:boolean = false;
 	forma: FormGroup;
+	listBrands: BrandModel [] = [];
+
 	constructor(private router:Router,
-		private routerA: ActivatedRoute,
-		private _brand:BrandService,
-		private fb:FormBuilder) { }
+							private routerA: ActivatedRoute,
+							private _brand:BrandService,
+							private _data:DataServicesService,
+							private fb:FormBuilder) { }
 
 	ngOnInit(): void {
 		this.id = this.routerA.snapshot.params.id;
@@ -77,7 +81,7 @@ export class UpdatebrandComponent implements OnInit {
 
 		this._brand.updateBrand(this.id,data)
 		.subscribe((resp) => {
-
+			this.Brands();
 			this.loader = false;
 			this.goGrid();
 
@@ -129,5 +133,27 @@ export class UpdatebrandComponent implements OnInit {
 
 		});
 	}
+
+	Brands(){
+
+    /*
+    Esta funcion obtiene todas las marcas para mostarlas en el menu.
+    parameter:no hay.
+    return:no hay.
+    */
+
+    this._brand.getBrands()
+    .subscribe((resp:any) => {
+      resp.forEach(element => {
+        let brand = new BrandModel(element);
+        this.listBrands.push(brand);
+      });
+			this._data.listBrands = this.listBrands;
+    },
+    (error:any) => {
+      console.log(error);
+
+    });
+  }
 
 }

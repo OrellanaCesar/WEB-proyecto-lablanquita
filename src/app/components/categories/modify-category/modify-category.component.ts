@@ -7,6 +7,7 @@ import { CategoryModel } from 'src/app/models/category.model';
 import { ApiSettigns } from 'src/app/API/API.settings';
 //import { DataService } from 'src/app/services/data.service';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 
 
@@ -18,6 +19,7 @@ import Swal from 'sweetalert2';
 export class ModifyCategoryComponent implements OnInit {
 
   category:CategoryModel;
+  listCategories: CategoryModel [] = [];
   id:number;
   form: FormGroup;
   loader:boolean = false;
@@ -26,6 +28,7 @@ export class ModifyCategoryComponent implements OnInit {
   constructor(
               private routerA: ActivatedRoute,
               private _categories: CategoryService,
+              private _data:DataServicesService,
               private router:Router,
               private fb: FormBuilder) { }
 
@@ -95,6 +98,7 @@ export class ModifyCategoryComponent implements OnInit {
 
 		this._categories.updateCategory(this.id,data)
 		.subscribe((resp) => {
+      this.getCategories();
 			this.loader = false;
       this.goGrid();
 
@@ -162,5 +166,27 @@ export class ModifyCategoryComponent implements OnInit {
 
 		});
 	}
+
+  getCategories(){
+
+    /*
+    Esta funcion obtiene todas las categorias para mostrarlas en el Menu
+    parameter:no hay.
+    return: no hay.
+    */
+
+    this._categories.getCategories()
+    .subscribe((resp:any) => {
+      resp.forEach(element => {
+        let category = new CategoryModel(element);
+        this.listCategories.push(category);
+      });
+      this._data.listCategories = this.listCategories;
+    },
+    (error:any) => {
+      console.log(error);
+
+    });
+  }
 
 }
