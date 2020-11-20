@@ -105,6 +105,7 @@ export class UpdateProductComponent implements OnInit {
     this._products.getProduct(this.id)
       .subscribe((resp:any) => {
         this.Product = new ProductModel(resp[0]);
+
         this.form.get('product_name').setValue(this.Product.product_name);
         this.form.get('product_description').setValue(this.Product.product_description);
         this.form.get('product_price').setValue(this.Product.product_price);
@@ -121,7 +122,7 @@ export class UpdateProductComponent implements OnInit {
         if (!this.Product.product_offer_day) {
           this.form.get('product_offer_day_order').disable();
         }
-        this.url_image = this.url_image + this.Product.product_image.substring(8);
+        this.url_image = this.url_image + this.Product.product_image;
 
       }, (error:any) => {
           console.log(error);
@@ -430,8 +431,12 @@ export class UpdateProductComponent implements OnInit {
       data.append('product_offer_day_order',
                   this.form.get('product_offer_day_order').value);
 
+      console.log(data);
+
+
       this._products.updateProduct(this.id,data)
         .subscribe((resp:any) => {
+            console.log(resp);
 
             this.loader = false;
             this.goGrid();
