@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { BrandService } from 'src/app/services/brand.service';
 import { BrandModel } from 'src/app/models/brand.model';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 @Component({
 	selector: 'app-data-table-brand',
@@ -14,7 +15,8 @@ export class DataTableBrandComponent implements OnInit {
 	Brands: any[] = [];
 	listBrands : BrandModel [] = [];
 	constructor(private _brands:BrandService,
-		private router:Router) {
+							private _data:DataServicesService,
+							private router:Router) {
 	}
 
 	ngOnInit(): void {
@@ -63,7 +65,6 @@ export class DataTableBrandComponent implements OnInit {
 		paramentro:id (identificador de la marca)*/
 		this._brands.deleteBrand(id)
 		.subscribe((resp:any) => {
-			console.log(resp);
 
 			const Toast = Swal.mixin({
 				toast: true,
@@ -88,6 +89,7 @@ export class DataTableBrandComponent implements OnInit {
 					let brand = new BrandModel(element);
 					this.listBrands.push(brand);
 				});
+				this._data.listBrands = this.listBrands;
 			},error =>{
 				console.log(error);
 			})

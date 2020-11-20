@@ -121,7 +121,7 @@ export class UpdateProductComponent implements OnInit {
         if (!this.Product.product_offer_day) {
           this.form.get('product_offer_day_order').disable();
         }
-        this.url_image = this.url_image + this.Product.product_image;
+        this.url_image = this.url_image + this.Product.product_image.substring(8);
 
       }, (error:any) => {
           console.log(error);

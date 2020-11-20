@@ -12,10 +12,8 @@ export class FooterComponent implements OnInit {
 	getScreenSize(event?) {
 		this.scrHeight = window.innerHeight;
 		this.scrWidth = window.innerWidth;
-		console.log( this.scrWidth);
-		console.log( this.scrHeight);
 	}
-	constructor() { 
+	constructor() {
 		this.getScreenSize();}
 
 		ngOnInit(): void {

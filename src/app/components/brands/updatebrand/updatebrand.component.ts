@@ -42,7 +42,7 @@ export class UpdatebrandComponent implements OnInit {
 		.subscribe((resp:any) => {
 			this.brand = new BrandModel(resp[0]);
 			this.forma.get('brand_name').setValue(this.brand.brand_name);
-			console.log(resp[0]);
+
 		},
 		(error:any) => {
 			console.log(error);
@@ -73,11 +73,11 @@ export class UpdatebrandComponent implements OnInit {
 		}
 		const data = new FormData();
 		data.append('brand_name',this.forma.get('brand_name').value );
-		console.log(data);
+
 
 		this._brand.updateBrand(this.id,data)
 		.subscribe((resp) => {
-			console.log(resp);
+
 			this.loader = false;
 			this.goGrid();
 

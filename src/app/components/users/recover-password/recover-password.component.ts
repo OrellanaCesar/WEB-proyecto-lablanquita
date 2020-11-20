@@ -52,6 +52,7 @@ export class RecoverPasswordComponent implements OnInit {
         this.loader = false;
         this.mensaje = resp.message;
         this.status = resp.status;
+        this.formRecover.get('user_email').setValue('');
 
 
       },(error:any) =>{

@@ -1,5 +1,5 @@
 export class ApiSettigns {
 
-	public static url:string = 'http://127.0.0.1:8000/api/';
-	public static url_image =  'http://127.0.0.1:8000';
+	public static url:string = 'https://softwaresalta.com/API-BLANQUITA/public/api/';
+	public static url_image =  'https://softwaresalta.com/API-BLANQUITA/storage/app/public';
 }

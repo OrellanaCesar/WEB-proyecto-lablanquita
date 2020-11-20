@@ -29,7 +29,7 @@ export class AuthService {
     };
     return this.http.post(`${ApiSettigns.url}auth/signupCliente`,data,{ headers });
   }
-  
+
   updateUser(data){
     /*esta función envía una peticion POST a la API para modificar
     datos de un usuario.
@@ -54,7 +54,6 @@ export class AuthService {
       remember_me:true
     }
 
-    console.log(auth);
     const headers = {
       'Content-Type': 'application/json',
       'X-Requested-With': 'XMLHttpRequest'

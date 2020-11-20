@@ -5,6 +5,7 @@ import { ProductModel } from 'src/app/models/product.model';
 import Swal from 'sweetalert2';
 import { ApiSettigns } from 'src/app/API/API.settings';
 
+
 @Component({
   selector: 'app-data-table-products',
   templateUrl: './data-table-products.component.html',
@@ -16,8 +17,9 @@ export class DataTableProductsComponent implements OnInit {
   Products:any[] = [];
   url_image :string = ApiSettigns.url_image;
 
+
   constructor(private _products:ProductsService,
-    private router:Router) {
+              private router:Router) {
 
   }
 
@@ -32,7 +34,10 @@ export class DataTableProductsComponent implements OnInit {
 
       ajax:(dataTablesParameters :any,callback) => {
         that._products.getDataTables(dataTablesParameters)
-        .subscribe(resp => {
+        .subscribe((resp:any) => {
+          for (let i = 0; i < resp.data.length; i++) {
+            resp.data[i].product_image = resp.data[i].product_image.substring(8);
+          }
           that.Products = resp.data;
           callback({
             recordsTotal: resp.recordsTotal,
@@ -152,11 +157,15 @@ export class DataTableProductsComponent implements OnInit {
 
     this._products.getProductsD()
     .subscribe((resp:any) => {
+      for (let i = 0; i < resp.length; i++) {
+        resp[i].product_image = resp[i].product_image.substring(8);
+      }
       this.Products = resp;
     },(error:any) => {
       this.Products = [];
     })
   }
+
 
   update(id:number){
 

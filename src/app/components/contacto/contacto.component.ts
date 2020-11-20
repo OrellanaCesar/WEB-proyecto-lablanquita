@@ -18,7 +18,7 @@ export class ContactoComponent implements OnInit {
 	@HostListener('window:resize', ['$event'])
     getScreenSize(event?) {
           this.scrWidth = window.innerWidth;
-          console.log( this.scrWidth);
+
     }
 	constructor(private fb:FormBuilder,
 		private _mail:EmailService) {

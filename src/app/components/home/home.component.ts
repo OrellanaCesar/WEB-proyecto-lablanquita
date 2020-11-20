@@ -71,7 +71,6 @@ export class HomeComponent implements OnInit {
   getProductsBestSeller(){
     this._productService.getProductsBestSeller()
       .subscribe( (resp:any) =>{
-        console.log(resp);
 
         let i = 0;
         resp.forEach(element => {
