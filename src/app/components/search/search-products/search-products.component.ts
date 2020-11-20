@@ -67,7 +67,8 @@ export class SearchProductsComponent implements OnInit {
         .subscribe((resp:any) => {
           this.listProducts = [];
           if(resp.length == undefined){
-            this.listProducts.push(resp);
+            let prod = new ProductModel(resp);
+            this.listProducts.push(prod);
             this.loader = false;
           }else{
             resp.forEach(element => {
@@ -90,7 +91,8 @@ export class SearchProductsComponent implements OnInit {
             .subscribe((resp:any) => {
               this.listProducts = [];
               if(resp.length == undefined){
-                this.listProducts.push(resp);
+                let prod = new ProductModel(resp);
+                this.listProducts.push(prod);
                 this.loader= false;
               }else{
                 resp.forEach(element => {
