@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { CategoryModel } from 'src/app/models/category.model';
 import Swal from 'sweetalert2';
+import { DataServicesService } from 'src/app/services/data-services.service';
 
 
 @Component({
@@ -15,9 +16,11 @@ export class DataTableCategoryComponent implements OnInit {
   Categories: any[] = [];
   listaCategory:CategoryModel[]=[];
 
-  constructor(private _categories:CategoryService,private router:Router) {
+  constructor(private _categories:CategoryService,
+              private _data:DataServicesService,
+              private router:Router) {
    }
-  
+
   ngOnInit(): void {
     /*Crea el dataTable con sus campos*/
 		const that = this;
@@ -57,7 +60,7 @@ export class DataTableCategoryComponent implements OnInit {
 
 	/*Elimina la categoría del identificador que pasa como parámetro
      Parámentro: id (identificador de la categoría)*/
-     
+
 		this._categories.deleteCategory(id)
 		.subscribe((resp:any) => {
 			const Toast = Swal.mixin({
@@ -99,7 +102,7 @@ export class DataTableCategoryComponent implements OnInit {
 
 	update(id:number){
 		/*Busca la ruta en app-routing que me llevará al componente ModifyCategoryComponent
-		Parámetros: id de la categoría a modificar */ 
+		Parámetros: id de la categoría a modificar */
 		this.router.navigateByUrl(`/updateCategory/${id}`);
 	}
 
@@ -112,6 +115,7 @@ export class DataTableCategoryComponent implements OnInit {
 				let category = new CategoryModel(element);
 				this.listaCategory.push(category);
 			});
+      this._data.listCategories = this.listaCategory;
 		},error =>{
 			console.log(error);
 		})

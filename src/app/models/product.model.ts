@@ -24,7 +24,7 @@ export class ProductModel {
 		this.product_id = element.product_id;
     this.product_name = element.product_name;
     this.product_description = element.product_description;
-    this.product_image = element.product_image;
+    this.product_image = element.product_image.substring(8);
 		this.product_price = element.product_price;
     this.product_offer_day = element.product_offer_day;
     this.product_offer_day_order = element.product_offer_day_order;
