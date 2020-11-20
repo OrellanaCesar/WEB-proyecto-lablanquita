@@ -91,13 +91,13 @@
     </div>
     <div class="col-md-4">
       <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
-      <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
+        <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
       </a>
       <a href="https://www.instagram.com/limpiezablanquita/" target="_blank">
         <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
       </a>
       <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
-      <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
+        <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
       </a>
 
 
@@ -156,13 +156,13 @@
               </div>
               <div class="col-md-4 alineacion-user">
                 <a href="https://www.facebook.com/LimpiezaBlanquitaStore" target="_blank">
-                <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
+                  <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
                 </a>
                 <a href="https://www.instagram.com/limpiezablanquita/" target="_blank">
                   <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
                 </a>
                 <a href="https://twitter.com/Blanqu1Limpieza" target="_blank">
-                <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
+                  <i class="fab fa-twitter fa-3x mr-2 mb-5 icono-RedesSociales "></i>
                 </a>
                 <!-- <i class="fab fa-facebook fa-3x ml-5 mr-2 mb-5 icono-RedesSociales "></i>
                 <i class="fab fa-instagram fa-3x mr-2  mb-5 icono-RedesSociales "></i>
@@ -171,127 +171,127 @@
 
               <div class="col-md-8 alineacion-user" *ngIf="estaAutenticado()">
 
-              <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
-              <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
-                <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
-                </button>
-                <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
-                  <div class="dropdown-divider "></div>
-                  <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
-                  <div class="dropdown-divider "></div>
-                  <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
+                <label class="btn-logout btn-logout-big letra" *ngIf="estaAutenticado()"><i class="fas fa-user mr-2"></i>{{user.user_name}}</label>
+                <div class="dropdown dropdown-big" *ngIf="estaAutenticado() && !disabled">
+                  <button type="button" class="btn btn-default  dropdown-toggle btn-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img  class="user_logo user-logo-big" src="assets/img/img_user/{{letra}}.svg" alt="">
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-big" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item dropdown-item-big" data-toggle="modal" data-target="#perfilModal">Ver Perfil</a>
+                    <div class="dropdown-divider "></div>
+                    <a class="dropdown-item dropdown-item-big" [routerLink]="['updateUser']">Modificar Datos</a>
+                    <div class="dropdown-divider "></div>
+                    <a class="dropdown-item dropdown-item-big" (click)="logout()">Cerrar Sesión</a>
+                  </div>
                 </div>
               </div>
+              <div class="col-md-8 " *ngIf="!estaAutenticado()">
+                <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
+                  <i class="fas fa-user mr-2"></i> Acceder
+                </button>
+                <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
+                  <i class="fas fa-user-plus mr-2"></i> Registrate
+                </button>
+              </div>
             </div>
-            <div class="col-md-8 " *ngIf="!estaAutenticado()">
-              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#loginModal">
-                <i class="fas fa-user mr-2"></i> Acceder
-              </button>
-              <button type="button" class="btn btn-info btn-acceder mt-5 letra" data-toggle="modal" data-target="#signupModal">
-                <i class="fas fa-user-plus mr-2"></i> Registrate
-              </button>
-            </div>
+
           </div>
 
-        </div>
+          <div class="row adaptacion bg-primary">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.margen-menu]="scrWidth > 990 ">
 
-        <div class="row adaptacion bg-primary">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.margen-menu]="scrWidth > 990 ">
+                <ul class="navbar-nav">
+                  <li class="nav-item " routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">
 
-              <ul class="navbar-nav">
-                <li class="nav-item " routerLinkActive="activo" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link   letra" [routerLink]="['']" [class.margen-item-menu]="scrWidth>990">
+                      Inicio
+                    </a>
+                  </li>
+                  <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
 
-                  <a class="nav-link   letra" [routerLink]="['']" [class.margen-item-menu]="scrWidth>990">
-                    Inicio
-                  </a>
-                </li>
-                <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+                    <a class="nav-link dropdown-toggle letra" id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Marcas
+                   </a>
 
-                  <a class="nav-link dropdown-toggle letra" id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   Marcas
+                   <div class="dropdown-menu  bg-primary scroll" aria-labelledby="navbarDropdownBrand">
+                    <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardBrand']">
+                      Gestión de Marcas
+                    </a>
+                    <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                    <a class="dropdown-item nav-link brand-item " style="color:white;" (click)="searchProducts(brand.brand_id,1,'')" *ngFor="let brand of _data.listBrands">
+                     {{ brand.brand_name }}
+                   </a>
+                 </div>
+               </li>
+
+               <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
+
+                <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Productos
+                </a>
+
+                <div class="dropdown-menu bg-primary scroll" aria-labelledby="navbarDropdownBrand">
+                  <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
+                   Gestión de Categorías
                  </a>
-
-                 <div class="dropdown-menu  bg-primary " aria-labelledby="navbarDropdownBrand">
-                  <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardBrand']">
-                    Gestión de Marcas
-                  </a>
-                  <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-                  <a class="dropdown-item nav-link brand-item " style="color:white;" (click)="searchProducts(brand.brand_id,1,'')" *ngFor="let brand of _data.listBrands">
-                   {{ brand.brand_name }}
+                 <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                 <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
+                   Gestión de Productos
+                 </a>
+                 <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
+                 <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
+                   {{ category.category_name }}
                  </a>
                </div>
              </li>
+             <li class="nav-item" routerLinkActive="activo">
 
-             <li class="nav-item mr-5 ml-2 dropdown" routerLinkActive="activo">
-
-              <a class="nav-link dropdown-toggle letra " id="navbarDropdownBrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Productos
-              </a>
-
-              <div class="dropdown-menu bg-primary " aria-labelledby="navbarDropdownBrand">
-                <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardCategory']">
-                 Gestión de Categorías
-               </a>
-               <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-               <a *ngIf="isAuthAdmin()" class="dropdown-item nav-link brand-item links letra" [routerLink]="['dashboardProducts']">
-                 Gestión de Productos
-               </a>
-               <div *ngIf="isAuthAdmin()" class="dropdown-divider "></div>
-               <a class="dropdown-item nav-link brand-item letra" style="color:white;" (click)="searchProducts(category.category_id,2,'')" *ngFor="let category of _data.listCategories">
-                 {{ category.category_name }}
-               </a>
-             </div>
+              <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
+               Ubicación
+             </a>
            </li>
            <li class="nav-item" routerLinkActive="activo">
+            <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
+              Contacto
+            </a>
+          </li>
+          <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
 
-            <a class="nav-link   letra" [routerLink]="['ubicacion']" [class.margen-item-menu]="scrWidth>990">
-             Ubicación
-           </a>
-         </li>
-         <li class="nav-item" routerLinkActive="activo">
-          <a class="nav-link  letra" [routerLink]="['contacto']" [class.margen-item-menu]="scrWidth>990">
-            Contacto
+            <li class="nav-itemmr-5 ml-2 dropdown"
+            routerLinkActive="activo"
+            *ngIf="isAuthAdmin()">
+
+            <a class="nav-link dropdown-toggle letra "
+            id="navbarDropdownUser" role="button"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            Usuarios
           </a>
-        </li>
-        <li class="nav-itemmr-5 ml-2 dropdown" routerLinkActive="activo" *ngIf="isAuthAdmin()">
+          <div class="dropdown-menu bg-primary "
+          aria-labelledby="navbarDropdownUser">
 
-          <li class="nav-itemmr-5 ml-2 dropdown"
-          routerLinkActive="activo"
-          *ngIf="isAuthAdmin()">
-
-          <a class="nav-link dropdown-toggle letra "
-          id="navbarDropdownUser" role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false">
-          Usuarios
+          <a class="dropdown-item nav-link brand-item letra"
+          style="color:white;"
+          [routerLink]="['dashboardUsers']"
+          [class.margen-item-menu]="scrWidth>990">
+          Gestión de Usuarios
         </a>
-        <div class="dropdown-menu bg-primary "
-        aria-labelledby="navbarDropdownUser">
-
+        <div *ngIf="isAuthAdmin()"
+        class="dropdown-divider "></div>
         <a class="dropdown-item nav-link brand-item letra"
         style="color:white;"
-        [routerLink]="['dashboardUsers']"
+        [routerLink]="['clients']"
         [class.margen-item-menu]="scrWidth>990">
-        Gestión de Usuarios
+        Enviar emails
       </a>
-      <div *ngIf="isAuthAdmin()"
-      class="dropdown-divider "></div>
-      <a class="dropdown-item nav-link brand-item letra"
-      style="color:white;"
-      [routerLink]="['clients']"
-      [class.margen-item-menu]="scrWidth>990">
-      Enviar emails
-    </a>
-  </div>
+    </div>
 
-</li>
+  </li>
 
 
 </ul>
