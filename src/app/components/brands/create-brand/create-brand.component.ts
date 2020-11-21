@@ -95,6 +95,14 @@ export class CreateBrandComponent implements OnInit {
 			this.loadBrand();
 		},
 		(error:any) => {
+			console.log(error);
+			let message_error;
+			if (error.error.errors.brand_name.length == 1
+					|| error.error.errors.brand_name.length != undefined){
+				message_error = error.error.errors.brand_name[0];
+			}else{
+				message_error = 'hubo un problema al registrar marca';
+			}
 			this.error = true;
 			this.loader = false;
 			const Toast = Swal.mixin({
@@ -110,7 +118,7 @@ export class CreateBrandComponent implements OnInit {
 			})
 			Toast.fire({
 				icon : 'error',
-				title: error.error.message
+				title: message_error
 			});
 		})
 	}
