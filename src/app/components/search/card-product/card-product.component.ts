@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductModel } from 'src/app/models/product.model';
 import { ApiSettigns } from 'src/app/API/API.settings';
 
@@ -11,12 +12,16 @@ export class CardProductComponent implements OnInit {
 
   @Input() product:ProductModel;
   url = ApiSettigns.url_image;
-  constructor() {
+  constructor(private router:Router) {
 
 
   }
 
   ngOnInit(): void {
+  }
+
+  showProduct(id:number){
+    this.router.navigateByUrl(`products/${id}`);
   }
 
 }

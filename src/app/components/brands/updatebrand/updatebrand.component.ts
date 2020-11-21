@@ -83,6 +83,21 @@ export class UpdatebrandComponent implements OnInit {
 		.subscribe((resp) => {
 			this.Brands();
 			this.loader = false;
+			const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        onOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      Toast.fire({
+        icon: 'success',
+        title: 'Se modificó la marca con éxito'
+      });
 			this.goGrid();
 
 		},
@@ -90,6 +105,13 @@ export class UpdatebrandComponent implements OnInit {
 			this.loader = false;
 			this.error = true;
 			console.log(error);
+			let message_error;
+			if (error.error.errors.brand_name.length == 1
+					|| error.error.errors.brand_name.length != undefined){
+				message_error = error.error.errors.brand_name[0];
+			}else{
+				message_error = 'hubo un problema al registrar marca';
+			}
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',
@@ -103,7 +125,7 @@ export class UpdatebrandComponent implements OnInit {
 			})
 			Toast.fire({
 				icon: 'error',
-				title: error.error.message
+				title: message_error
 			})
 		})
 

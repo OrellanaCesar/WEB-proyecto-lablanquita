@@ -1,7 +1,7 @@
 <div class="col mb-4">
   <div class="card tarjetas">
-    <a href="#"
-       [routerLink]="['products/',product.product_id]"
+    <a
+       (click)="showProduct(product.product_id)"
        class="nounderline">
       <div class="slide">
         <img [src]="url + product.product_image"
@@ -11,8 +11,8 @@
       </div>
     </a>
     <div class="card-body bg-fondo">
-      <a href="#"
-         [routerLink]="['products/',product.product_id]"
+      <a
+         (click)="showProduct(product.product_id)"
          class="nounderline">
         <h5 class="card-title botones-contacto">
           {{product.product_name}}
