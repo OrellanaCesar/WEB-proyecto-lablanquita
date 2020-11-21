@@ -123,6 +123,13 @@ export class ModifyCategoryComponent implements OnInit {
 			this.loader = false;
 			this.error = true;
 			console.log(error);
+      let message_error;
+			if (error.error.errors.category_name.length == 1
+					|| error.error.errors.category_name.length != undefined){
+				message_error = error.error.errors.category_name[0];
+			}else{
+				message_error = 'hubo un problema al midificar categoría';
+			}
 			const Toast = Swal.mixin({
 				toast: true,
 				position: 'top-end',
@@ -136,7 +143,7 @@ export class ModifyCategoryComponent implements OnInit {
 			})
 			Toast.fire({
 				icon: 'error',
-				title: error.error.message
+				title: message_error
 			})
 		})
 	}
