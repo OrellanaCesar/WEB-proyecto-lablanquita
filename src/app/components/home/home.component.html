@@ -186,10 +186,11 @@
 									{{ offert.product_description }}
 								</strong>
 							</p>
-							<div  class="row" style="display: flex;justify-content: center;">
+							<div *ngIf="offert.product_price > 0" class="row" style="display: flex;justify-content: center;">
 								<h3 class=" precio">Precio: ${{ offert.product_price | number:'.0-2' }}</h3>
 								<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
 							</div>
+							
 							</a>
 							<div class="row" style="justify-content:center;">
 								<a href="https://api.whatsapp.com/send?phone=5491157505056&amp;text=Hola%20Limpieza%20Blanquita" class="decoration" target="_blank">
