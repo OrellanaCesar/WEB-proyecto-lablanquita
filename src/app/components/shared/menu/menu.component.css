@@ -321,7 +321,10 @@
 
 .letra {
     font-family: Georgia, Cambria, Times, "Times New Roman";
+    color: white;
+
 }
+
 
 .margen-menu {
     margin-left: 12rem;

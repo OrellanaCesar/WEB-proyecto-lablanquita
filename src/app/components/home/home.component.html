@@ -169,7 +169,7 @@
 							<img [src]="url_image + offert.product_image"
 							class="card-img-top"
 							alt=""
-							height="250" width="500">
+							height="350" width="500">
 						</div>
 						</a>
 						<div class="card-body bg-fondo">
@@ -190,7 +190,7 @@
 								<h3 class=" precio">Precio: ${{ offert.product_price | number:'.0-2' }}</h3>
 								<!-- <a href="#" class="btn btn-secondary"> Comprar</a> -->
 							</div>
-							
+
 							</a>
 							<div class="row" style="justify-content:center;">
 								<a href="https://api.whatsapp.com/send?phone=5491157505056&amp;text=Hola%20Limpieza%20Blanquita" class="decoration" target="_blank">
@@ -223,6 +223,8 @@
 
 </div>
 </div>
+
+
 <!-- PRODUCTOS MAS VENDIDOS -->
 <div class="row adaptacion mb-5" >
 
@@ -241,11 +243,14 @@
 					<div class="card tarjetas">
 						<a href="#" [routerLink]="['products/',best.product_id]" class="nounderline">
 						<div class="slide">
+							<!-- <div >
 
+							</div> -->
 							<img [src]="url_image + best.product_image"
 							class="card-img-top"
 							alt=""
-							height="250" width="500">
+							height="350"
+							 width="500">
 						</div>
 						</a>
 						<div class="card-body bg-fondo">
