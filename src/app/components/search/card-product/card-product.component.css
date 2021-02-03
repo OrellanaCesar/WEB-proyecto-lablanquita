@@ -68,7 +68,7 @@
 
 .tarjetas {
   width: 18rem ;
-  height: 31rem;
+  height: 40rem;
 }
 
 @media(max-width:768px){
@@ -86,7 +86,7 @@
   font-weight: 300 ;
 }
 
-a.nounderline:link
+.pepe
 {
 text-decoration:none;
 }

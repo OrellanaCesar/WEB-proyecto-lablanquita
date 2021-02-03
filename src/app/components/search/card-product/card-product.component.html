@@ -7,13 +7,13 @@
         <img [src]="url + product.product_image"
              class="card-img-top"
              alt=""
-             height="250" width="500">
+             height="350" width="500">
       </div>
     </a>
     <div class="card-body bg-fondo">
       <a
          (click)="showProduct(product.product_id)"
-         class="nounderline">
+         class="pepe">
         <h5 class="card-title botones-contacto">
           {{product.product_name}}
         </h5>
@@ -27,7 +27,7 @@
             {{ product.product_description }}
           </strong>
         </p>
-        <div  class="row">
+        <div  class="row" style="justify-content:center">
           <h3 class="mr-5 precio">
             Precio: ${{ product.product_price | number:'.0-2' }}
           </h3>
